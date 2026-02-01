@@ -19,7 +19,7 @@ class FetchException(Exception):
 
 
 if RAW_DATA_API.exists():
-    print(f'The downloaded API data can be found using the following file path')
+    print(f'The downloaded API data can be found using the following file path', RAW_DATA_API)
 else:
     url = "https://api.cps.edu/schoolprofile/CPS/AllSchoolProfiles"
     response = httpx.get(
