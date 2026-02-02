@@ -79,5 +79,3 @@ Note: The name infront of a task indicates the person who will lead its progress
 2. Do you have guidance on best practices for aggregating school-level metrics to neighborhood-level summaries in a geospatial context?
 3. Which GIS libraries would you recommend using? The most we will do is work with shapefiles to map schools and neighborhood
 
-
-
