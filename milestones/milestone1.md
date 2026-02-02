@@ -18,7 +18,7 @@ We will use three datasets from multiple public sources. First, we will access d
 
 ### Illinois State Board of Education (ISBE)
 - Source URL: https://www.isbe.net/pages/illinois-state-report-card-data.aspx
-- Source Type: Bulk data (CVS, XLSX)
+- Source Type: Bulk data (CSV, XLSX)
 - Summary: Published by ISBE, this school-level data provides annual statistics such as average class size, student performance on standardized tests (ELA, math, and science), dropout rates, graduation rates, transfer-out rates, multiple expenditure categories, and teacher attendance ratios.
 - Challenges: This data contains missing data, and we will have to identify sound methods of handling these inconsistencies. Furthermore, this dataset needs to be consolidated with Chicago Public Schools data. There might be challenges in matching data for the same school across both datasets due to the potential lack of a shared unique identifier.
 
