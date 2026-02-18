@@ -1,0 +1,290 @@
+DestinationTable
+RCDTS
+Level
+School Name
+District
+City
+County
+District Type
+School Type
+Grades Served
+% Science Proficiency
+% Science Proficiency - Male
+% Science Proficiency - Female
+% Science Proficiency - Non Binary
+% Science Proficiency - White
+% Science Proficiency - Black or African American
+% Science Proficiency - Hispanic or Latino
+% Science Proficiency - Asian
+% Science Proficiency - Native Hawaiian or Other Pacific Islander
+% Science Proficiency - American Indian or Alaska Native
+% Science Proficiency - Two or More Races
+% Science Proficiency - MENA
+% Science Proficiency - Children with Disabilities
+% Science Proficiency - IEP
+% Science Proficiency - EL
+% Science Proficiency - Low Income
+% Science Proficiency - Youth in Care
+% Science Proficiency - Homeless
+% Science Proficiency - Migrant
+% Science Proficiency - Military
+% Science Proficiency Grade 5
+% Science Proficiency Grade 5 - Male
+% Science Proficiency Grade 5 - Female
+% Science Proficiency Grade 5 - Non Binary
+% Science Proficiency Grade 5 - White
+% Science Proficiency Grade 5 - Black or African American
+% Science Proficiency Grade 5 - Hispanic or Latino
+% Science Proficiency Grade 5 - Asian
+% Science Proficiency Grade 5 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 5 - American Indian or Alaska Native
+% Science Proficiency Grade 5 - Two or More Races
+% Science Proficiency Grade 5 - MENA
+% Science Proficiency Grade 5 - Children with Disabilities
+% Science Proficiency Grade 5 - IEP
+% Science Proficiency Grade 5 - EL
+% Science Proficiency Grade 5 - Low Income
+% Science Proficiency Grade 5 - Youth in Care
+% Science Proficiency Grade 5 - Homeless
+% Science Proficiency Grade 5 - Migrant
+% Science Proficiency Grade 5 - Military
+% Science Proficiency Grade 8
+% Science Proficiency Grade 8 - Male
+% Science Proficiency Grade 8 - Female
+% Science Proficiency Grade 8 - Non Binary
+% Science Proficiency Grade 8 - White
+% Science Proficiency Grade 8 - Black or African American
+% Science Proficiency Grade 8 - Hispanic or Latino
+% Science Proficiency Grade 8 - Asian
+% Science Proficiency Grade 8 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 8 - American Indian or Alaska Native
+% Science Proficiency Grade 8 - Two or More Races
+% Science Proficiency Grade 8 - MENA
+% Science Proficiency Grade 8 - Children with Disabilities
+% Science Proficiency Grade 8 - IEP
+% Science Proficiency Grade 8 - EL
+% Science Proficiency Grade 8 - Low Income
+% Science Proficiency Grade 8 - Youth in Care
+% Science Proficiency Grade 8 - Homeless
+% Science Proficiency Grade 8 - Migrant
+% Science Proficiency Grade 8 - Military
+% Science Proficiency Grade 9
+% Science Proficiency Grade 9 - Male
+% Science Proficiency Grade 9 - Female
+% Science Proficiency Grade 9 - Non Binary
+% Science Proficiency Grade 9 - White
+% Science Proficiency Grade 9 - Black or African American
+% Science Proficiency Grade 9 - Hispanic or Latino
+% Science Proficiency Grade 9 - Asian
+% Science Proficiency Grade 9 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 9 - American Indian or Alaska Native
+% Science Proficiency Grade 9 - Two or More Races
+% Science Proficiency Grade 9 - MENA
+% Science Proficiency Grade 9 - Children with Disabilities
+% Science Proficiency Grade 9 - IEP
+% Science Proficiency Grade 9 - EL
+% Science Proficiency Grade 9 - Low Income
+% Science Proficiency Grade 9 - Youth in Care
+% Science Proficiency Grade 9 - Homeless
+% Science Proficiency Grade 9 - Migrant
+% Science Proficiency Grade 9 - Military
+% Science Proficiency Grade 10
+% Science Proficiency Grade 10 - Male
+% Science Proficiency Grade 10 - Female
+% Science Proficiency Grade 10 - Non Binary
+% Science Proficiency Grade 10 - White
+% Science Proficiency Grade 10 - Black or African American
+% Science Proficiency Grade 10 - Hispanic or Latino
+% Science Proficiency Grade 10 - Asian
+% Science Proficiency Grade 10 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 10 - American Indian or Alaska Native
+% Science Proficiency Grade 10 - Two or More Races
+% Science Proficiency Grade 10 - MENA
+% Science Proficiency Grade 10 - Children with Disabilities
+% Science Proficiency Grade 10 - IEP
+% Science Proficiency Grade 10 - EL
+% Science Proficiency Grade 10 - Low Income
+% Science Proficiency Grade 10 - Youth in Care
+% Science Proficiency Grade 10 - Homeless
+% Science Proficiency Grade 10 - Migrant
+% Science Proficiency Grade 10 - Military
+% Science Proficiency Grade 11
+% Science Proficiency Grade 11 - Male
+% Science Proficiency Grade 11 - Female
+% Science Proficiency Grade 11 - Non Binary
+% Science Proficiency Grade 11 - White
+% Science Proficiency Grade 11 - Black or African American
+% Science Proficiency Grade 11 - Hispanic or Latino
+% Science Proficiency Grade 11 - Asian
+% Science Proficiency Grade 11 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 11 - American Indian or Alaska Native
+% Science Proficiency Grade 11 - Two or More Races
+% Science Proficiency Grade 11 - MENA
+% Science Proficiency Grade 11 - Children with Disabilities
+% Science Proficiency Grade 11 - IEP
+% Science Proficiency Grade 11 - EL
+% Science Proficiency Grade 11 - Low Income
+% Science Proficiency Grade 11 - Youth in Care
+% Science Proficiency Grade 11 - Homeless
+% Science Proficiency Grade 11 - Migrant
+% Science Proficiency Grade 11 - Military
+% Science Proficiency Grade 3 to 8
+% Science Proficiency Grade 3 to 8 - Male
+% Science Proficiency Grade 3 to 8 - Female
+% Science Proficiency Grade 3 to 8 - Non Binary
+% Science Proficiency Grade 3 to 8 - White
+% Science Proficiency Grade 3 to 8 - Black or African American
+% Science Proficiency Grade 3 to 8 - Hispanic or Latino
+% Science Proficiency Grade 3 to 8 - Asian
+% Science Proficiency Grade 3 to 8 - Native Hawaiian or Other Pacific Islander
+% Science Proficiency Grade 3 to 8 - American Indian or Alaska Native
+% Science Proficiency Grade 3 to 8 - Two or More Races
+% Science Proficiency Grade 3 to 8 - MENA
+% Science Proficiency Grade 3 to 8 - Children with Disabilities
+% Science Proficiency Grade 3 to 8 - IEP
+% Science Proficiency Grade 3 to 8 - EL
+% Science Proficiency Grade 3 to 8 - Low Income
+% Science Proficiency Grade 3 to 8 - Youth in Care
+% Science Proficiency Grade 3 to 8 - Homeless
+% Science Proficiency Grade 3 to 8 - Migrant
+% Science Proficiency Grade 3 to 8 - Military
+% Science Proficiency High School
+% Science Proficiency High School - Male
+% Science Proficiency High School - Female
+% Science Proficiency High School - Non Binary
+% Science Proficiency High School - White
+% Science Proficiency High School - Black or African American
+% Science Proficiency High School - Hispanic or Latino
+% Science Proficiency High School - Asian
+% Science Proficiency High School - Native Hawaiian or Other Pacific Islander
+% Science Proficiency High School - American Indian or Alaska Native
+% Science Proficiency High School - Two or More Races
+% Science Proficiency High School - MENA
+% Science Proficiency High School - Children with Disabilities
+% Science Proficiency High School - IEP
+% Science Proficiency High School - EL
+% Science Proficiency High School - Low Income
+% Science Proficiency High School - Youth in Care
+% Science Proficiency High School - Homeless
+% Science Proficiency High School - Migrant
+% Science Proficiency High School - Military
+% Science Participation
+% Science Participation - Male
+% Science Participation - Female
+% Science Participation - Non Binary
+% Science Participation - White
+% Science Participation - Black or African American
+% Science Participation - Hispanic or Latino
+% Science Participation - Asian
+% Science Participation - Native Hawaiian or Other Pacific Islander
+% Science Participation - American Indian or Alaska Native
+% Science Participation - Two or More Races
+% Science Participation - MENA
+% Science Participation - Children with Disabilities
+% Science Participation - IEP
+% Science Participation - EL
+% Science Participation - Low Income
+% Science Participation - Youth in Care
+% Science Participation - Homeless
+% Science Participation - Migrant
+% Science Participation - Military
+% Science Participation Grade 5
+% Science Participation Grade 5 - Male
+% Science Participation Grade 5 - Female
+% Science Participation Grade 5 - Non Binary
+% Science Participation Grade 5 - White
+% Science Participation Grade 5 - Black or African American
+% Science Participation Grade 5 - Hispanic or Latino
+% Science Participation Grade 5 - Asian
+% Science Participation Grade 5 - Native Hawaiian or Other Pacific Islander
+% Science Participation Grade 5 - American Indian or Alaska Native
+% Science Participation Grade 5 - Two or More Races
+% Science Participation Grade 5 - MENA
+% Science Participation Grade 5 - Children with Disabilities
+% Science Participation Grade 5 - IEP
+% Science Participation Grade 5 - EL
+% Science Participation Grade 5 - Low Income
+% Science Participation Grade 5 - Youth in Care
+% Science Participation Grade 5 - Homeless
+% Science Participation Grade 5 - Migrant
+% Science Participation Grade 5 - Military
+% Science Participation Grade 8
+% Science Participation Grade 8 - Male
+% Science Participation Grade 8 - Female
+% Science Participation Grade 8 - Non Binary
+% Science Participation Grade 8 - White
+% Science Participation Grade 8 - Black or African American
+% Science Participation Grade 8 - Hispanic or Latino
+% Science Participation Grade 8 - Asian
+% Science Participation Grade 8 - Native Hawaiian or Other Pacific Islander
+% Science Participation Grade 8 - American Indian or Alaska Native
+% Science Participation Grade 8 - Two or More Races
+% Science Participation Grade 8 - MENA
+% Science Participation Grade 8 - Children with Disabilities
+% Science Participation Grade 8 - IEP
+% Science Participation Grade 8 - EL
+% Science Participation Grade 8 - Low Income
+% Science Participation Grade 8 - Youth in Care
+% Science Participation Grade 8 - Homeless
+% Science Participation Grade 8 - Migrant
+% Science Participation Grade 8 - Military
+% Science Participation Grade 9
+% Science Participation Grade 9 - Male
+% Science Participation Grade 9 - Female
+% Science Participation Grade 9 - Non Binary
+% Science Participation Grade 9 - White
+% Science Participation Grade 9 - Black or African American
+% Science Participation Grade 9 - Hispanic or Latino
+% Science Participation Grade 9 - Asian
+% Science Participation Grade 9 - Native Hawaiian or Other Pacific Islander
+% Science Participation Grade 9 - American Indian or Alaska Native
+% Science Participation Grade 9 - Two or More Races
+% Science Participation Grade 9 - MENA
+% Science Participation Grade 9 - Children with Disabilities
+% Science Participation Grade 9 - IEP
+% Science Participation Grade 9 - EL
+% Science Participation Grade 9 - Low Income
+% Science Participation Grade 9 - Youth in Care
+% Science Participation Grade 9 - Homeless
+% Science Participation Grade 9 - Migrant
+% Science Participation Grade 9 - Military
+% Science Participation Grade 10
+% Science Participation Grade 10 - Male
+% Science Participation Grade 10 - Female
+% Science Participation Grade 10 - Non Binary
+% Science Participation Grade 10 - White
+% Science Participation Grade 10 - Black or African American
+% Science Participation Grade 10 - Hispanic or Latino
+% Science Participation Grade 10 - Asian
+% Science Participation Grade 10 - Native Hawaiian or Other Pacific Islander
+% Science Participation Grade 10 - American Indian or Alaska Native
+% Science Participation Grade 10 - Two or More Races
+% Science Participation Grade 10 - MENA
+% Science Participation Grade 10 - Children with Disabilities
+% Science Participation Grade 10 - IEP
+% Science Participation Grade 10 - EL
+% Science Participation Grade 10 - Low Income
+% Science Participation Grade 10 - Youth in Care
+% Science Participation Grade 10 - Homeless
+% Science Participation Grade 10 - Migrant
+% Science Participation Grade 10 - Military
+% Science Participation Grade 11
+% Science Participation Grade 11 - Male
+% Science Participation Grade 11 - Female
+% Science Participation Grade 11 - Non Binary
+% Science Participation Grade 11 - White
+% Science Participation Grade 11 - Black or African American
+% Science Participation Grade 11 - Hispanic or Latino
+% Science Participation Grade 11 - Asian
+% Science Participation Grade 11 - Native Hawaiian or Other Pacific Islander
+% Science Participation Grade 11 - American Indian or Alaska Native
+% Science Participation Grade 11 - Two or More Races
+% Science Participation Grade 11 - MENA
+% Science Participation Grade 11 - Children with Disabilities
+% Science Participation Grade 11 - IEP
+% Science Participation Grade 11 - EL
+% Science Participation Grade 11 - Low Income
+% Science Participation Grade 11 - Youth in Care
+% Science Participation Grade 11 - Homeless
+% Science Participation Grade 11 - Migrant
+% Science Participation Grade 11 - Military
