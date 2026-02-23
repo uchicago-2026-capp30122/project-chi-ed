@@ -9,4 +9,6 @@ dependencies = [
     "pandas>=3.0.1",
     "httpx[cli]>=0.28.1",
     "whsk>=0.3.1",
+    "polars>=1.38.1",
+    "ruff>=0.15.2",
 ]
