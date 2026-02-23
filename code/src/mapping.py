@@ -1,1 +1,0 @@
-"""Helper functions for spatial maps, and matplotlib plots"""
