@@ -4,7 +4,7 @@ import pathlib
 import pandas
 import json
 from ..schools import data
-from data import Schools
+from ..schools.data import Schools
 
 COLNAMES_DIRPATH = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "raw" / "colnames"
 
@@ -67,6 +67,6 @@ def load_reports_card(filepath, year):
     # Filter to "Chicago" 
     merged_df = merged_df[merged_df['city'].str.strip() == 'Chicago']
 
-    return Schools(merged_df)
+    return merged_df
 
 

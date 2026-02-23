@@ -6,13 +6,19 @@ class Schools():
     I would rather pass in json files but for now I am storing pandas.DataFrames.
     """
     def __init__(self, schools):
-        self.schools = schools
-        self.columns = schools.culumns
+        self.data = schools
+        self.columns = schools.columns
+    def select_columns(self, columns: list, identifiers: bool = True):
+        assert all(col in self.columns for col in columns), f"All columns must be in the dataset: {columns}"
 
-        def select_cols(self, columns: list):
-            assert all(col in self.columns for col in columns), f"All columns must me in the dataset: {columns}"
+        cols = list(columns)
+        if identifiers:
+            cols += ['RCDTS', 'school_name', 'district', 'city', 'county']
+        return self.data[cols]
 
-            return self.schools[columns]
+    def select_schools(self, names: list):
+        assert all(name in self.data['school_name'].values for name in names), "Some school names are not present in the data"
+        return self.data[self.data['school_name'].isin(names)]
             
             
 

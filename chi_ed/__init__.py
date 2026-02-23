@@ -1,4 +1,1 @@
-import schools
-import viz
-import report_card
-import cps_api
+from . import schools, viz, report_card, cps_api, reports
