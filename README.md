@@ -44,6 +44,7 @@ For our final product we are aiming to automate PDF generation that provides use
 ```
 
 The code to produce the reports is ```bash chi_ed/reports/render.sh```⁠, this is a sample product and the sample will be incorporated in our ```__main__.py``` module. The code that we are using to import, clean and map one of our data sources is ```chi_ed/report_card/s01_load.py```.
+
 ---
 
 More updates to follow soon!
