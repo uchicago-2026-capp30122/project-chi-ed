@@ -9,6 +9,10 @@ dependencies = [
     "pandas>=3.0.1",
     "httpx[cli]>=0.28.1",
     "whsk>=0.3.1",
+<<<<<<< HEAD
     "polars>=1.38.1",
     "ruff>=0.15.2",
+=======
+    "matplotlib>=3.10.8",
+>>>>>>> 3cdc67ad56297fd9cb723b19ba2b4d2e31357b79
 ]
