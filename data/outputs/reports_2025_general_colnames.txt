@@ -1,0 +1,900 @@
+DestinationTable
+RCDTS
+Level
+School Name
+District
+City
+County
+District Type
+School Type
+Grades Served
+Summative Designation
+Summative Designation: Student Group(s)
+Title I Status
+State Senate District
+State House District
+# Student Enrollment
+% Student Enrollment -Male
+% Student Enrollment - Female
+% Student Enrollment - Non-binary
+% Student Enrollment - White
+% Student Enrollment - Black or African American
+% Student Enrollment - Hispanic or Latino
+% Student Enrollment - Asian
+% Student Enrollment - Native Hawaiian or Other Pacific Islander
+% Student Enrollment - American Indian or Alaska Native
+% Student Enrollment - Two or More Races
+% Student Enrollment - Middle Eastern or North African
+% Student Enrollment - Children with Disabilities
+% Student Enrollment - IEP
+% Student Enrollment - EL
+% Student Enrollment - Former EL
+% Student Enrollment - Never EL
+% Student Enrollment - Low Income
+% Student Enrollment - Homeless
+% Student Enrollment - Youth in Care
+% Student Enrollment - Migrant
+% Student Enrollment - Military
+# Student Enrollment - Male
+# Student Enrollment - Female
+# Student Enrollment - Non-binary
+# Student Enrollment - White
+# Student Enrollment - Black or African American
+# Student Enrollment - Hispanic or Latino
+# Student Enrollment - Asian
+# Student Enrollment - Native Hawaiian or Other Pacific Islander
+# Student Enrollment - American Indian or Alaska Native
+# Student Enrollment - Two or More Races
+# Student Enrollment - Middle Eastern or North African
+# Student Enrollment - Children with Disabilities
+# Student Enrollment - IEP
+# Student Enrollment - EL
+# Student Enrollment - Former EL
+# Student Enrollment - Never EL
+# Student Enrollment - Low Income
+# Student Enrollment - Homeless
+# Student Enrollment - Youth in Care
+# Student Enrollment - Migrant
+# Student Enrollment - Military
+# Student Enrollment -Grade PK
+# Student Enrollment -Grade K
+# Student Enrollment -Grade 1
+# Student Enrollment -Grade 2
+# Student Enrollment -Grade 3
+# Student Enrollment -Grade 4
+# Student Enrollment -Grade 5
+# Student Enrollment -Grade 6
+# Student Enrollment -Grade 7
+# Student Enrollment -Grade 8
+# Student Enrollment -Grade 9
+# Student Enrollment -Grade 10
+# Student Enrollment -Grade 11
+# Student Enrollment -Grade 12
+Total Number of School Days
+% 8th Grade Passing Algebra 1
+Student Attendance Rate
+Student Mobility Rate
+Student Mobility Rate - Male
+Student Mobility Rate - Female
+Student Mobility Rate - Non-binary
+Student Mobility Rate - White
+Student Mobility Rate - Black or African American
+Student Mobility Rate - Hispanic or Latino
+Student Mobility Rate - Asian
+Student Mobility Rate - Native Hawaiian or Other Pacific Islander
+Student Mobility Rate - American Indian or Alaska Native
+Student Mobility Rate - Two or More Races
+Student Mobility Rate - MENA
+Student Mobility Rate - Children with Disabilities
+Student Mobility Rate - EL
+Student Mobility Rate - IEP
+Student Mobility Rate - Low Income
+Student Mobility Rate - Youth in Care
+Student Mobility Rate - Homeless
+Student Mobility Rate - Military
+Chronic Truancy Rate
+Truancy Rate
+High School Dropout Rate - Total
+High School Dropout Rate - Male
+High School Dropout Rate - Female
+High School Dropout Rate - Non-binary
+High School Dropout Rate - White
+High School Dropout Rate - Black or African American
+High School Dropout Rate - Hispanic or Latino
+High School Dropout Rate - Asian
+High School Dropout Rate - Native Hawaiian or Other Pacific Islander
+High School Dropout Rate - American Indian or Alaska Native
+High School Dropout Rate - Two or More Races
+High School Dropout Rate - MENA
+High School Dropout Rate - Children with Disabilities
+High School Dropout Rate - EL
+High School Dropout Rate - IEP
+High School Dropout Rate - Low Income
+High School Dropout Count - Total
+High School Dropout Count - Male
+High School Dropout Count - Female
+High School Dropout Count - Non-binary
+High School Dropout Count - White
+High School Dropout Count - Black or African American
+High School Dropout Count - Hispanic or Latino
+High School Dropout Count - Asian
+High School Dropout Count - Native Hawaiian or Other Pacific Islander
+High School Dropout Count - American Indian or Alaska Native
+High School Dropout Count - Two or More Races
+High School Dropout Count - MENA
+High School Dropout Count - Children with Disabilities
+High School Dropout Count - EL
+High School Dropout Count - IEP
+High School Dropout Count - Low Income
+High School 4-Year Graduation Rate - Total
+High School 4-Year Graduation Rate - Male
+High School 4-Year Graduation Rate - Female
+High School 4-Year Graduation Rate - Non-binary
+High School 4-Year Graduation Rate - White
+High School 4-Year Graduation Rate - Black or African American
+High School 4-Year Graduation Rate - Hispanic or Latino
+High School 4-Year Graduation Rate - Asian
+High School 4-Year Graduation Rate - Native Hawaiian or Other Pacific Islander
+High School 4-Year Graduation Rate - American Indian or Alaska Native
+High School 4-Year Graduation Rate - Two or More Races
+High School 4-Year Graduation Rate - MENA
+High School 4-Year Graduation Rate - Children with Disabilities
+High School 4-Year Graduation Rate - IEP
+High School 4-Year Graduation Rate - EL
+High School 4-Year Graduation Rate - Low Income
+High School 4-Year Graduation Rate - Homeless
+High School 4-Year Graduation Rate - Migrant
+High School 4-Year Graduation Rate - Youth In Care
+High School 4-Year Graduation Rate - Military
+High School 4-Year Cohort Graduates - Total
+High School 4-Year Cohort Graduates - Male
+High School 4-Year Cohort Graduates - Female
+High School 4-Year Cohort Graduates - Non-binary
+High School 4-Year Cohort Graduates - White
+High School 4-Year Cohort Graduates - Black or African American
+High School 4-Year Cohort Graduates - Hispanic or Latino
+High School 4-Year Cohort Graduates - Asian
+High School 4-Year Cohort Graduates - Native Hawaiian or Other Pacific Islander
+High School 4-Year Cohort Graduates - American Indian or Alaska Native
+High School 4-Year Cohort Graduates - Two or More Races
+High School 4-Year Cohort Graduates - MENA
+High School 4-Year Cohort Graduates - Children with Disabilities
+High School 4-Year Cohort Graduates - IEP
+High School 4-Year Cohort Graduates - EL
+High School 4-Year Cohort Graduates - Low Income
+High School 4-Year Cohort Graduates - Homeless
+High School 4-Year Cohort Graduates - Migrant
+High School 4-Year Cohort Graduates - Youth In Care
+High School 4-Year Cohort Graduates - Military
+High School 4-Year IEP Continuing Rate - Total
+High School 4-Year IEP Continuing Rate - Male
+High School 4-Year IEP Continuing Rate - Female
+High School 4-Year IEP Continuing Rate - Non-binary
+High School 4-Year IEP Continuing Rate - White
+High School 4-Year IEP Continuing Rate - Black or African American
+High School 4-Year IEP Continuing Rate - Hispanic or Latino
+High School 4-Year IEP Continuing Rate - Asian
+High School 4-Year IEP Continuing Rate - Native Hawaiian or Other Pacific Islander
+High School 4-Year IEP Continuing Rate - American Indian or Alaska Native
+High School 4-Year IEP Continuing Rate - Two or More Races
+High School 4-Year IEP Continuing Rate - MENA
+High School 4-Year IEP Continuing Rate - Children with Disabilities
+High School 4-Year IEP Continuing Rate - IEP
+High School 4-Year IEP Continuing Rate - EL
+High School 4-Year IEP Continuing Rate - Low Income
+High School 4-Year IEP Continuing Rate - Homeless
+High School 4-Year IEP Continuing Rate - Migrant
+High School 4-Year IEP Continuing Rate - Youth In Care
+High School 4-Year IEP Continuing Rate - Military
+High School 5-Year Graduation Rate - Total
+High School 5-Year Graduation Rate - Male
+High School 5-Year Graduation Rate - Female
+High School 5-Year Graduation Rate - Non-binary
+High School 5-Year Graduation Rate - White
+High School 5-Year Graduation Rate - Black or African American
+High School 5-Year Graduation Rate - Hispanic or Latino
+High School 5-Year Graduation Rate - Asian
+High School 5-Year Graduation Rate - Native Hawaiian or Other Pacific Islander
+High School 5-Year Graduation Rate - American Indian or Alaska Native
+High School 5-Year Graduation Rate - Two or More Races
+High School 5-Year Graduation Rate - MENA
+High School 5-Year Graduation Rate - Children with Disabilities
+High School 5-Year Graduation Rate - IEP
+High School 5-Year Graduation Rate - EL
+High School 5-Year Graduation Rate - Low Income
+High School 5-Year Graduation Rate - Homeless
+High School 5-Year Graduation Rate - Migrant
+High School 5-Year Graduation Rate - Youth In Care
+High School 5-Year Graduation Rate - Military
+High School 5-Year Cohort Graduates - Total
+High School 5-Year Cohort Graduates - Male
+High School 5-Year Cohort Graduates - Female
+High School 5-Year Cohort Graduates - Non-binary
+High School 5-Year Cohort Graduates - White
+High School 5-Year Cohort Graduates - Black or African American
+High School 5-Year Cohort Graduates - Hispanic or Latino
+High School 5-Year Cohort Graduates - Asian
+High School 5-Year Cohort Graduates - Native Hawaiian or Other Pacific Islander
+High School 5-Year Cohort Graduates - American Indian or Alaska Native
+High School 5-Year Cohort Graduates - Two or More Races
+High School 5-Year Cohort Graduates - MENA
+High School 5-Year Cohort Graduates - Children with Disabilities
+High School 5-Year Cohort Graduates - IEP
+High School 5-Year Cohort Graduates - EL
+High School 5-Year Cohort Graduates - Low Income
+High School 5-Year Cohort Graduates - Homeless
+High School 5-Year Cohort Graduates - Migrant
+High School 5-Year Cohort Graduates - Youth In Care
+High School 5-Year Cohort Graduates - Military
+High School 5-Year IEP Continuing Rate - Total
+High School 5-Year IEP Continuing Rate - Male
+High School 5-Year IEP Continuing Rate - Female
+High School 5-Year IEP Continuing Rate - Non-binary
+High School 5-Year IEP Continuing Rate - White
+High School 5-Year IEP Continuing Rate - Black or African American
+High School 5-Year IEP Continuing Rate - Hispanic or Latino
+High School 5-Year IEP Continuing Rate - Asian
+High School 5-Year IEP Continuing Rate - Native Hawaiian or Other Pacific Islander
+High School 5-Year IEP Continuing Rate - American Indian or Alaska Native
+High School 5-Year IEP Continuing Rate - Two or More Races
+High School 5-Year IEP Continuing Rate - MENA
+High School 5-Year IEP Continuing Rate - Children with Disabilities
+High School 5-Year IEP Continuing Rate - IEP
+High School 5-Year IEP Continuing Rate - EL
+High School 5-Year IEP Continuing Rate - Low Income
+High School 5-Year IEP Continuing Rate - Homeless
+High School 5-Year IEP Continuing Rate - Migrant
+High School 5-Year IEP Continuing Rate - Youth In Care
+High School 5-Year IEP Continuing Rate - Military
+High School 6-Year Graduation Rate - Total
+High School 6-Year Graduation Rate - Male
+High School 6-Year Graduation Rate - Female
+High School 6-Year Graduation Rate - Non-binary
+High School 6-Year Graduation Rate - White
+High School 6-Year Graduation Rate - Black or African American
+High School 6-Year Graduation Rate - Hispanic or Latino
+High School 6-Year Graduation Rate - Asian
+High School 6-Year Graduation Rate - Native Hawaiian or Other Pacific Islander
+High School 6-Year Graduation Rate - American Indian or Alaska Native
+High School 6-Year Graduation Rate - Two or More Races
+High School 6-Year Graduation Rate - MENA
+High School 6-Year Graduation Rate - Children with Disabilities
+High School 6-Year Graduation Rate - IEP
+High School 6-Year Graduation Rate - EL
+High School 6-Year Graduation Rate - Low Income
+High School 6-Year Graduation Rate - Homeless
+High School 6-Year Graduation Rate - Migrant
+High School 6-Year Graduation Rate - Youth In Care
+High School 6-Year Graduation Rate - Military
+High School 6-Year Cohort Graduates - Total
+High School 6-Year Cohort Graduates - Male
+High School 6-Year Cohort Graduates - Female
+High School 6-Year Cohort Graduates - Non-binary
+High School 6-Year Cohort Graduates - White
+High School 6-Year Cohort Graduates - Black or African American
+High School 6-Year Cohort Graduates - Hispanic or Latino
+High School 6-Year Cohort Graduates - Asian
+High School 6-Year Cohort Graduates - Native Hawaiian or Other Pacific Islander
+High School 6-Year Cohort Graduates - American Indian or Alaska Native
+High School 6-Year Cohort Graduates - Two or More Races
+High School 6-Year Cohort Graduates - MENA
+High School 6-Year Cohort Graduates - Children with Disabilities
+High School 6-Year Cohort Graduates - IEP
+High School 6-Year Cohort Graduates - EL
+High School 6-Year Cohort Graduates - Low Income
+High School 6-Year Cohort Graduates - Homeless
+High School 6-Year Cohort Graduates - Migrant
+High School 6-Year Cohort Graduates - Youth In Care
+High School 6-Year Cohort Graduates - Military
+High School 6-Year IEP Continuing Rate - Total
+High School 6-Year IEP Continuing Rate - Male
+High School 6-Year IEP Continuing Rate - Female
+High School 6-Year IEP Continuing Rate - Non-binary
+High School 6-Year IEP Continuing Rate - White
+High School 6-Year IEP Continuing Rate - Black or African American
+High School 6-Year IEP Continuing Rate - Hispanic or Latino
+High School 6-Year IEP Continuing Rate - Asian
+High School 6-Year IEP Continuing Rate - Native Hawaiian or Other Pacific Islander
+High School 6-Year IEP Continuing Rate - American Indian or Alaska Native
+High School 6-Year IEP Continuing Rate - Two or More Races
+High School 6-Year IEP Continuing Rate - MENA
+High School 6-Year IEP Continuing Rate - Children with Disabilities
+High School 6-Year IEP Continuing Rate - IEP
+High School 6-Year IEP Continuing Rate - EL
+High School 6-Year IEP Continuing Rate - Low Income
+High School 6-Year IEP Continuing Rate - Homeless
+High School 6-Year IEP Continuing Rate - Migrant
+High School 6-Year IEP Continuing Rate - Youth In Care
+High School 6-Year IEP Continuing Rate - Military
+Avg Class Size - Kindergarten
+Avg Class Size - Grade 1
+Avg Class Size - Grade 2
+Avg Class Size - Grade 3
+Avg Class Size - Grade 4
+Avg Class Size - Grade 5
+Avg Class Size - Grade 6
+Avg Class Size - Grade 7
+Avg Class Size - Grade 8
+Avg Class Size - Grade 9
+Avg Class Size - Grade 10
+Avg Class Size - Grade 11
+Avg Class Size - Grade 12
+Avg Class Size - All Grades
+Avg Number of Days of Physical Education per Week Per Student
+Total Teacher Headcount
+Total Teacher FTE
+% Teachers - White
+% Teachers - Black or African American
+% Teachers - Hispanic or Latino
+% Teachers - Asian
+% Teachers - Native Hawaiian or Other Pacific Islander
+% Teachers - American Indian or Alaska Native
+% Teachers - Two or More Races
+% Teachers - MENA
+% Teachers - Unknown
+% Teachers - Male
+% Teachers - Female
+% Teachers - Non-binary
+Avg Teaching Exp
+Avg Teaching Exp - High Poverty
+Avg Teaching Exp - Low Poverty
+Teacher with a Bachelor’s Degree
+Teacher with a Bachelor’s Degree - High Poverty
+Teacher with a Bachelor’s Degree - Low Poverty
+Teacher with a Master’s Degree or Above
+Teacher with a Master’s Degree or Above - High Poverty
+Teacher with a Master’s Degree or Above - Low Poverty
+% Novice Teachers
+% Novice Teachers - High Poverty Schools
+% Novice Teachers - Low Poverty Schools
+% Teachers with Short-Term or Provisional License
+% Teachers with Short-Term or Provisional License - High Poverty Schools
+% Teachers with Short-Term or Provisional License - Low Poverty Schools
+Teacher Retention Rate
+Teacher Attendance Rate
+Teacher Evaluation
+Teacher Evaluation - High Poverty
+Teacher Evaluation - Low Poverty
+# Out-of-Field Teachers
+% Out-of-Field Teachers
+# Out-of-Field Teachers - High Poverty Schools
+# Out-of-Field Teachers - Low Poverty Schools
+% Out-of-Field Teachers - High Poverty Schools
+% Out-of-Field Teachers - Low Poverty Schools
+Principal Turnover within 6 Years
+Pupil Teacher Ratio - Elementary
+Pupil Teacher Ratio - High School
+Pupil Certified Staff Ratio
+Pupil Admin Ratio
+Pupil School Counselor Ratio
+Pupil School Nurse Ratio
+Pupil School Psychologist Ratio
+Pupil School Social Worker Ratio
+School Counselor FTE
+School Nurse FTE
+School Psychologist FTE
+School Social Worker FTE
+Teacher Avg Salary
+Admin Avg Salary
+% 9th Grade on Track
+% 9th Grade on Track - White
+% 9th Grade on Track - Black or African American
+% 9th Grade on Track - Hispanic or Latino
+% 9th Grade on Track - Asian
+% 9th Grade on Track - Native Hawaiian or Other Pacific Islander
+% 9th Grade on Track - American Indian or Alaska Native
+% 9th Grade on Track - Two or More Races
+% 9th Grade on Track - MENA
+% 9th Grade on Track - Children with Disabilities
+% 9th Grade on Track - IEP
+% 9th Grade on Track - EL
+% 9th Grade on Track - Low Income
+% Graduates enrolled in a Postsecondary Institution within 12 months
+% Graduates enrolled in a Postsecondary Institution within 12 months - Public Institition
+% Graduates enrolled in a Postsecondary Institution within 12 months - Private Institution
+% Graduates enrolled in a Postsecondary Institution within 12 months - Four-year Institution
+% Graduates enrolled in a Postsecondary Institution within 12 months - Two-year Institution
+% Graduates enrolled in a Postsecondary Institution within 12 months - Trade/Vocational School
+% Graduates enrolled in a Postsecondary Institution within 16 months
+% Graduates enrolled in a Postsecondary Institution within 16 months - Public Institition
+% Graduates enrolled in a Postsecondary Institution within 16 months - Private Institution
+% Graduates enrolled in a Postsecondary Institution within 16 months - Four-year Institution
+% Graduates enrolled in a Postsecondary Institution within 16 months - Two-year Institution
+% Graduates enrolled in a Postsecondary Institution within 16 months - Trade/Vocational School
+% Community College Remediation
+% Community College Remediation - Reading
+% Community College Remediation - Math
+% Community College Remediation - Communication
+% 4-year Institution Remediation
+% 4-year Institution Remediation - ELA
+% 4-year Institution Remediation - Math
+Chronic Absenteeism
+Chronic Absenteeism - Male
+Chronic Absenteeism - Female
+Chronic Absenteeism - Non-binary
+Chronic Absenteeism - White
+Chronic Absenteeism - Black or African American
+Chronic Absenteeism - Hispanic or Latino
+Chronic Absenteeism - Asian
+Chronic Absenteeism - Native Hawaiian or Other Pacific Islander
+Chronic Absenteeism - American Indian or Alaska Native
+Chronic Absenteeism - Two or More Races
+Chronic Absenteeism - MENA
+Chronic Absenteeism - Children with Disabilities
+Chronic Absenteeism - IEP
+Chronic Absenteeism - EL
+Chronic Absenteeism - Low Income
+Chronic Absenteeism - Grade K
+Chronic Absenteeism - Grade 1
+Chronic Absenteeism - Grade 2
+Chronic Absenteeism - Grade 3
+Chronic Absenteeism - Grade 4
+Chronic Absenteeism - Grade 5
+Chronic Absenteeism - Grade 6
+Chronic Absenteeism - Grade 7
+Chronic Absenteeism - Grade 8
+Chronic Absenteeism - Grade 9
+Chronic Absenteeism - Grade 10
+Chronic Absenteeism - Grade 11
+Chronic Absenteeism - Grade 12
+# Students who took AP classes Grade 9 Total
+# Students who took AP classes Grade 9 - White
+# Students who took AP classes Grade 9 - Black or African American
+# Students who took AP classes Grade 9 - Hispanic or Latino
+# Students who took AP classes Grade 9 - Asian
+# Students who took AP classes Grade 9 - Native Hawaiian or Other Pacific Islander
+# Students who took AP classes Grade 9 - American Indian or Alaska Native
+# Students who took AP classes Grade 9 - Two or More Races
+# Students who took AP classes Grade 9 - MENA
+# Students who took AP classes Grade 9 - Children with Disabilities
+# Students who took AP classes Grade 9 - EL
+# Students who took AP classes Grade 9 - IEP
+# Students who took AP classes Grade 9 - Low Income
+# Students who took AP classes Grade 10 Total
+# Students who took AP classes Grade 10 - White
+# Students who took AP classes Grade 10 - Black or African American
+# Students who took AP classes Grade 10 - Hispanic or Latino
+# Students who took AP classes Grade 10 - Asian
+# Students who took AP classes Grade 10 - Native Hawaiian or Other Pacific Islander
+# Students who took AP classes Grade 10 - American Indian or Alaska Native
+# Students who took AP classes Grade 10 - Two or More Races
+# Students who took AP classes Grade 10 - MENA
+# Students who took AP classes Grade 10 - Children with Disabilities
+# Students who took AP classes Grade 10 - EL
+# Students who took AP classes Grade 10 - IEP
+# Students who took AP classes Grade 10 - Low Income
+# Students who took AP classes Grade 11 Total
+# Students who took AP classes Grade 11 - White
+# Students who took AP classes Grade 11 - Black or African American
+# Students who took AP classes Grade 11 - Hispanic or Latino
+# Students who took AP classes Grade 11 - Asian
+# Students who took AP classes Grade 11 - Native Hawaiian or Other Pacific Islander
+# Students who took AP classes Grade 11 - American Indian or Alaska Native
+# Students who took AP classes Grade 11 - Two or More Races
+# Students who took AP classes Grade 11 - MENA
+# Students who took AP classes Grade 11 - Children with Disabilities
+# Students who took AP classes Grade 11 - EL
+# Students who took AP classes Grade 11 - IEP
+# Students who took AP classes Grade 11 - Low Income
+# Students who took AP classes Grade 12 Total
+# Students who took AP classes Grade 12 - White
+# Students who took AP classes Grade 12 - Black or African American
+# Students who took AP classes Grade 12 - Hispanic or Latino
+# Students who took AP classes Grade 12 - Asian
+# Students who took AP classes Grade 12 - Native Hawaiian or Other Pacific Islander
+# Students who took AP classes Grade 12 - American Indian or Alaska Native
+# Students who took AP classes Grade 12 - Two or More Races
+# Students who took AP classes Grade 12 - MENA
+# Students who took AP classes Grade 12 - Children with Disabilities
+# Students who took AP classes Grade 12 - EL
+# Students who took AP classes Grade 12 - IEP
+# Students who took AP classes Grade 12 - Low Income
+# Students who took IB classes Grade 9 Total
+# Students who took IB classes Grade 9 - White
+# Students who took IB classes Grade 9 - Black or African American
+# Students who took IB classes Grade 9 - Hispanic or Latino
+# Students who took IB classes Grade 9 - Asian
+# Students who took IB classes Grade 9 - Native Hawaiian or Other Pacific Islander
+# Students who took IB classes Grade 9 - American Indian or Alaska Native
+# Students who took IB classes Grade 9 - Two or More Races
+# Students who took IB classes Grade 9 - Children with Disabilities
+# Students who took IB classes Grade 9 - EL
+# Students who took IB classes Grade 9 - IEP
+# Students who took IB classes Grade 9 - Low Income
+# Students who took IB classes Grade 10 Total
+# Students who took IB classes Grade 10 - White
+# Students who took IB classes Grade 10 - Black or African American
+# Students who took IB classes Grade 10 - Hispanic or Latino
+# Students who took IB classes Grade 10 - Asian
+# Students who took IB classes Grade 10 - Native Hawaiian or Other Pacific Islander
+# Students who took IB classes Grade 10 - American Indian or Alaska Native
+# Students who took IB classes Grade 10 - Two or More Races
+# Students who took IB classes Grade 10 - MENA
+# Students who took IB classes Grade 10 - Children with Disabilities
+# Students who took IB classes Grade 10 - EL
+# Students who took IB classes Grade 10 - IEP
+# Students who took IB classes Grade 10 - Low Income
+# Students who took IB classes Grade 11 Total
+# Students who took IB classes Grade 11 - White
+# Students who took IB classes Grade 11 - Black or African American
+# Students who took IB classes Grade 11 - Hispanic or Latino
+# Students who took IB classes Grade 11 - Asian
+# Students who took IB classes Grade 11 - Native Hawaiian or Other Pacific Islander
+# Students who took IB classes Grade 11 - American Indian or Alaska Native
+# Students who took IB classes Grade 11 - Two or More Races
+# Students who took IB classes Grade 11 - MENA
+# Students who took IB classes Grade 11 - Children with Disabilities
+# Students who took IB classes Grade 11 - EL
+# Students who took IB classes Grade 11 - IEP
+# Students who took IB classes Grade 11 - Low Income
+# Students who took IB classes Grade 12 Total
+# Students who took IB classes Grade 12 - White
+# Students who took IB classes Grade 12 - Black or African American
+# Students who took IB classes Grade 12 - Hispanic or Latino
+# Students who took IB classes Grade 12 - Asian
+# Students who took IB classes Grade 12 - Native Hawaiian or Other Pacific Islander
+# Students who took IB classes Grade 12 - American Indian or Alaska Native
+# Students who took IB classes Grade 12 - Two or More Races
+# Students who took IB classes Grade 12 - MENA
+# Students who took IB classes Grade 12 - Children with Disabilities
+# Students who took IB classes Grade 12 - EL
+# Students who took IB classes Grade 12 - IEP
+# Students who took IB classes Grade 12 - Low Income
+# Students who took Dual Credit classes Grade 9 Total
+# Students who took Dual Credit classes Grade 9 - White
+# Students who took Dual Credit classes Grade 9 - Black or African American
+# Students who took Dual Credit classes Grade 9 - Hispanic or Latino
+# Students who took Dual Credit classes Grade 9 - Asian
+# Students who took Dual Credit classes Grade 9 - Native Hawaiian or Other Pacific Islander
+# Students who took Dual Credit classes Grade 9 - American Indian or Alaska Native
+# Students who took Dual Credit classes Grade 9 - Two or More Races
+# Students who took Dual Credit classes Grade 9 - MENA
+# Students who took Dual Credit classes Grade 9 - Children with Disabilities
+# Students who took Dual Credit classes Grade 9 - EL
+# Students who took Dual Credit classes Grade 9 - IEP
+# Students who took Dual Credit classes Grade 9 - Low Income
+# Students who took Dual Credit classes Grade 10 Total
+# Students who took Dual Credit classes Grade 10 - White
+# Students who took Dual Credit classes Grade 10 - Black or African American
+# Students who took Dual Credit classes Grade 10 - Hispanic or Latino
+# Students who took Dual Credit classes Grade 10 - Asian
+# Students who took Dual Credit classes Grade 10 - Native Hawaiian or Other Pacific Islander
+# Students who took Dual Credit classes Grade 10 - American Indian or Alaska Native
+# Students who took Dual Credit classes Grade 10 - Two or More Races
+# Students who took Dual Credit classes Grade 10 - MENA
+# Students who took Dual Credit classes Grade 10 - Children with Disabilities
+# Students who took Dual Credit classes Grade 10 - EL
+# Students who took Dual Credit classes Grade 10 - IEP
+# Students who took Dual Credit classes Grade 10 - Low Income
+# Students who took Dual Credit classes Grade 11 Total
+# Students who took Dual Credit classes Grade 11 - White
+# Students who took Dual Credit classes Grade 11 - Black or African American
+# Students who took Dual Credit classes Grade 11 - Hispanic or Latino
+# Students who took Dual Credit classes Grade 11 - Asian
+# Students who took Dual Credit classes Grade 11 - Native Hawaiian or Other Pacific Islander
+# Students who took Dual Credit classes Grade 11 - American Indian or Alaska Native
+# Students who took Dual Credit classes Grade 11 - Two or More Races
+# Students who took Dual Credit classes Grade 11 - MENA
+# Students who took Dual Credit classes Grade 11 - Children with Disabilities
+# Students who took Dual Credit classes Grade 11 - EL
+# Students who took Dual Credit classes Grade 11 - IEP
+# Students who took Dual Credit classes Grade 11 - Low Income
+# Students who took Dual Credit classes Grade 12 Total
+# Students who took Dual Credit classes Grade 12 - White
+# Students who took Dual Credit classes Grade 12 - Black or African American
+# Students who took Dual Credit classes Grade 12 - Hispanic or Latino
+# Students who took Dual Credit classes Grade 12 - Asian
+# Students who took Dual Credit classes Grade 12 - Native Hawaiian or Other Pacific Islander
+# Students who took Dual Credit classes Grade 12 - American Indian or Alaska Native
+# Students who took Dual Credit classes Grade 12 - Two or More Races
+# Students who took Dual Credit classes Grade 12 - MENA
+# Students who took Dual Credit classes Grade 12 - Children with Disabilities
+# Students who took Dual Credit classes Grade 12 - EL
+# Students who took Dual Credit classes Grade 12 - IEP
+# Students who took Dual Credit classes Grade 12 - Low Income
+Total AP Exams Taken Grade 9
+Total AP Exams Eligible to Earn College Credit Grade 9
+Students Taking One or More AP Exams Grade 9
+Students Eligible to Earn College Credit for One or More AP Exams Grade 9
+Total AP Exams Taken Grade 10
+Total AP Exams Eligible to Earn College Credit Grade 10
+Students Taking One or More AP Exams Grade 10
+Students Eligible to Earn College Credit for One or More AP Exams Grade 10
+Total AP Exams Taken Grade 11
+Total AP Exams Eligible to Earn College Credit Grade 11
+Students Taking One or More AP Exams Grade 11
+Students Eligible to Earn College Credit for One or More AP Exams Grade 11
+Total AP Exams Taken Grade 12
+Total AP Exams Eligible to Earn College Credit Grade 12
+Students Taking One or More AP Exams Grade 12
+Students Eligible to Earn College Credit for One or More AP Exams Grade 12
+Five Essential Survey Effective Leaders
+Five Essential Survey Leaders Level
+Five Essential Survey Collaborative Teachers
+Five Essential Survey Collaborative Teachers Level
+Five Essential Survey Involved Families
+Five Essential Survey Involved Families Level
+Five Essential Survey Supportive Environment
+Five Essential Survey Supportive Environment Level
+Five Essential Survey Ambitious Instruction
+Five Essential Survey Ambitious Instruction Level
+Climate Survey Student Response Rate
+Climate Survey Teacher Response Rate
+Climate Survey Schools with over 50% Response Rate
+% CRDC In-School Suspensions
+% CRDC Out-of-School Suspensions
+% CRDC Expulsions
+% CRDC School Related Arrests
+% CRDC Referral to Law Enforcement
+% CRDC Chronic Absenteeism
+% CRDC Incidents of Violence
+% CRDC Incidents of Harassment or Bullying
+# CRDC Enrolled PreK
+% CRDC Enrolled PreK
+# CRDC Advanced Placement Coursework
+% CRDC Advanced Placement Coursework
+# CRDC IB Course
+% CRDC IB Course
+# CRDC Dual Credit Courses
+% CRDC Dual Credit Courses
+CRDC Firearm Indicator
+CRDC Homicide Indicator
+% Students Assessed for Giftedness  - Total
+% Students Assessed for Giftedness  - Female
+% Students Assessed for Giftedness  - Non-binary
+% Students Assessed for Giftedness  - Male
+% Students Assessed for Giftedness  - White
+% Students Assessed for Giftedness  - Black or African American
+% Students Assessed for Giftedness  - Hispanic or Latino
+% Students Assessed for Giftedness  - Asian
+% Students Assessed for Giftedness  - Native Hawaiian or Other Pacific Islander
+% Students Assessed for Giftedness  - American Indian or Alaska Native
+% Students Assessed for Giftedness  - Two or More Race
+% Students Assessed for Giftedness  - MENA
+% Students Assessed for Giftedness  - IEP
+% Students Assessed for Giftedness  - EL
+% Students Assessed for Giftedness  - Low Income
+% Students Identified as Gifted  - Total
+% Students Identified as Gifted  - Female
+% Students Identified as Gifted  - Non-binary
+% Students Identified as Gifted  - Male
+% Students Identified as Gifted  - White
+% Students Identified as Gifted  - Black or African American
+% Students Identified as Gifted  - Hispanic or Latino
+% Students Identified as Gifted  - Asian
+% Students Identified as Gifted  - Native Hawaiian or Other Pacific Islander
+% Students Identified as Gifted  - American Indian or Alaska Native
+% Students Identified as Gifted  - Two or More Race
+% Students Identified as Gifted  - MENA
+% Students Identified as Gifted  - IEP
+% Students Identified as Gifted  - EL
+% Students Identified as Gifted  - Low Income
+# Students Assessed for Giftedness  - Total
+# Students Assessed for Giftedness  - Female
+# Students Assessed for Giftedness  - Non-binary
+# Students Assessed for Giftedness  - Male
+# Students Assessed for Giftedness  - White
+# Students Assessed for Giftedness  - Black or African American
+# Students Assessed for Giftedness  - Hispanic or Latino
+# Students Assessed for Giftedness  - Asian
+# Students Assessed for Giftedness  - Native Hawaiian or Other Pacific Islander
+# Students Assessed for Giftedness  - American Indian or Alaska Native
+# Students Assessed for Giftedness  - Two or More Race
+# Students Assessed for Giftedness  - MENA
+# Students Assessed for Giftedness  - IEP
+# Students Assessed for Giftedness  - EL
+# Students Assessed for Giftedness  - Low Income
+# Students Identified as Gifted  - Total
+# Students Identified as Gifted  - Female
+# Students Identified as Gifted  - Non-binary
+# Students Identified as Gifted  - Male
+# Students Identified as Gifted  - White
+# Students Identified as Gifted  - Black or African American
+# Students Identified as Gifted  - Hispanic or Latino
+# Students Identified as Gifted  - Asian
+# Students Identified as Gifted  - Native Hawaiian or Other Pacific Islander
+# Students Identified as Gifted  - American Indian or Alaska Native
+# Students Identified as Gifted  - Two or More Race
+# Students Identified as Gifted  - MENA
+# Students Identified as Gifted  - IEP
+# Students Identified as Gifted  - EL
+# Students Identified as Gifted  - Low Income
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Total
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Female
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Non-binary
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Male
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - White
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Black or African American
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Hispanic or Latino
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Asian
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Native Hawaiian or Other Pacific Islander
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - American Indian or Alaska Native
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Two or More Race
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - MENA
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - IEP
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - EL
+% of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Low Income
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Total
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Female
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Male
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Non-binary
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - White
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Black or African American
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Hispanic or Latino
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Asian
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Native Hawaiian or Other Pacific Islander
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - American Indian or Alaska Native
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Two or More Race
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - MENA
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - IEP
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - EL
+% Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Low Income
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Total
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Female
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Male
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Non-binary
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - White
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Black or African American
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Hispanic or Latino
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Asian
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Native Hawaiian or Other Pacific Islander
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - American Indian or Alaska Native
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Two or More Race
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - MENA
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - IEP
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - EL
+# of Students Assessed for Giftedness Taught by Gifted-endorsed Teachers  - Low Income
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Total
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Female
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Non-binary
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Male
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - White
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Black or African American
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Hispanic or Latino
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Asian
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Native Hawaiian or Other Pacific Islander
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - American Indian or Alaska Native
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Two or More Race
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - MENA
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - IEP
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - EL
+# Students Identified as Gifted Taught by Gifted-endorsed Teachers  - Low Income
+# Students who are identified as Accelerated - All
+# Students who are identified as Accelerated - Male 
+# Students who are identified as Accelerated - Female
+# Students who are identified as Accelerated - Non-binary
+# Students who are identified as Accelerated - White
+# Students who are identified as Accelerated - Black
+# Students who are identified as Accelerated - Hispanic
+# Students who are identified as Accelerated - Asian
+# Students who are identified as Accelerated - Hawaiian/Pac Islander
+# Students who are identified as Accelerated - Am Ind/Alaska Nat
+# Students who are identified as Accelerated - Two or More Races
+# Students who are identified as Accelerated - MENA
+# Students who are identified as Accelerated - CWD
+# Students who are identified as Accelerated - EL
+# Students who are identified as Accelerated - IEP
+# Students who are identified as Accelerated - LowIncome
+# Students who are identified as Accelerated - Homeless
+% Students who are identified as Accelerated - All
+% Students who are identified as Accelerated - Male 
+% Students who are identified as Accelerated - Female
+% Students who are identified as Accelerated - Non-binary
+% Students who are identified as Accelerated - White
+% Students who are identified as Accelerated - Black
+% Students who are identified as Accelerated - Hispanic
+% Students who are identified as Accelerated - Asian
+% Students who are identified as Accelerated - Hawaiian/Pac Islander
+% Students who are identified as Accelerated - Am Ind/Alaska Nat
+% Students who are identified as Accelerated - Two or More Races
+% Students who are identified as Accelerated - MENA
+% Students who are identified as Accelerated - CWD
+% Students who are identified as Accelerated - EL
+% Students who are identified as Accelerated - IEP
+% Students who are identified as Accelerated - LowIncome
+% Students who are identified as Accelerated - Homeless
+# Students who are Accelerated Math Only - All
+# Students who are Accelerated Math Only - Male 
+# Students who are Accelerated Math Only - Female
+# Students who are Accelerated Math Only - Non-Binary
+# Students who are Accelerated Math Only - White
+# Students who are Accelerated Math Only - Black
+# Students who are Accelerated Math Only - Hispanic
+# Students who are Accelerated Math Only - Asian
+# Students who are Accelerated Math Only - Hawaiian/Pac Islander
+# Students who are Accelerated Math Only - Am Ind/Alaska Nat
+# Students who are Accelerated Math Only - Two or More Races
+# Students who are Accelerated Math Only - MENA
+# Students who are Accelerated Math Only - CWD
+# Students who are Accelerated Math Only - EL
+# Students who are Accelerated Math Only - IEP
+# Students who are Accelerated Math Only - LowIncome
+# Students who are Accelerated Math Only - Homeless
+% Students who are Accelerated Math Only - All
+% Students who are Accelerated Math Only - Male 
+% Students who are Accelerated Math Only - Female
+% Students who are Accelerated Math Only - Non-Binary
+% Students who are Accelerated Math Only - White
+% Students who are Accelerated Math Only - Black
+% Students who are Accelerated Math Only - Hispanic
+% Students who are Accelerated Math Only - Asian
+% Students who are Accelerated Math Only - Hawaiian/Pac Islander
+% Students who are Accelerated Math Only - Am Ind/Alaska Nat
+% Students who are Accelerated Math Only - Two or More Races
+% Students who are Accelerated Math Only - MENA
+% Students who are Accelerated Math Only - CWD
+% Students who are Accelerated Math Only - EL
+% Students who are Accelerated Math Only - IEP
+% Students who are Accelerated Math Only - LowIncome
+% Students who are Accelerated Math Only - Homeless
+# Students who are Accelerated ELA Only - All
+# Students who are Accelerated ELA Only - Male 
+# Students who are Accelerated ELA Only - Female
+# Students who are Accelerated ELA Only - Non-binary
+# Students who are Accelerated ELA Only - White
+# Students who are Accelerated ELA Only - Black
+# Students who are Accelerated ELA Only - Hispanic
+# Students who are Accelerated ELA Only - Asian
+# Students who are Accelerated ELA Only - Hawaiian/Pac Islander
+# Students who are Accelerated ELA Only - Am Ind/Alaska Nat
+# Students who are Accelerated ELA Only - Two or More Races
+# Students who are Accelerated ELA Only - MENA
+# Students who are Accelerated ELA Only - CWD
+# Students who are Accelerated ELA Only - EL
+# Students who are Accelerated ELA Only - IEP
+# Students who are Accelerated ELA Only - LowIncome
+# Students who are Accelerated ELA Only - Homeless
+% Students who are Accelerated ELA Only - All
+% Students who are Accelerated ELA Only - Male 
+% Students who are Accelerated ELA Only - Female
+% Students who are Accelerated ELA Only - Non-binary
+% Students who are Accelerated ELA Only - White
+% Students who are Accelerated ELA Only - Black
+% Students who are Accelerated ELA Only - Hispanic
+% Students who are Accelerated ELA Only - Asian
+% Students who are Accelerated ELA Only - Hawaiian/Pac Islander
+% Students who are Accelerated ELA Only - Am Ind/Alaska Nat
+% Students who are Accelerated ELA Only - Two or More Races
+% Students who are Accelerated ELA Only - MENA
+% Students who are Accelerated ELA Only - CWD
+% Students who are Accelerated ELA Only - EL
+% Students who are Accelerated ELA Only - IEP
+% Students who are Accelerated ELA Only - LowIncome
+% Students who are Accelerated ELA Only - Homeless
+# Students who are identified as Accelerated for Science Only - All
+# Students who are identified as Accelerated for Science Only - Male 
+# Students who are identified as Accelerated for Science Only - Female
+# Students who are identified as Accelerated for Science Only - Nonbinary
+# Students who are identified as Accelerated for Science Only - White
+# Students who are identified as Accelerated for Science Only - Black
+# Students who are identified as Accelerated for Science Only - Hispanic
+# Students who are identified as Accelerated for Science Only - Asian
+# Students who are identified as Accelerated for Science Only - HawaiiPacIslander
+# Students who are identified as Accelerated for Science Only - Am Ind/Alaska Nat
+# Students who are identified as Accelerated for Science Only - Two or More Races
+# Students who are identified as Accelerated for Science Only - MENA
+# Students who are identified as Accelerated for Science Only - CWD
+# Students who are identified as Accelerated for Science Only - EL
+# Students who are identified as Accelerated for Science Only - IEP
+# Students who are identified as Accelerated for Science Only - LowIncome
+# Students who are identified as Accelerated for Science Only - Homeless
+% Students who are identified as Accelerated for Science Only - All
+% Students who are identified as Accelerated for Science Only - Male 
+% Students who are identified as Accelerated for Science Only - Female
+% Students who are identified as Accelerated for Science Only - Non-binary
+% Students who are identified as Accelerated for Science Only - White
+% Students who are identified as Accelerated for Science Only - Black
+% Students who are identified as Accelerated for Science Only - Hispanic
+% Students who are identified as Accelerated for Science Only - Asian
+% Students who are identified as Accelerated for Science Only - Hawaiian/Pac Islander
+% Students who are identified as Accelerated for Science Only - Am Ind/Alaska Nat
+% Students who are identified as Accelerated for Science Only - Two or More Races
+% Students who are identified as Accelerated for Science Only - MENA
+% Students who are identified as Accelerated for Science Only - CWD
+% Students who are identified as Accelerated for Science Only - EL
+% Students who are identified as Accelerated for Science Only - IEP
+% Students who are identified as Accelerated for Science Only - LowIncome
+% Students who are identified as Accelerated for Science Only - Homeless
+# Students who are identified as Accelerated for Single Subject - All
+# Students who are identified as Accelerated for Single Subject - Male 
+# Students who are identified as Accelerated for Single Subject - Female
