@@ -1,10 +1,9 @@
 import json
-import sys
 import httpx
 from pathlib import Path
-from pprint import pprint
 
-RAW_DATA_API = Path(__file__).parent.parent / "data/raw_data/api_data.json"
+RAW_DATA_API = Path(__file__).parent.parent.parent / "data/raw/api_data/api_data.json"
+URL = "https://api.cps.edu/schoolprofile/CPS/AllSchoolProfiles"
 
 
 class FetchException(Exception):
@@ -18,17 +17,26 @@ class FetchException(Exception):
         )
 
 
-if RAW_DATA_API.exists():
-    print(f'The downloaded API data can be found using the following file path', RAW_DATA_API)
-else:
-    url = "https://api.cps.edu/schoolprofile/CPS/AllSchoolProfiles"
-    response = httpx.get(
-        url, 
-        timeout=10
-        ) # increasing timeout helps load data
-    if response.status_code != 200:
-        raise FetchException(response)
+def get_api_data(filename: Path = RAW_DATA_API, api_url: str=URL):
+    """
+    This function checks for whether the API data has previosly been downloaded
+    and saved, if not it makes the httpx.get call and writes the data in the
+    folder.
+
+    Input:
+    filename: Path object identifying the name and path of the api data
+    """
+    if RAW_DATA_API.exists():  # check if data already exists
+        print(
+            f"The downloaded API data can be found using the following file path",
+            filename,
+        )
     else:
-        api_data = response.json()
-        with open(RAW_DATA_API, 'w') as f:
-            json.dump(api_data, f, indent=1)
+        url = api_url
+        response = httpx.get(url, timeout=10)
+        if response.status_code != 200:
+            raise FetchException(response)
+        else:  # get api data and save
+            api_data = response.json()
+            with open(filename, "w") as f:
+                json.dump(api_data, f, indent=1)
