@@ -38,6 +38,4 @@ def load_reports_card(year):
                 txt_file.write(col)
                 txt_file.write("\n")
             
-
-
 load_reports_card(year = 2025)
