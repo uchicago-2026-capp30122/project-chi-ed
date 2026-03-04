@@ -57,9 +57,9 @@ def load_reports_card(filepath, year):
     common_colnames = ['RCDTS', 'school_name', 'school_type', 'county', 'city', 'district']
 
     # Merge all sheets on the common columns
-    merged_df = pandas.merge(general_df, scores_df, on = common_colnames, how='left')
-    merged_df = pandas.merge(merged_df, scores2_df, on = common_colnames, how='left')
-    merged_df = pandas.merge(merged_df, finance_df, on = common_colnames, how='left')
+    merged_df = pandas.merge(general_df, scores_df, on = common_colnames, how = 'left')
+    merged_df = pandas.merge(merged_df, scores2_df, on = common_colnames, how = 'left')
+    merged_df = pandas.merge(merged_df, finance_df, on = common_colnames, how = 'left')
 
     # Filter to "Hight Schools" only
     merged_df = merged_df[merged_df['school_type'].str.strip() == 'High School']
