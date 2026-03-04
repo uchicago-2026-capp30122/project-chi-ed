@@ -10,7 +10,7 @@ from great_tables import GT, md
 OUTPUTS_DIRPATH = pathlib.Path(__file__).parent.parent.parent.resolve() / "outputs" 
 
 
-def plot_bar_graph(data: pandas.DataFrame, variable: str, school1: str, school2: str, filename: str):
+def plot_bar_graph(data: pandas.DataFrame, variable: str, school1: str, school2: str, filename: str = None):
     """This is a semi-comparative which will show the distribution of `variable` for all schools,
     but highlight the values for `school1` and `school2`."""
     data = data.copy()
@@ -61,7 +61,8 @@ def plot_bar_graph(data: pandas.DataFrame, variable: str, school1: str, school2:
         )
         .properties(width = 700, height = 350, title = alt.Title(text = "", subtitle = subtitle))
     )
-    chart.save(filename, scale_factor = 2)
+    if filename is not None:
+        chart.save(filename, scale_factor = 2)
 
     return chart
 

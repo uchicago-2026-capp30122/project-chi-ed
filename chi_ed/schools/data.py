@@ -19,6 +19,12 @@ class Schools():
     def select_schools(self, names: list):
         assert all(name in self.data['school_name'].values for name in names), "Some school names are not present in the data"
         return self.data[self.data['school_name'].isin(names)]
+
+    def rename_columns(self, mapping: dict):
+        self.data.rename(columns = mapping, inplace = True)
+
+    def save_csv(self, filepath: str):
+        self.data.to_csv(filepath, index = False)
             
             
 
