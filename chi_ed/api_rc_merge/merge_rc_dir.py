@@ -47,6 +47,6 @@ def merge_for_zip(directory_data: Path = DIRECTORY_DATA_PATH, report_card_data: 
         how="inner"
     )
 
+    # Should yield 141 high schools with zip codes
     return merged_df
-
 

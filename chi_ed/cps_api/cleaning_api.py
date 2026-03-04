@@ -2,8 +2,10 @@ import polars as pl
 from pathlib import Path
 import re
 
-# This file loads the raw api data that was downloaded and saves a clean csv
-#   file with selected variables of interest
+# ------------------------------------------------------------------------------
+# This code loads the raw api data that was fetched using the fetching_api_data
+#   file, cleans the data, generatees some new columns of interest
+# ------------------------------------------------------------------------------
 
 RAW_DATA_API = Path(__file__).parent.parent.parent / "data/raw/api_data/api_data.json"
 CSV_PATH = Path(__file__).parent.parent.parent / "data/outputs/api_data/api_data.csv"
@@ -52,7 +54,18 @@ API_DATA_COLS = [
 ]
 
 
-def clean_json(filename: Path = RAW_DATA_API):
+def clean_api_json(filename: Path = RAW_DATA_API):
+    """
+    This function loads the JSON API data as a polars dataframe, performs basic
+    cleaning on it and selects only the relevant columns for our analysis and 
+    returns the cleaned dataframe.
+
+    Inputs:
+        filename: Path object for the raw API JSON data file
+
+    Returns: 
+        dataframe: returns the cleaned API data as polars dataframe
+    """
     api_df = pl.read_json(filename, infer_schema_length=200)
     api_df = api_df.filter(
         pl.col("IsHighSchool") == True
@@ -87,6 +100,14 @@ def clean_json(filename: Path = RAW_DATA_API):
 
 
 def write_csv(input_filename: Path = RAW_DATA_API, output_filename: Path = CSV_PATH):
-    api_data = clean_json(input_filename)
+    """
+    This function takes in the raw API filepaths and writes the csv data on the 
+    specified output filepath.
+
+    Inputs:
+        input_filename: Path object for the raw API JSON data file
+        output_filename: Path object for the filename we want to write the csv on
+    """
+    api_data = clean_api_json(input_filename)
     api_data.write_csv(output_filename)
 
