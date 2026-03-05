@@ -1,0 +1,8 @@
+{
+    "ELA_proficiency": "English Language Arts Proficiency", 
+    "math_proficiency": "Mathematics Proficiency",     
+    "science_proficiency": "Science Proficiency", 
+    "sat_school_average": "SAT School Average", 
+    "graduation_rate": "Graduation Rate",
+    "graduation_rate4_year": "Graduation Rate 4 Year"
+}
