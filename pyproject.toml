@@ -12,4 +12,7 @@ dependencies = [
     "polars>=1.38.1",
     "ruff>=0.15.2",
     "matplotlib>=3.10.8",
+    "shapely>=2.1.2",
+    "pyshp>=3.0.3",
+    "geopandas>=1.1.2",
 ]
