@@ -23,7 +23,7 @@ def merge_for_zip(directory_data: Path = DIRECTORY_DATA_PATH, report_card_data: 
         Returns polars dataframe for the merged data
     """
 
-    report_card = pl.read_csv(report_card_data)
+    report_card = pl.read_csv(report_card_data, infer_schema_length=200)
     dir_ed = pl.read_excel(directory_data, sheet_name="1 Public Dist & Sch")
 
     dir_ed = dir_ed.rename({"Region-2\nCounty-3\nDistrict-4": "RCD"})
