@@ -1,44 +1,31 @@
-# from shapely.geometry import Point, Polygon
-# from typing import NamedTuple
-# import pathlib
-# import shapefile
-# import csv
-
 import geopandas as gpd
 import pandas as pd
 import json
+import pathlib
 
 
-neigbhorhoods = gpd.read_file("path/to/your/neighborhoods.shp")
+SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
+SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
 
-# class Neighborhood(NamedTuple):
-#     id: str
-#     polygon: Polygon
+# TODO: Add directory and file name etc for schools too
 
+neighborhoods = gpd.read_file(SHAPEFILE_DIR/SHAPEFILE_NAME)
+schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
 
-# def load_shapefiles(path: pathlib.Path) -> Neighborhood:
-#     """
-#     Extract and parse polygons from Census shapefiles.
-#     """
-#     neighborhoods = []
-#     with shapefile.Reader(path) as sf:
-#         # This iterates over all shapes with their associated data.
-#         for shape_rec in sf.shapeRecords():
-#             # the shape_rec object here has two properties of interest
-#             #    shape_rec.record - dict containing the data attributes
-#             #                       associated with the shape
-#             #    shape_rec.shape.points - list of WKT points, used to construct
-#             #                             a shapely.Polygon
-#             neighborhoods.append(
-#                 Neighborhood(
-#                     id=shape_rec.record["FID"],
-#                     polygon=Polygon(shape_rec.shape.points),
-#                 )
-#             )
+school_points = gpd.GeoDataFrame(
+    schools,
+    geometry=gpd.points_from_xy(schools["address_longitude"], schools["address_latitude"]),
+    crs="EPSG:4326"
+)
 
-#     return neighborhoods
+spatial_join = gpd.sjoin(school_points, neighborhoods[["pri_neigh", "geometry"]], how="left", predicate="within")
 
+schools_by_neighborhoods = {}
+for neighborhood, group in spatial_join.groupby("pri_neigh"):
+    schools_by_neighborhoods[neighborhood] = group["school_name"].tolist()
 
+#output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "schools_by_neighborhoods.json"
+output_path = pathlib.Path("/mnt/c/Users/mehwi/Downloads/schools_by_neighborhoods.json")
 
-
-
+with open(output_path, "w") as f:
+    json.dump(schools_by_neighborhoods, f, indent=2)
