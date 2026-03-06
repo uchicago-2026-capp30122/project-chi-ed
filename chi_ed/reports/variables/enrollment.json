@@ -1,5 +1,7 @@
 {
     "enrollment": "Enrollment", 
+    "avg_class_size": "Average Class Size", 
+    "pupil_teacher_ratio": "Pupil-Teacher Ratio", 
     "student_count_low_income": "Student Count Low Income", 
     "student_count_special_education": "Student Count Special Education", 
     "student_count_black": "Student Count Black", 

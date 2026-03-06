@@ -42,6 +42,18 @@ class Schools():
         self.data.rename(columns = cols_mapping, inplace = True)
         self.columns = self.data.columns
 
+    def set_year_attribute(self, year: int):
+        """Set the year attribute and column"""
+        self.data["year"] = year
+        self.year = year
+
+    def correct_school_names(self):
+        """Use RCDTS to correct school names. 
+        I will just take the school name from the first occurrence of each RCDTS"""
+        # Create a mapping of RCDTS to school name, a dict
+        rcdts_school_mapping = self.data.drop_duplicates(subset = "RCDTS", keep = "first").set_index("RCDTS")["school_name"].to_dict()
+        self.data["school_name"] = self.data["RCDTS"].map(rcdts_school_mapping)
+
     def save_csv(self, filepath: str):
         """Save the data to a csv file"""
         self.data.to_csv(filepath, index = False)
@@ -64,23 +76,15 @@ COLUMNS_2025_REPORTS_CARDS = {
         "% Science Proficiency": "science_proficiency", 
         "High School 4-Year Graduation Rate": "grad_rate"
     }, 
-    "expenditure": {
-        "$ Instructional Expenditure per Pupil": "pp_expenditure"
-    }, 
     "general": {
         "% Novice Teachers": "perc_novice_teachers", 
         "Avg Teaching Exp": "avg_teaching_exp", 
-        "Pupil Teacher Ratio": "pupil_teacher_ratio", 
-        "Avg Class Size": "avg_class_size", 
+        "Pupil Teacher Ratio - High School": "pupil_teacher_ratio", 
+        "Avg Class Size - All Grades": "avg_class_size", 
         "Chronic Absenteeism": "chronic_absenteeism", 
         "High School Dropout Rate": "dropout_rate", 
         "# Student Enrollment": "enrollment", 
         "Children with Disabilities": "num_children_with_disabilities", 
         "Teacher Attendance Rate": "teacher_attendance_rate"
-    },
-    "others": {
-        "Health and Wellness": "health_and_wellness",
-        "Transfers In ": "transfers_in", 
-        "Transfers Out": "transfers_out"
     }
 }

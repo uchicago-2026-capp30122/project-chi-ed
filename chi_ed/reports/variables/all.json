@@ -6,6 +6,8 @@
     "county": "County", 
     "school_type": "School Type", 
     "enrollment": "Enrollment", 
+    "avg_class_size": "Average Class Size", 
+    "pupil_teacher_ratio": "Pupil-Teacher Ratio", 
     "avg_teaching_exp": "Average Teaching Experience", 
     "perc_novice_teachers": "Percentage of Novice Teachers", 
     "teacher_attendance_rate": "Teacher Attendance Rate", 
