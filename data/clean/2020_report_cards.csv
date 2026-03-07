@@ -1,0 +1,93 @@
+RCDTS,school_name,district,city,county,school_type,enrollment,avg_teaching_exp,perc_novice_teachers,pupil_teacher_ratio,chronic_absenteeism,year
+150162990250001,Amundsen High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1382,,,,18.6,2020
+150162990250003,Bogan High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,734,,,,38.5,2020
+150162990250006,Carver Military Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,479,,,,12.9,2020
+150162990250011,Farragut Career Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,560,,,,46.3,2020
+150162990250012,Fenger Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,261,,,,45.9,2020
+150162990250013,Foreman High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,704,,,,47.3,2020
+150162990250014,Back of The Yards IB HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1069,,,,13.1,2020
+150162990250015,Gage Park High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,320,,,,42.8,2020
+150162990250016,Harlan Community Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,300,,,,41.5,2020
+150162990250017,Harper High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,48,,,,12.5,2020
+150162990250019,Hirsch Metropolitan High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,95,,,,51.7,2020
+150162990250020,Hubbard High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1626,,,,26.7,2020
+150162990250021,Hyde Park Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,725,,,,37.5,2020
+150162990250022,Thomas Kelly College Preparatory,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1775,,,,26.0,2020
+150162990250023,Kelvyn Park High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,410,,,,37.1,2020
+150162990250024,Kennedy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1544,,,,21.1,2020
+150162990250025,Kenwood Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,2029,,,,13.8,2020
+150162990250026,Lake View High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1295,,,,28.3,2020
+150162990250027,Lane Technical High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,4500,,,,6.7,2020
+150162990250029,Marshall Metropolitan High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,247,,,,55.9,2020
+150162990250030,Mather High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1525,,,,23.9,2020
+150162990250031,Morgan Park High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1123,,,,35.1,2020
+150162990250034,Phillips Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,599,,,,52.9,2020
+150162990250035,Roosevelt High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,976,,,,25.2,2020
+150162990250036,Schurz High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1533,,,,35.1,2020
+150162990250037,Senn High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1551,,,,20.1,2020
+150162990250039,King College Prep High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,483,,,,14.7,2020
+150162990250041,Steinmetz College Prep HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1218,,,,36.7,2020
+150162990250042,Sullivan High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,641,,,,35.0,2020
+150162990250043,Taft High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,3655,,,,17.2,2020
+150162990250044,Tilden Career Communty Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,194,,,,48.8,2020
+150162990250046,Von Steuben Metro Science HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1715,,,,10.1,2020
+150162990250047,Lincoln Park High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,2192,,,,16.8,2020
+150162990250048,Washington G High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1445,,,,27.0,2020
+150162990250049,Wells Community Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,369,,,,39.6,2020
+150162990250052,Crane Medical Prep HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,415,,,,28.2,2020
+150162990250053,Disney II Magnet HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,773,,,,19.0,2020
+150162990250526,Chicago Vocational Career Acad HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,760,,,,36.7,2020
+150162990250531,Dunbar Vocational Career Acad HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,344,,,,45.0,2020
+150162990250533,Jones College Prep High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1968,,,,11.4,2020
+150162990250534,Prosser Career Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1235,,,,31.6,2020
+150162990250536,Richards Career Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,222,,,,46.1,2020
+150162990250537,Simeon Career Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1336,,,,35.0,2020
+150162990250543,Corliss High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,278,,,,37.3,2020
+150162990250545,Clemente Community Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,667,,,,42.7,2020
+150162990250616,Manley Career Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,79,,,,51.4,2020
+150162990250617,Curie Metropolitan High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,2903,,,,27.6,2020
+150162990250763,Julian High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,384,,,,49.7,2020
+150162990250764,Young Magnet High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,2198,,,,4.8,2020
+150162990250767,Juarez Community Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1734,,,,40.7,2020
+150162990250772,Chicago HS for Agricult Sciences,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,810,,,,7.0,2020
+150162990250779,Hancock College Preparatory HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1016,,,,9.0,2020
+150162990250788,Brooks College Prep Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1004,,,,15.3,2020
+150162990250794,Northside College Preparatory Hs,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1078,,,,5.7,2020
+150162990250795,Chicago Military Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,307,,,,19.4,2020
+150162990250796,Payton College Preparatory HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1220,,,,8.9,2020
+150162990250803,Phoenix Military Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,558,,,,4.6,2020
+150162990250818,Spry Community Links High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,97,,,,46.2,2020
+150162990250820,Chicago Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,567,,,,9.0,2020
+150162990250824,Bowen High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,240,,,,40.7,2020
+150162990250825,North-Grand High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1011,,,,24.9,2020
+150162990250826,Raby High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,268,,,,32.4,2020
+150162990250827,Clark Acad Prep Magnet High Schl,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,535,,,,30.4,2020
+150162990250828,Rickover Naval Academy High Schl,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,396,,,,15.3,2020
+150162990250829,Uplift Community High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,121,,,,35.2,2020
+150162990250830,World Language High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,361,,,,19.1,2020
+150162990250831,Douglass Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,57,,,,57.1,2020
+150162990250832,Devry Advantage Academy High Schl,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,142,,,,5.6,2020
+150162990250833,Lindblom Math & Science Acad HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1357,,,,10.8,2020
+150162990250834,Bronzeville Scholastic HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,117,,,,42.1,2020
+150162990250835,School of Social Justice HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,317,,,,31.8,2020
+150162990250836,Multicultural Acad of Scholarshp HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,214,,,,35.9,2020
+150162990250837,Infinity Math  Science & Tech HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,383,,,,16.0,2020
+150162990250841,Collins Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,227,,,,39.9,2020
+150162990250844,Austin College and Career Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,238,,,,64.5,2020
+150162990250847,Orr Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,230,,,,52.8,2020
+150162990250848,Air Force Acad High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,194,,,,13.8,2020
+150162990250849,Alcott College Prep,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,319,,,,17.4,2020
+150162990250850,Chicago Technology Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,312,,,,21.6,2020
+150162990250851,Chicago HS for the Arts,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,617,,,,6.7,2020
+150162990250855,Ogden Int High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,638,,,,20.1,2020
+150162990250856,Williams Medical Prep High Sch,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,126,,,,38.6,2020
+150162990250857,Westinghouse High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1238,,,,12.4,2020
+150162990250859,Solorio Academy High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,1219,,,,11.2,2020
+150162990250860,South Shore Intl Col Prep HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,586,,,,23.3,2020
+150162990250861,Goode STEM Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,924,,,,27.3,2020
+150162990250862,Chicago Excel Academy HS,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,295,,,,50.1,2020
+150162990250863,Walter Henri Dyett High School for the Arts,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,614,,,,24.9,2020
+150162990250867,Englewood STEM High School,City of Chicago SD 299,Chicago,Cook,HIGH SCHOOL,409,,,,35.5,2020
+15016905025001C,Intrinsic 2 Charter High School,Intrinsic 2 Charter High School,Chicago,Cook,HIGH SCHOOL,90,,,,,2020
+15016906025001C,Urban Prep West Charter School,Urban Prep West Charter School,Chicago,Cook,HIGH SCHOOL,100,,,,,2020
+601054280303050,IYC Chicago,IDJJ Sch Dist 428,Chicago,Dept Of Corrections,HIGH SCHOOL,40,,,,,2020
