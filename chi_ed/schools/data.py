@@ -9,6 +9,10 @@ class Schools():
         self.data = schools_data
         self.columns = schools_data.columns
 
+        # Automatically correct RCDTS column
+        if "RCDTS" not in self.columns:
+            self.data["RCDTS"] = str(self.data["RCDTS"])
+
     def select_columns(self, columns: list, contains: bool = True):
         """Select columns of interest. 
         Strict column mapping if necessary"""
@@ -53,6 +57,26 @@ class Schools():
         # Create a mapping of RCDTS to school name, a dict
         rcdts_school_mapping = self.data.drop_duplicates(subset = "RCDTS", keep = "first").set_index("RCDTS")["school_name"].to_dict()
         self.data["school_name"] = self.data["RCDTS"].map(rcdts_school_mapping)
+
+    def fill_school_names(self, column: str):
+        """Fill in school_name, if missing, with the value in column"""
+        self.data["school_name"] = self.data["school_name"].fillna(self.data[column])
+
+    def populate_columns(self, identifier: list[str], columns: list[str]):
+        """For each column, populate the first non-null value per identifier group
+        and fill it across all rows sharing those identifiers."""
+        for column in columns:
+            self.data[column] = self.data.groupby(identifier)[column].transform("first")
+
+    def convert_to_binary(self, columns: str):
+        """Convert binary columns to Yes, No"""
+        for column in columns:
+            self.data[column] = pandas.to_numeric(self.data[column], errors = "coerce")
+            self.data[column] = self.data[column].map({1.0: "Yes", 0.0: "No"})
+
+    def assign_neighborhoods(self, mapping: dict):
+        """Assign neighborhoods to schools based on the mapping"""
+        self.data["neighborhood"] = self.data["school_name"].map(mapping)
 
     def save_csv(self, filepath: str):
         """Save the data to a csv file"""

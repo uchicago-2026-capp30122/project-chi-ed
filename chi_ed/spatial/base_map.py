@@ -7,8 +7,10 @@ import pathlib
 SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
 SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
 neighborhoods = gpd.read_file(SHAPEFILE_DIR / SHAPEFILE_NAME)
+MERGED_DATA_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "outputs" / "merged_data"
 
-schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
+#schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
+schools = pd.read_csv(MERGED_DATA_DIR/"merged_api_rc.csv")
 
 # filter to most recent year
 most_recent_year = schools["school_profile_year"].max()
@@ -57,14 +59,23 @@ base_map = folium.Map(
 folium.GeoJson(
     neighborhoods,
     name="Neighborhoods",
+    # style_function=lambda feature: {
+    #     "fillColor": "transparent",
+    #     "color": "#444444",
+    #     "weight": 1.0,
+    # },
     style_function=lambda feature: {
-        "fillColor": "transparent",
-        "color": "#444444",
-        "weight": 1.0,
+    "fillColor": "#d4e8f5",
+    "fillOpacity": 0.4,       
+    "color": "#444444",
+    "weight": 1.0,
     },
+    zoom_on_click=True,
     tooltip=folium.GeoJsonTooltip(
         fields=["pri_neigh"],
-        aliases=["Neighborhood:"]
+        aliases=["Neighborhood:"],
+        sticky=False,
+        labels=True,
     )
 ).add_to(base_map)
 
@@ -72,12 +83,19 @@ folium.GeoJson(
 folium.GeoJson(
     school_points,
     name="Schools",
+    # marker=folium.Circle(
+    #     radius=100,
+    #     fill_color="steelblue",
+    #     fill_opacity=0.8,
+    #     color="steelblue",
+    #     weight=1
+    # ),
     marker=folium.Circle(
-        radius=100,
-        fill_color="steelblue",
-        fill_opacity=0.8,
-        color="steelblue",
-        weight=1
+    radius=100,
+    fill_color="#e85d26",    # warm coral/orange
+    fill_opacity=0.8,
+    color="#e85d26",
+    weight=1
     ),
     tooltip=folium.GeoJsonTooltip(
         fields=display_cols,
@@ -94,6 +112,6 @@ folium.GeoJson(
 ).add_to(base_map)
 
 # Saving the map as html
-# base_map.save("/mnt/c/Users/mehwi/Downloads/chicago_schools_map.html")
+base_map.save("/mnt/c/Users/mehwi/Downloads/chicago_schools_map.html")
 output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean"
 base_map.save(output_path / "chicago_schools_map.html")
