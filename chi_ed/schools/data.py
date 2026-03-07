@@ -9,6 +9,10 @@ class Schools():
         self.data = schools_data
         self.columns = schools_data.columns
 
+        # Automatically correct RCDTS column
+        if "RCDTS" not in self.columns:
+            self.data["RCDTS"] = str(self.data["RCDTS"])
+
     def select_columns(self, columns: list, contains: bool = True):
         """Select columns of interest. 
         Strict column mapping if necessary"""
