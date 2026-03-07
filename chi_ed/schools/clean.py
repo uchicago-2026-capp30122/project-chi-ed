@@ -64,16 +64,30 @@ def clean_reports_data():
     return panel_data
 
 
+def clean_merged_data(restart: bool = False):
+    """Clean the merged data"""
+    if restart:
+        panel_data = clean_reports_data()
 
+    else:
+        panel_dt = import_data(filepath = DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw = False)
+        merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw = False)
 
-    # # (2) Import the merged report cards and API data 
-    # # NOTE: I iwll use import_data() even though that function seems designed for report card data. It is flexible on non-raw data
-    # merged_dt = import_data(filepath = DATA_DIRPATH / "outputs" / "merged_data" / "merged_api_rc.csv", raw = False)
+    columns_API = set(merged_dt.data.columns) - set(panel_dt.data.columns)
 
-    # # Save all columns names
-    # with open(OUTPUTS_DIRPATH / "explore" / "columns_merged_api_rc.txt", "w") as f:
-    #     for col in merged_dt.columns:
-    #         f.write(col + "\n")
+    # Populate the merged data with the API columns
+    merged_dt.populate_columns(identifier = ["RCDTS"], columns = list(columns_API))
 
+    # Fill in missing school names with the school short name or long school name if necessary
+    merged_dt.fill_school_names(column = "school_short_name")
+    merged_dt.fill_school_names(column = "school_long_name")
 
-print(clean_reports_data().data.head())
+    # Drop missing rows 
+    merged_dt.data = merged_dt.data.dropna(how = "all")
+
+    # Save the updated merged data
+    merged_dt.save_csv(DATA_DIRPATH / "clean" / "clean_panel.csv")
+
+    return merged_dt.data.head()
+
+print(clean_merged_data())
