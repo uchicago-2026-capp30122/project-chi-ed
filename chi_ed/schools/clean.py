@@ -73,8 +73,14 @@ def clean_merged_data(restart: bool = False):
         panel_dt = import_data(filepath = DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw = False)
         merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw = False)
 
-    columns_API = set(merged_dt.data.columns) - set(panel_dt.data.columns)
+    columns_ISBE = set(panel_dt.data.columns) 
+    columns_API = set(merged_dt.data.columns) - columns_ISBE
 
+    columns_dict = {"ISBE": list(columns_ISBE), "API": list(columns_API)}
+
+    with open(DATA_DIRPATH / "outputs" / "colnames" / "clean_columns.json", "w") as f:
+        json.dump(columns_dict, f, indent = 1)
+    
     copy = merged_dt.data.copy()
     
     # Fill in missing school names with the school long name or short name if necessary
@@ -85,6 +91,12 @@ def clean_merged_data(restart: bool = False):
 
     # Populate the merged data with the API columns
     merged_dt.populate_columns(identifier = ["school_name"], columns = list(columns_API) + ["RCDTS"])
+
+    # Convert binary columns to Yes, No
+    binary_columns = [ "has_transition_program", "transportation_bus", "has_bilingual_services", "el_connections",
+    "has_refugee_services", "has_hearing_impairment_services", "has_visual_impairment_services", "metra_connections"
+    ]
+    merged_dt.convert_to_binary(columns = binary_columns)
 
     # More cleaning
     merged_dt.data = merged_dt.data.dropna(how = "all")

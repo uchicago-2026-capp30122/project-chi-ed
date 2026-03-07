@@ -1,13 +1,12 @@
 {
     "enrollment": "Enrollment", 
-    "avg_class_size": "Average Class Size", 
-    "pupil_teacher_ratio": "Pupil-Teacher Ratio", 
-    "student_count_low_income": "Student Count Low Income", 
-    "student_count_special_education": "Student Count Special Education", 
-    "student_count_black": "Student Count Black", 
-    "student_count_hispanic": "Student Count Hispanic", 
-    "student_count_white": "Student Count White", 
-    "student_count_asian": "Student Count Asian", 
-    "student_count_native_american": "Student Count Native American", 
-    "college_enrollment_rate": "College Enrollment Rate" 
+    "avg_class_size": "Average Class Size",
+    "student_count_low_income": "Low Income Students", 
+    "student_count_special_education": "Special Education Students", 
+    "student_count_black": "Black Students", 
+    "student_count_hispanic": "Hispanic Students", 
+    "student_count_white": "White Students", 
+    "student_count_asian": "Asian Students", 
+    "student_count_native_american": "Native American Students", 
+    "college_enrollment_rate": "College Enrollment Rate (%)" 
 }

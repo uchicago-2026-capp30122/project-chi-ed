@@ -68,6 +68,12 @@ class Schools():
         for column in columns:
             self.data[column] = self.data.groupby(identifier)[column].transform("first")
 
+    def convert_to_binary(self, columns: str):
+        """Convert binary columns to Yes, No"""
+        for column in columns:
+            self.data[column] = pandas.to_numeric(self.data[column], errors = "coerce")
+            self.data[column] = self.data[column].map({1.0: "Yes", 0.0: "No"})
+
     def assign_neighborhoods(self, mapping: dict):
         """Assign neighborhoods to schools based on the mapping"""
         self.data["neighborhood"] = self.data["school_name"].map(mapping)
