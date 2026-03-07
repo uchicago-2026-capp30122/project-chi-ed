@@ -1,5 +1,5 @@
-from merge_rc_dir import merge_for_zip, REPORT_CARD_PATH, DIRECTORY_DATA_PATH
-from cps_api.cleaning_api import clean_api_json, RAW_DATA_API
+from chi_ed.merging.merge_rc_dir import merge_for_zip, REPORT_CARD_PATH, DIRECTORY_DATA_PATH
+from chi_ed.cps_api.cleaning_api import clean_api_json, RAW_DATA_API
 import jellyfish
 import polars as pl
 import re
