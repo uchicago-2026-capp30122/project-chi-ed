@@ -64,16 +64,47 @@ def clean_reports_data():
     return panel_data
 
 
+def clean_merged_data(restart: bool = False):
+    """Clean the merged data"""
+    if restart:
+        panel_data = clean_reports_data()
 
+    else:
+        panel_dt = import_data(filepath = DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw = False)
+        merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw = False)
 
-    # # (2) Import the merged report cards and API data 
-    # # NOTE: I iwll use import_data() even though that function seems designed for report card data. It is flexible on non-raw data
-    # merged_dt = import_data(filepath = DATA_DIRPATH / "outputs" / "merged_data" / "merged_api_rc.csv", raw = False)
+    columns_ISBE = set(panel_dt.data.columns) 
+    columns_API = set(merged_dt.data.columns) - columns_ISBE
 
-    # # Save all columns names
-    # with open(OUTPUTS_DIRPATH / "explore" / "columns_merged_api_rc.txt", "w") as f:
-    #     for col in merged_dt.columns:
-    #         f.write(col + "\n")
+    columns_dict = {"ISBE": list(columns_ISBE), "API": list(columns_API)}
 
+    with open(DATA_DIRPATH / "outputs" / "colnames" / "clean_columns.json", "w") as f:
+        json.dump(columns_dict, f, indent = 1)
+    
+    copy = merged_dt.data.copy()
+    
+    # Fill in missing school names with the school long name or short name if necessary
+    merged_dt.fill_school_names(column = "school_long_name")
+    merged_dt.fill_school_names(column = "school_short_name")
 
-print(clean_reports_data().data.head())
+    print(f"We filled in {merged_dt.data["school_name"].nunique() - copy["school_name"].nunique()} missing school names")
+
+    # Populate the merged data with the API columns
+    merged_dt.populate_columns(identifier = ["school_name"], columns = list(columns_API) + ["RCDTS"])
+
+    # Convert binary columns to Yes, No
+    binary_columns = [ "has_transition_program", "transportation_bus", "has_bilingual_services", "el_connections",
+    "has_refugee_services", "has_hearing_impairment_services", "has_visual_impairment_services", "metra_connections"
+    ]
+    merged_dt.convert_to_binary(columns = binary_columns)
+
+    # More cleaning
+    merged_dt.data = merged_dt.data.dropna(how = "all")
+    merged_dt.data.drop(columns = ["RCDTS", "school_short_name", "school_long_name", "school_type"], inplace = True)
+
+    # Save the updated merged data
+    merged_dt.save_csv(DATA_DIRPATH / "clean" / "clean_panel.csv")
+
+    return merged_dt.data.head()
+
+print(clean_merged_data())
