@@ -94,7 +94,7 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     return school_similarity_lookup
 
 
-def merge_api_rc():
+def merge_api_rc(output_filname: Path = MERGE_CSV_PATH):
     """
     This function takes in a Path object and inside the function we are importing
     different data sources, performing a fuzzy match and return the merged df
