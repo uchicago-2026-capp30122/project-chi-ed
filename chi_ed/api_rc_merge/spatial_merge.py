@@ -1,5 +1,5 @@
 import json
-from chi_ed.spatial.data import load_neighborhoods, load_schools, get_school_points, get_spatial_join, CLEAN_DATA_DIR
+from spatial.data import load_neighborhoods, load_schools, get_school_points, get_spatial_join, CLEAN_DATA_DIR
 
 neighborhoods = load_neighborhoods()
 schools = load_schools()

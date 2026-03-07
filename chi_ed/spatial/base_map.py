@@ -2,7 +2,12 @@ import folium
 import pandas as pd
 import geopandas as gpd
 import pathlib
+#from chi_ed.spatial.data import load_neighborhoods, load_schools, get_mappable_schools, get_school_points, CLEAN_DATA_DIR
 
+
+# neighborhoods = load_neighborhoods()
+# schools = load_schools(year=2025)
+# schools = get_mappable_schools(schools)
 
 SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
 SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
@@ -40,6 +45,9 @@ school_points = gpd.GeoDataFrame(
     geometry=gpd.points_from_xy(schools["address_longitude"], schools["address_latitude"]),
     crs="EPSG:4326"
 )
+
+#school_points = get_school_points(schools)
+
 
 # Creating a base map
 
@@ -92,7 +100,7 @@ folium.GeoJson(
     # ),
     marker=folium.Circle(
     radius=100,
-    fill_color="#e85d26",    # warm coral/orange
+    fill_color="#e85d26",
     fill_opacity=0.8,
     color="#e85d26",
     weight=1
