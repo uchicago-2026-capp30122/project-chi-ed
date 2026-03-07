@@ -4,11 +4,14 @@ import pathlib
 
 SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
 SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
+MERGED_DATA_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "outputs" / "merged_data"
 
 # TODO: Add directory and file name etc for schools too
 
 neighborhoods = gpd.read_file(SHAPEFILE_DIR/SHAPEFILE_NAME)
-schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
+
+#schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
+schools = pd.read_csv(MERGED_DATA_DIR/"merged_api_rc.csv")
 
 school_points = gpd.GeoDataFrame(
     schools,
