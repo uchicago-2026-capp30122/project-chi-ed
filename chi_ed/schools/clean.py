@@ -75,15 +75,20 @@ def clean_merged_data(restart: bool = False):
 
     columns_API = set(merged_dt.data.columns) - set(panel_dt.data.columns)
 
-    # Populate the merged data with the API columns
-    merged_dt.populate_columns(identifier = ["RCDTS"], columns = list(columns_API))
-
-    # Fill in missing school names with the school short name or long school name if necessary
-    merged_dt.fill_school_names(column = "school_short_name")
+    copy = merged_dt.data.copy()
+    
+    # Fill in missing school names with the school long name or short name if necessary
     merged_dt.fill_school_names(column = "school_long_name")
+    merged_dt.fill_school_names(column = "school_short_name")
 
-    # Drop missing rows 
+    print(f"We filled in {merged_dt.data["school_name"].nunique() - copy["school_name"].nunique()} missing school names")
+
+    # Populate the merged data with the API columns
+    merged_dt.populate_columns(identifier = ["school_name"], columns = list(columns_API) + ["RCDTS"])
+
+    # More cleaning
     merged_dt.data = merged_dt.data.dropna(how = "all")
+    merged_dt.data.drop(columns = ["RCDTS", "school_short_name", "school_long_name", "school_type"], inplace = True)
 
     # Save the updated merged data
     merged_dt.save_csv(DATA_DIRPATH / "clean" / "clean_panel.csv")
