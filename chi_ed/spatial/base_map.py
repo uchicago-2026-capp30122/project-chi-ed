@@ -2,30 +2,38 @@ import folium
 import pandas as pd
 import geopandas as gpd
 import pathlib
-#from chi_ed.spatial.data import load_neighborhoods, load_schools, get_mappable_schools, get_school_points, CLEAN_DATA_DIR
 
 
-# neighborhoods = load_neighborhoods()
-# schools = load_schools(year=2025)
-# schools = get_mappable_schools(schools)
+# TODO: Temporary fix come back later to remove
+import sys
+ROOT = pathlib.Path(__file__).parent.parent.parent.resolve()
+sys.path.insert(0, str(ROOT))
 
-SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
-SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
-neighborhoods = gpd.read_file(SHAPEFILE_DIR / SHAPEFILE_NAME)
-MERGED_DATA_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "outputs" / "merged_data"
 
-#schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
-schools = pd.read_csv(MERGED_DATA_DIR/"merged_api_rc.csv")
+from chi_ed.spatial.data import load_neighborhoods, load_schools, get_mappable_schools, get_school_points, CLEAN_DATA_DIR
 
-# filter to most recent year
-most_recent_year = schools["school_profile_year"].max()
-schools = schools[schools["school_profile_year"] == most_recent_year]
 
-# dropping schools with missing coordinates
-schools = schools.dropna(subset=["address_latitude", "address_longitude"])
+neighborhoods = load_neighborhoods()
+schools = load_schools(year=2025)
+schools = get_mappable_schools(schools)
 
-# fixing missing school names
-schools["school_name"] = schools["school_name"].fillna(schools["school_long_name"])
+# SHAPEFILE_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "chicago_neighborhoods"
+# SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
+# neighborhoods = gpd.read_file(SHAPEFILE_DIR / SHAPEFILE_NAME)
+# MERGED_DATA_DIR = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "outputs" / "merged_data"
+
+# #schools = pd.read_csv("/mnt/c/Users/mehwi/Downloads/merged_api_rc.csv")
+# schools = pd.read_csv(MERGED_DATA_DIR/"merged_api_rc.csv")
+
+# # filter to most recent year
+# most_recent_year = schools["school_profile_year"].max()
+# schools = schools[schools["school_profile_year"] == most_recent_year]
+
+# # dropping schools with missing coordinates
+# schools = schools.dropna(subset=["address_latitude", "address_longitude"])
+
+# # fixing missing school names
+# schools["school_name"] = schools["school_name"].fillna(schools["school_long_name"])
 
 # replace NaN and 0 with "N/A" for columns we are using for tooltip intercation
 # replace 0 SAT scores with N/A
@@ -40,13 +48,13 @@ display_cols = [
 ]
 schools[display_cols] = schools[display_cols].fillna("N/A")
 
-school_points = gpd.GeoDataFrame(
-    schools,
-    geometry=gpd.points_from_xy(schools["address_longitude"], schools["address_latitude"]),
-    crs="EPSG:4326"
-)
+# school_points = gpd.GeoDataFrame(
+#     schools,
+#     geometry=gpd.points_from_xy(schools["address_longitude"], schools["address_latitude"]),
+#     crs="EPSG:4326"
+# )
 
-#school_points = get_school_points(schools)
+school_points = get_school_points(schools)
 
 
 # Creating a base map
