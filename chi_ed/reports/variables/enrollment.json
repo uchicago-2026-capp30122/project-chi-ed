@@ -1,0 +1,12 @@
+{
+    "enrollment": "Enrollment", 
+    "avg_class_size": "Average Class Size",
+    "student_count_low_income": "Low Income Students", 
+    "student_count_special_education": "Special Education Students", 
+    "student_count_black": "Black Students", 
+    "student_count_hispanic": "Hispanic Students", 
+    "student_count_white": "White Students", 
+    "student_count_asian": "Asian Students", 
+    "student_count_native_american": "Native American Students", 
+    "college_enrollment_rate": "College Enrollment Rate (%)" 
+}

@@ -1,0 +1,143 @@
+RCDTS,school_name,district,city,county,school_type,enrollment,avg_class_size,avg_teaching_exp,perc_novice_teachers,teacher_attendance_rate,pupil_teacher_ratio,chronic_absenteeism,ELA_proficiency,math_proficiency,science_proficiency,year
+15-016-2990-25-085C,Acero Chtr Sch Network -  Major Hector P Garcia MD H S,Chicago Public Schools District 299,Chicago,Cook,High School,655,25.6,10.5,,96.7,,51.3,24.1,*,24.1,2025
+15-016-2990-25-086C,Acero Chtr Sch Network Victoria Soto Campus,Chicago Public Schools District 299,Chicago,Cook,High School,552,24.4,9.7,4.8,96.5,,54.5,15.2,*,16.7,2025
+15-016-2990-25-049C,Acero Chtr Sch Network- Sor Juana Ines de la Cruz K-12,Chicago Public Schools District 299,Chicago,Cook,High School,432,15.3,10.9,,100.0,,48.3,20.4,10.0,19.8,2025
+15-016-2990-25-0848,Air Force Acad High School,Chicago Public Schools District 299,Chicago,Cook,High School,130,11.3,16.8,,38.9,,42.3,*,*,*,2025
+15-016-2990-25-0849,Alcott College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,359,21.6,12.1,3.4,56.8,,53.8,*,*,26.2,2025
+15-016-2990-25-0001,Amundsen High School,Chicago Public Schools District 299,Chicago,Cook,High School,1420,26.3,13.4,4.8,55.2,,52.4,70.3,50.6,62.4,2025
+15-016-2990-25-079C,Aspira Charter - Business and Finance HS,Chicago Public Schools District 299,Chicago,Cook,High School,421,16.2,6.0,8.1,100.0,,59.3,16.0,*,16.0,2025
+15-016-2990-25-074C,ASPIRA Charter - Early College Prep HS,Chicago Public Schools District 299,Chicago,Cook,High School,278,14.7,6.8,19.0,100.0,,55.9,18.8,*,23.4,2025
+15-016-2990-25-0844,Austin College and Career Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,145,16.1,10.3,10.6,26.2,,87.4,*,*,*,2025
+15-016-2990-25-0014,Back of The Yards IB HS,Chicago Public Schools District 299,Chicago,Cook,High School,1014,23.0,8.2,13.1,49.6,,48.7,48.5,28.3,43.8,2025
+15-016-2990-25-0003,Bogan High School,Chicago Public Schools District 299,Chicago,Cook,High School,599,20.8,17.9,2.2,60.5,,62.5,10.3,*,8.3,2025
+15-016-2990-25-0824,Bowen High School,Chicago Public Schools District 299,Chicago,Cook,High School,230,26.7,12.2,4.8,37.0,,77.0,*,*,*,2025
+15-016-2990-25-0834,Bronzeville Scholastic HS,Chicago Public Schools District 299,Chicago,Cook,High School,112,13.3,12.5,10.6,57.1,,59.5,*,*,*,2025
+15-016-2990-25-0788,Brooks College Prep Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,992,23.8,16.0,,61.1,,44.8,88.2,64.6,76.3,2025
+15-016-2990-25-0006,Carver Military Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,415,22.2,15.7,4.8,44.1,,60.2,15.3,*,25.5,2025
+15-016-2990-25-0820,Chicago Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,569,24.8,10.4,7.2,58.9,,37.7,53.8,23.9,42.7,2025
+15-016-2990-25-0772,Chicago HS for Agricult Sciences,Chicago Public Schools District 299,Chicago,Cook,High School,760,21.1,17.2,,48.7,,39.2,53.4,25.8,53.1,2025
+15-016-2990-25-0851,Chicago HS for the Arts,Chicago Public Schools District 299,Chicago,Cook,High School,572,23.1,7.6,10.7,87.7,,20.6,58.9,22.3,46.4,2025
+15-016-2990-25-0795,Chicago Military Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,201,16.2,14.3,6.9,45.4,,74.3,*,*,44.4,2025
+15-016-2990-25-0850,Chicago Technology Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,313,21.0,,,,,57.4,13.6,*,*,2025
+15-016-2990-25-0526,Chicago Vocational Career Acad HS,Chicago Public Schools District 299,Chicago,Cook,High School,578,22.6,17.4,3.6,35.4,,43.8,7.6,*,9.9,2025
+15-016-2990-25-082C,CICS - Northtown  Campus,Chicago Public Schools District 299,Chicago,Cook,High School,872,23.2,9.5,4.1,46.9,,39.1,34.0,17.7,28.2,2025
+15-016-2990-25-083C,CICS - Ralph Ellison Campus,Chicago Public Schools District 299,Chicago,Cook,High School,224,20.5,10.5,9.8,41.0,,82.2,18.6,*,*,2025
+15-016-2990-25-0827,Clark Acad Prep Magnet High Schl,Chicago Public Schools District 299,Chicago,Cook,High School,443,22.4,11.5,7.5,53.6,,88.1,*,*,18.9,2025
+15-016-2990-25-0545,Clemente Community Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,673,22.0,10.8,5.2,47.1,,76.3,15.6,*,13.4,2025
+15-016-2990-25-0841,Collins Academy STEAM High School,Chicago Public Schools District 299,Chicago,Cook,High School,196,16.1,11.6,3.7,48.3,,66.1,*,*,*,2025
+15-016-2990-25-0543,Corliss High School,Chicago Public Schools District 299,Chicago,Cook,High School,366,22.1,16.1,3.9,48.0,,76.8,*,*,*,2025
+15-016-2990-25-0052,Crane Medical Prep HS,Chicago Public Schools District 299,Chicago,Cook,High School,282,21.1,10.0,9.9,52.7,,81.9,13.3,*,14.7,2025
+15-016-2990-25-0617,Curie Metropolitan High School,Chicago Public Schools District 299,Chicago,Cook,High School,2874,26.4,15.7,3.1,45.5,,68.9,32.2,22.2,33.2,2025
+15-016-2990-25-0832,Devry Advantage Academy High Schl,Chicago Public Schools District 299,Chicago,Cook,High School,152,15.3,10.1,23.0,69.3,,28.4,66.2,37.7,57.1,2025
+15-016-2990-25-0053,Disney II Magnet HS,Chicago Public Schools District 299,Chicago,Cook,High School,722,25.9,11.4,1.5,42.3,,54.5,59.0,30.6,39.4,2025
+15-016-2990-25-0831,Douglass Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,27,6.7,11.9,22.8,66.8,,65.6,*,*,*,2025
+15-016-2990-25-0531,Dunbar Vocational Career Acad HS,Chicago Public Schools District 299,Chicago,Cook,High School,331,20.2,15.3,3.3,47.2,,73.4,*,*,14.1,2025
+15-016-2990-25-0867,Englewood STEM High School,Chicago Public Schools District 299,Chicago,Cook,High School,626,27.1,8.0,16.0,33.1,,87.5,8.4,*,*,2025
+15-016-2990-25-015C,EPIC Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,243,13.8,5.4,4.9,68.2,,66.8,36.4,*,38.2,2025
+15-016-2990-25-0011,Farragut Career Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,423,19.5,12.5,4.5,38.1,,72.0,25.0,*,20.0,2025
+15-016-2990-25-0012,Fenger Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,201,24.8,13.9,,33.0,,82.0,*,*,*,2025
+15-016-2990-25-0013,Foreman High School,Chicago Public Schools District 299,Chicago,Cook,High School,569,21.3,16.8,2.2,35.8,,69.0,11.6,*,14.7,2025
+15-016-2990-25-0015,Gage Park High School,Chicago Public Schools District 299,Chicago,Cook,High School,329,19.1,8.7,11.9,51.4,,87.0,*,*,*,2025
+15-016-2990-25-0861,Goode STEM Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,961,24.4,13.2,4.3,38.4,,56.5,22.2,8.7,23.1,2025
+15-016-2990-25-0779,Hancock College Preparatory HS,Chicago Public Schools District 299,Chicago,Cook,High School,1043,27.2,15.2,1.7,43.0,,32.8,91.4,70.0,85.8,2025
+15-016-2990-25-0016,Harlan Community Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,161,13.4,13.6,23.1,48.5,,76.6,*,*,14.7,2025
+15-016-2990-25-0019,Hirsch Metropolitan High School,Chicago Public Schools District 299,Chicago,Cook,High School,103,13.7,13.1,,35.5,,81.7,*,*,*,2025
+15-016-2990-25-0020,Hubbard High School,Chicago Public Schools District 299,Chicago,Cook,High School,1565,24.6,14.1,2.0,53.2,,75.0,31.8,8.7,24.6,2025
+15-016-2990-25-0021,Hyde Park Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,757,21.1,14.0,18.1,60.1,,73.0,11.5,*,11.2,2025
+15-016-2990-25-012C,IHSCA Charter High School,Chicago Public Schools District 299,Chicago,Cook,High School,555,25.5,,,,,60.0,15.0,8.6,18.3,2025
+15-016-2990-25-020C,IJLA Charter High School,Chicago Public Schools District 299,Chicago,Cook,High School,93,,,,,,92.5,*,*,*,2025
+15-016-2990-25-0837,Infinity Math  Science & Tech HS,Chicago Public Schools District 299,Chicago,Cook,High School,413,20.2,11.7,1.6,57.7,,58.7,48.2,27.7,34.8,2025
+15-016-2990-25-022C,Intrinsic Charter High School,Chicago Public Schools District 299,Chicago,Cook,High School,981,20.4,4.0,19.1,30.8,,43.9,42.0,17.4,29.5,2025
+15-016-2990-25-0533,Jones College Prep High School,Chicago Public Schools District 299,Chicago,Cook,High School,1932,28.0,13.3,1.8,50.2,,41.3,90.5,84.3,85.7,2025
+15-016-2990-25-0767,Juarez Community Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,1520,24.7,13.0,3.2,57.3,,70.6,36.3,14.1,26.1,2025
+15-016-2990-25-0763,Julian High School,Chicago Public Schools District 299,Chicago,Cook,High School,400,20.5,16.8,4.7,55.8,,79.7,*,*,11.1,2025
+15-016-2990-25-0023,Kelvyn Park High School,Chicago Public Schools District 299,Chicago,Cook,High School,543,25.5,7.9,11.7,62.4,,74.1,11.0,*,8.8,2025
+15-016-2990-25-0024,Kennedy High School,Chicago Public Schools District 299,Chicago,Cook,High School,1544,23.3,14.3,3.8,41.0,,63.4,35.6,15.6,32.3,2025
+15-016-2990-25-0025,Kenwood Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,2223,28.4,12.8,4.8,54.7,,48.3,70.4,52.9,60.3,2025
+15-016-2990-25-0039,King College Prep High School,Chicago Public Schools District 299,Chicago,Cook,High School,794,26.8,11.8,8.8,67.8,,66.3,36.9,14.7,34.3,2025
+15-016-2990-25-0026,Lake View High School,Chicago Public Schools District 299,Chicago,Cook,High School,1364,27.2,13.5,1.4,46.2,,67.7,34.9,14.1,26.2,2025
+15-016-2990-25-0027,Lane Technical High School,Chicago Public Schools District 299,Chicago,Cook,High School,4591,27.8,13.2,2.1,54.0,,34.3,91.4,87.5,89.2,2025
+15-016-2990-25-019C,Legal Prep Academy Charter HS,Chicago Public Schools District 299,Chicago,Cook,High School,209,18.2,6.0,19.2,83.2,,76.2,*,*,*,2025
+15-016-2990-25-0047,Lincoln Park High School,Chicago Public Schools District 299,Chicago,Cook,High School,2179,28.7,15.3,3.5,48.2,,57.6,74.2,50.2,66.2,2025
+15-016-2990-25-0833,Lindblom Math & Science Acad HS,Chicago Public Schools District 299,Chicago,Cook,High School,1285,25.0,11.4,3.9,66.4,,43.1,78.8,48.7,63.6,2025
+15-016-2990-25-0616,Manley Career Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,124,21.4,7.9,33.3,69.1,,89.3,*,*,*,2025
+15-016-2990-25-0029,Marshall Metropolitan High School,Chicago Public Schools District 299,Chicago,Cook,High School,197,21.7,14.9,,48.8,,84.9,*,*,*,2025
+15-016-2990-25-0030,Mather High School,Chicago Public Schools District 299,Chicago,Cook,High School,1658,26.7,15.7,0.9,61.8,,62.4,32.8,19.8,28.6,2025
+15-016-2990-25-0031,Morgan Park High School,Chicago Public Schools District 299,Chicago,Cook,High School,1213,27.3,16.2,2.4,51.3,,67.0,34.3,9.9,25.5,2025
+15-016-2990-25-0836,Multicultural Arts High School,Chicago Public Schools District 299,Chicago,Cook,High School,273,21.6,12.6,6.3,59.8,,83.2,19.3,*,*,2025
+15-016-2990-25-044C,Noble St Chtr - Mansueto,Chicago Public Schools District 299,Chicago,Cook,High School,1082,30.9,5.2,8.1,100.0,,41.8,35.8,18.2,40.9,2025
+15-016-2990-25-029C,Noble St Chtr Rauner College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,550,24.7,6.8,15.0,100.0,,49.8,29.8,11.3,22.5,2025
+15-016-2990-25-040C,Noble St Chtr-Baker Campus,Chicago Public Schools District 299,Chicago,Cook,High School,279,26.4,3.5,21.1,100.0,,59.7,21.4,*,16.9,2025
+15-016-2990-25-039C,Noble St Chtr-Butler College Prep - Crimson,Chicago Public Schools District 299,Chicago,Cook,High School,672,25.2,5.0,21.3,100.0,,58.9,24.7,7.6,27.6,2025
+15-016-2990-25-034C,Noble St Chtr-Chicago Bulls Prep,Chicago Public Schools District 299,Chicago,Cook,High School,1051,23.9,4.3,26.9,100.0,,54.2,37.6,16.1,33.1,2025
+15-016-2990-25-032C,Noble St Chtr-Comer College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,990,21.8,4.7,15.1,97.3,,58.2,32.7,9.8,22.4,2025
+15-016-2990-25-038C,Noble St Chtr-DRW Trading College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,313,21.1,6.5,21.4,100.0,,72.7,*,*,21.7,2025
+15-016-2990-25-031C,Noble St Chtr-Golder College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,626,23.9,4.1,29.3,100.0,,51.9,32.3,16.4,32.9,2025
+15-016-2990-25-037C,Noble St Chtr-Hansberry College Prep - Silver,Chicago Public Schools District 299,Chicago,Cook,High School,527,28.2,4.1,27.3,100.0,,56.0,26.0,*,26.8,2025
+15-016-2990-25-042C,Noble St Chtr-ITW Speer Acad,Chicago Public Schools District 299,Chicago,Cook,High School,1127,31.9,6.1,14.1,100.0,,36.4,41.9,21.9,41.7,2025
+15-016-2990-25-036C,Noble St Chtr-Johnson College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,498,20.7,7.4,9.8,100.0,,65.9,22.0,*,14.4,2025
+15-016-2990-25-035C,Noble St Chtr-Muchin College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,891,24.9,4.1,32.2,100.0,,48.9,35.1,14.3,30.2,2025
+15-016-2990-25-041C,Noble St Chtr-Noble Campus,Chicago Public Schools District 299,Chicago,Cook,High School,683,21.3,8.1,14.9,100.0,,34.4,54.1,28.7,45.9,2025
+15-016-2990-25-028C,Noble St Chtr-Pritzker College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,980,29.0,6.4,17.9,98.4,,33.1,39.2,19.8,38.4,2025
+15-016-2990-25-030C,Noble St Chtr-Rowe-Clark MS Acad,Chicago Public Schools District 299,Chicago,Cook,High School,311,19.0,4.9,41.7,100.0,,65.7,14.1,*,21.2,2025
+15-016-2990-25-043C,Noble St Chtr-The Noble Academy,Chicago Public Schools District 299,Chicago,Cook,High School,401,20.1,3.7,21.3,100.0,,52.7,41.8,14.6,24.6,2025
+15-016-2990-25-033C,Noble St Chtr-UIC College Prep,Chicago Public Schools District 299,Chicago,Cook,High School,940,27.5,5.0,24.2,98.4,,49.3,36.5,13.7,28.8,2025
+15-016-2990-25-084C,North Lawndale Prep Chtr - Christiana,Chicago Public Schools District 299,Chicago,Cook,High School,251,18.2,3.9,42.9,100.0,,55.4,*,*,*,2025
+15-016-2990-25-046C,North Lawndale Prep Chtr-Collins,Chicago Public Schools District 299,Chicago,Cook,High School,266,23.3,3.8,18.5,100.0,,74.5,*,*,*,2025
+15-016-2990-25-0825,North-Grand High School,Chicago Public Schools District 299,Chicago,Cook,High School,1013,26.3,13.1,1.3,42.8,,70.4,26.2,11.2,30.0,2025
+15-016-2990-25-0794,Northside College Preparatory Hs,Chicago Public Schools District 299,Chicago,Cook,High School,1059,26.5,14.4,3.5,64.2,,26.6,95.4,89.4,92.0,2025
+15-016-2990-25-0855,Ogden Int High School,Chicago Public Schools District 299,Chicago,Cook,High School,511,23.5,13.0,4.4,64.6,,65.3,52.8,21.1,47.2,2025
+15-016-2990-25-0847,Orr Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,302,26.9,9.5,12.3,55.1,,81.1,*,*,*,2025
+15-016-2990-25-0796,Payton College Preparatory HS,Chicago Public Schools District 299,Chicago,Cook,High School,1251,27.7,14.7,0.6,48.3,,23.2,93.8,91.7,91.7,2025
+15-016-2990-25-053C,Perspectives Chtr -  IIT Campus,Chicago Public Schools District 299,Chicago,Cook,High School,398,20.3,,,,,71.6,20.6,*,16.9,2025
+15-016-2990-25-052C,Perspectives Chtr - High School of Technology,Chicago Public Schools District 299,Chicago,Cook,High School,306,7.6,,,,,72.3,22.5,*,15.0,2025
+15-016-2990-25-050C,Perspectives Chtr - Joslin Campus,Chicago Public Schools District 299,Chicago,Cook,High School,307,19.3,,,,,75.2,23.2,9.2,16.0,2025
+15-016-2990-25-051C,Perspectives Chtr - Leadership Acad,Chicago Public Schools District 299,Chicago,Cook,High School,805,16.7,,,,,73.8,20.7,*,10.2,2025
+15-016-2990-25-0034,Phillips Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,397,26.4,14.1,,27.4,,86.6,12.0,*,12.0,2025
+15-016-2990-25-0803,Phoenix Military Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,366,23.8,11.6,6.5,52.1,,53.3,34.7,13.3,28.0,2025
+15-016-2990-25-0534,Prosser Career Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,1163,25.9,13.9,2.8,39.5,,67.9,39.0,12.0,33.9,2025
+15-016-2990-25-0826,Raby High School,Chicago Public Schools District 299,Chicago,Cook,High School,111,10.9,8.4,6.1,51.4,,78.8,*,*,*,2025
+15-016-2990-25-0536,Richards Career Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,304,20.8,9.2,4.5,31.7,,76.1,*,*,*,2025
+15-016-2990-25-0828,Rickover Naval Academy High Schl,Chicago Public Schools District 299,Chicago,Cook,High School,524,26.3,14.5,3.4,47.1,,37.2,30.2,17.2,32.8,2025
+15-016-2990-25-0035,Roosevelt High School,Chicago Public Schools District 299,Chicago,Cook,High School,1058,24.1,14.8,4.3,45.9,,70.8,22.7,7.1,19.2,2025
+15-016-2990-25-0835,School of Social Justice HS,Chicago Public Schools District 299,Chicago,Cook,High School,254,18.0,14.2,,36.8,,83.1,26.6,*,21.9,2025
+15-016-2990-25-0036,Schurz High School,Chicago Public Schools District 299,Chicago,Cook,High School,1123,24.3,16.3,2.3,49.9,,72.9,18.3,12.5,15.9,2025
+15-016-2990-25-0037,Senn High School,Chicago Public Schools District 299,Chicago,Cook,High School,1495,27.5,11.4,7.3,72.5,,69.1,44.9,26.3,43.3,2025
+15-016-2990-25-0537,Simeon Career Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,1044,26.4,15.5,0.8,32.1,,61.3,15.5,9.8,24.0,2025
+15-016-2990-25-0859,Solorio Academy High School,Chicago Public Schools District 299,Chicago,Cook,High School,1245,24.1,10.8,2.2,48.1,,36.0,40.1,27.6,36.1,2025
+15-016-2990-25-0860,South Shore Intl Col Prep HS,Chicago Public Schools District 299,Chicago,Cook,High School,594,24.7,16.7,5.6,47.7,,75.2,54.2,34.3,42.3,2025
+15-016-2990-25-0818,Spry Community Links High School,Chicago Public Schools District 299,Chicago,Cook,High School,82,15.3,10.6,6.5,46.6,,72.6,*,*,*,2025
+15-016-2990-25-0041,Steinmetz College Prep HS,Chicago Public Schools District 299,Chicago,Cook,High School,1063,23.8,17.9,3.0,43.3,,73.8,17.1,5.8,23.1,2025
+15-016-2990-25-0042,Sullivan High School,Chicago Public Schools District 299,Chicago,Cook,High School,711,25.7,11.7,3.5,56.6,,76.5,12.4,11.3,16.5,2025
+15-016-2990-25-0043,Taft High School,Chicago Public Schools District 299,Chicago,Cook,High School,4290,28.3,13.9,3.0,45.8,,62.4,56.6,37.6,49.7,2025
+15-016-2990-25-0022,Thomas Kelly College Preparatory,Chicago Public Schools District 299,Chicago,Cook,High School,1594,24.7,17.0,4.1,35.4,,63.6,23.3,9.8,16.3,2025
+15-016-2990-25-0044,Tilden Career Communty Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,246,21.0,11.3,3.6,48.9,,79.3,*,*,*,2025
+15-016-2990-25-0829,Uplift Community High School,Chicago Public Schools District 299,Chicago,Cook,High School,221,19.5,9.5,7.8,65.0,,77.7,*,*,*,2025
+15-016-2990-25-013C,Urban Prep Chtr Acad Bronzeville HS,Chicago Public Schools District 299,Chicago,Cook,High School,143,16.6,5.3,10.0,100.0,,44.4,*,*,*,2025
+15-016-2990-25-010C,Urban Prep Chtr Acad Englewood HS,Chicago Public Schools District 299,Chicago,Cook,High School,83,,2.2,30.0,100.0,,33.0,*,*,*,2025
+15-016-2990-25-0046,Von Steuben Metro Science HS,Chicago Public Schools District 299,Chicago,Cook,High School,1669,25.7,15.9,1.9,46.1,,41.0,65.9,45.1,57.3,2025
+15-016-2990-25-0863,Walter Henri Dyett High School for the Arts,Chicago Public Schools District 299,Chicago,Cook,High School,510,23.6,10.9,9.4,60.3,,72.3,7.2,*,15.8,2025
+15-016-2990-25-0048,Washington G High School,Chicago Public Schools District 299,Chicago,Cook,High School,1465,27.7,12.3,3.7,40.5,,67.9,29.8,10.6,24.7,2025
+15-016-2990-25-0049,Wells Community Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,359,24.2,12.7,,35.0,,86.6,*,*,*,2025
+15-016-2990-25-0857,Westinghouse High School,Chicago Public Schools District 299,Chicago,Cook,High School,1216,27.4,12.4,5.9,31.0,,51.5,55.5,31.0,51.1,2025
+15-016-2990-25-0856,Williams Medical Prep High Sch,Chicago Public Schools District 299,Chicago,Cook,High School,72,14.7,16.1,12.1,30.7,,47.4,*,*,*,2025
+15-016-2990-25-0830,World Language High School,Chicago Public Schools District 299,Chicago,Cook,High School,378,18.1,16.6,,47.3,,60.9,39.2,*,17.6,2025
+15-016-2990-25-073C,YCCS Chtr - Chatham,Chicago Public Schools District 299,Chicago,Cook,High School,102,22.8,24.6,,71.4,,88.2,*,*,*,2025
+15-016-2990-25-071C,YCCS West,Chicago Public Schools District 299,Chicago,Cook,High School,79,12.4,2.5,50.0,50.0,,82.5,*,*,*,2025
+15-016-2990-25-055C,YCCS- McKinley-Lakeside Leadership Academy,Chicago Public Schools District 299,Chicago,Cook,High School,96,11.2,16.5,,52.0,,87.1,*,*,*,2025
+15-016-2990-25-062C,YCCS-Albizu Campos Puerto Rican HS,Chicago Public Schools District 299,Chicago,Cook,High School,180,8.4,7.1,25.0,62.5,,87.8,*,*,*,2025
+15-016-2990-25-056C,YCCS-ASPIRA Pantoja Alt HS,Chicago Public Schools District 299,Chicago,Cook,High School,196,12.1,8.6,10.0,30.0,,95.3,*,*,*,2025
+15-016-2990-25-057C,YCCS-Association House,Chicago Public Schools District 299,Chicago,Cook,High School,101,11.5,1.0,100.0,50.0,,98.0,*,*,*,2025
+15-016-2990-25-059C,YCCS-CCA Academy HS,Chicago Public Schools District 299,Chicago,Cook,High School,122,28.1,5.7,,100.0,,96.9,*,*,*,2025
+15-016-2990-25-061C,YCCS-Community Youth Dev Inst HS,Chicago Public Schools District 299,Chicago,Cook,High School,82,13.7,5.8,,80.0,,91.4,*,*,*,2025
+15-016-2990-25-063C,YCCS-Innovations of Arts Integr HS,Chicago Public Schools District 299,Chicago,Cook,High School,383,16.3,7.2,10.0,,,92.2,*,*,*,2025
+15-016-2990-25-065C,YCCS-Latino Youth Alternative HS,Chicago Public Schools District 299,Chicago,Cook,High School,167,17.1,8.5,,66.7,,93.5,*,*,*,2025
+15-016-2990-25-066C,YCCS-Olive Harvey Mid College HS,Chicago Public Schools District 299,Chicago,Cook,High School,124,12.6,18.6,,100.0,,87.9,*,*,*,2025
+15-016-2990-25-060C,YCCS-Progressive Leadership Academy,Chicago Public Schools District 299,Chicago,Cook,High School,118,14.6,14.3,,100.0,,89.1,*,*,*,2025
+15-016-2990-25-054C,YCCS-Scholastic Achievement HS,Chicago Public Schools District 299,Chicago,Cook,High School,116,12.6,3.9,14.3,100.0,,74.8,*,*,*,2025
+15-016-2990-25-067C,YCCS-Sullivan House Alt HS,Chicago Public Schools District 299,Chicago,Cook,High School,274,8.6,19.8,,100.0,,55.8,*,*,*,2025
+15-016-2990-25-068C,YCCS-Truman Middle College HS,Chicago Public Schools District 299,Chicago,Cook,High School,181,13.7,19.5,,84.6,,91.7,*,*,*,2025
+15-016-2990-25-070C,YCCS-West Town Academy Alt HS,Chicago Public Schools District 299,Chicago,Cook,High School,114,15.5,16.0,,20.0,,97.0,*,*,*,2025
+15-016-2990-25-072C,YCCS-Youth Connection Leadership Academy,Chicago Public Schools District 299,Chicago,Cook,High School,99,14.5,9.4,20.0,60.0,,87.7,*,*,*,2025
+15-016-2990-25-0764,Young Magnet High School,Chicago Public Schools District 299,Chicago,Cook,High School,2206,25.6,16.6,1.9,60.0,,17.0,93.8,92.2,91.8,2025
+15-016-9050-25-001C,Intrinsic 2 Charter High School,Intrinsic 2 Charter High School,Chicago,Cook,High School,734,18.0,3.6,29.4,35.5,,38.4,29.4,12.8,32.3,2025

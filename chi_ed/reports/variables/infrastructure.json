@@ -1,0 +1,13 @@
+{
+    "has_transition_program": "Has A Transition Program", 
+    "transportation_bus": "Has Bus Transportation", 
+    "transportationel": "CTA L Trains Access", 
+    "el_connections": "Has CTA L Connections", 
+    "metra_connections": "Has Metra Connections",
+    "cta_connections": "CTA Connections", 
+    "transportation_metra": "Has Metra Connections", 
+    "has_bilingual_services": "Has Bilingual Services", 
+    "has_refugee_services": "Has Refugee Services", 
+    "has_hearing_impairment_services": "Has Hearing Impairment Services", 
+    "has_visual_impairment_services": "Has Visual Impairment Services"
+}
