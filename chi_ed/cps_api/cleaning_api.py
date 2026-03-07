@@ -1,3 +1,4 @@
+from chi_ed.cps_api.fetching_api_data import get_api_data
 import polars as pl
 from pathlib import Path
 import re
@@ -66,6 +67,8 @@ def clean_api_json(filename: Path = RAW_DATA_API):
     Returns: 
         dataframe: returns the cleaned API data as polars dataframe
     """
+
+    get_api_data(filename)
     api_df = pl.read_json(filename, infer_schema_length=200)
     api_df = api_df.filter(
         pl.col("IsHighSchool") == True

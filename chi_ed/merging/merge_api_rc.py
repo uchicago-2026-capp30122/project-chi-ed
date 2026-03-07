@@ -1,9 +1,14 @@
-from chi_ed.merging.merge_rc_dir import merge_for_zip, REPORT_CARD_PATH, DIRECTORY_DATA_PATH
+from chi_ed.merging.merge_rc_dir import (
+    merge_for_zip,
+    REPORT_CARD_PATH,
+    DIRECTORY_DATA_PATH,
+)
 from chi_ed.cps_api.cleaning_api import clean_api_json, RAW_DATA_API
 import jellyfish
 import polars as pl
 import re
 from pathlib import Path
+from collections import defaultdict
 
 # ------------------------------------------------------------------------------
 # In this code we use fuzzy matching to link & merge API data with report card data
@@ -25,6 +30,9 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     inspection of all the matches. Only one school was wrongly matched which
     is handled explicitly.
 
+    This code successfully matches 134 out of 141 schools in the report card data,
+    there are 32 additional schools only in the API data.
+
     Inputs:
         api_dict: Dictionary containing key value pairs for school names and zips
                     for the API data
@@ -37,19 +45,19 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     """
     school_similarity_lookup = dict()
 
-    for school_x, zip_x in api_dict.items():
-        school_similarity_lookup[school_x] = []
-        same_zip_schools = {}
+    for school_api, zip_api in api_dict.items():
+        school_similarity_lookup[
+            school_api
+        ] = []  # Not using default dict here to keep track of schools with no matches
+        same_zip_schools = defaultdict(list)
 
-        same_zip_schools[school_x] = []
-        for school_y, zip_y in rc_dict.items():
-            if zip_y == zip_x:
-                same_zip_schools[school_x].append(school_y)
+        for school_rc, zip_rc in rc_dict.items():
+            if zip_rc == zip_api:
+                same_zip_schools[school_api].append(school_rc)
 
-        for matched_school in same_zip_schools[school_x]:
-            clean_school_x = (
-                school_x.lower().replace("hs", "").strip()
-            )
+        for matched_school in same_zip_schools[school_api]:
+            # Cleaning school names ahead of comparisons
+            clean_school_api = school_api.lower().replace("hs", "").strip()
             clean_matched_school = (
                 matched_school.lower()
                 .replace("high school", "")
@@ -57,14 +65,16 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
                 .strip()
             )
             if (
-                jellyfish.jaro_winkler_similarity(clean_school_x, clean_matched_school)
-                > 0.71  # Only one school is being wrongly matched
+                jellyfish.jaro_winkler_similarity(
+                    clean_school_api, clean_matched_school
+                )
+                > 0.71  # Only one school is being wrongly matched using this threshold
             ):
-                school_similarity_lookup[school_x].append(
+                school_similarity_lookup[school_api].append(
                     (
                         matched_school,
                         jellyfish.jaro_winkler_similarity(
-                            clean_school_x, clean_matched_school
+                            clean_school_api, clean_matched_school
                         ),
                     )
                 )
@@ -84,16 +94,17 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     return school_similarity_lookup
 
 
-def merge_api_rc(output_filname: Path = MERGE_CSV_PATH):
+def merge_api_rc():
     """
     This function takes in a Path object and inside the function we are importing
-    different data sources, performing a fuzzy match and writing the merged data
-    as a csv file.
+    different data sources, performing a fuzzy match and return the merged df
 
-    Inputs:
-        output_filename: Path object for where we write the csv merged data
+    Returns:
+        Merged Dataframe containing data from both API and Report card data
     """
-    report_card_df = merge_for_zip(DIRECTORY_DATA_PATH, REPORT_CARD_PATH)
+    report_card_df = merge_for_zip(
+        DIRECTORY_DATA_PATH, REPORT_CARD_PATH
+    )  # Merging report card data with direcotry data to get zip codes
     api_df = clean_api_json(RAW_DATA_API)
 
     api_school_zip = pl.Series(
@@ -117,8 +128,24 @@ def merge_api_rc(output_filname: Path = MERGE_CSV_PATH):
         }
     )
 
-    api_df = api_df.join(mapper, on="school_short_name", how="inner")
+    api_df = api_df.join(
+        mapper, on="school_short_name", how="inner"
+    )  # We do an inner join here because there should be a 1:1 correspondence
 
-    merged_df = report_card_df.join(api_df, on="school_name", how="full")
+    merged_df = report_card_df.join(
+        api_df, on="school_name", how="full"
+    )  # We do a full join here to keep the schools that were not matched across both datasets
 
+    return merged_df
+
+
+def write_merged_data(output_filname: Path = MERGE_CSV_PATH):
+    """
+    This function gets the merged dataframe using the merge_api_rc function and
+    writes the dataframe as a csv on the path given as input
+
+    Inputs:
+        output_filename: Path object where the csv file will be written
+    """
+    merged_df = merge_api_rc()
     merged_df.write_csv(output_filname)
