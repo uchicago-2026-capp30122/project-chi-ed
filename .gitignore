@@ -1,4 +1,6 @@
 # Raw report card data
 data/raw/report_card_data/
+.DS_Store
+.data/DS_Store
 pyproject.toml
 uv.lock
