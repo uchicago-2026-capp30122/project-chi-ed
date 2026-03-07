@@ -19,8 +19,7 @@ school_points = gpd.GeoDataFrame(
 spatial_join = gpd.sjoin(school_points, neighborhoods[["pri_neigh", "geometry"]], how="left", predicate="within")
 
 schools_by_neighborhoods = {}
-for neighborhood, df in spatial_join.groupby("pri_neigh"):
-    schools_by_neighborhoods[neighborhood] = df["school_name"].tolist()
+for _, row in spatial_join.iterrows():
+    schools_by_neighborhoods[row["school_name"]] = row["pri_neigh"]
 
-#output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "schools_by_neighborhoods.json"
-output_path = pathlib.Path("/mnt/c/Users/mehwi/Downloads/schools_by_neighborhoods.json")
+output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean" / "schools_by_neighborhoods.json"

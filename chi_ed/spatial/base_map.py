@@ -94,4 +94,6 @@ folium.GeoJson(
 ).add_to(base_map)
 
 # Saving the map as html
-base_map.save("/mnt/c/Users/mehwi/Downloads/chicago_schools_map.html")
+# base_map.save("/mnt/c/Users/mehwi/Downloads/chicago_schools_map.html")
+output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean"
+base_map.save(output_path / "chicago_schools_map.html")
