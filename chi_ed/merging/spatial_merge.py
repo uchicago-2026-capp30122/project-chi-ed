@@ -1,20 +1,14 @@
-import json
-from spatial.data import load_neighborhoods, load_schools, get_school_points, get_spatial_join, CLEAN_DATA_DIR
+from ..spatial.data import load_neighborhoods, load_schools, get_school_points, get_spatial_join, CLEAN_DATA_DIR
 
-neighborhoods = load_neighborhoods()
-schools = load_schools()
-school_points = get_school_points(schools)
-spatial_join = get_spatial_join(school_points, neighborhoods)
+if __name__ == "__main__":
 
-# Adding neigh
-schools["neighborhood"] = spatial_join["pri_neigh"].values
-schools.to_csv(CLEAN_DATA_DIR / "clean_panel_with_neighborhoods.csv", index=False)
+    # Write explanation of what this file is doing
 
-# Saving school-to-neighborhood mapping as JSON
-schools_by_neighborhoods = {}
-for _, row in spatial_join.iterrows():
-    schools_by_neighborhoods[row["school_name"]] = row["pri_neigh"]
+    neighborhoods = load_neighborhoods()
+    schools = load_schools()
+    school_points = get_school_points(schools)
+    spatial_join = get_spatial_join(school_points, neighborhoods)
 
-# output_path = CLEAN_DATA_DIR / "schools_by_neighborhoods.json"
-# with open(output_path, "w") as f:
-#     json.dump(schools_by_neighborhoods, f, indent=2)
+    # Adding neighborhood to panel cleaned data 
+    schools["neighborhood"] = spatial_join["pri_neigh"].values
+    schools.to_csv(CLEAN_DATA_DIR / "clean_panel.csv", index=False)
