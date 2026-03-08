@@ -20,5 +20,16 @@ dependencies = [
     "great-tables>=0.21.0",
     "folium>=0.20.0",
     "geopandas>=1.1.2",
+    "dash>=4.0.0",
+    "dash-bootstrap-components>=2.0.4",
+    "plotly>=6.6.0",
     "pytest>=9.0.2",
+]
+
+[tool.ruff.lint]
+select = [
+  "E", # pycodestyle errors - handles basic Python style
+  "W", # pycodestyle warnings - handles whitespace issues
+  "F", # pyflakes - handles unused imports and variables
+  "N", # pep8-naming - handles naming conventions
 ]

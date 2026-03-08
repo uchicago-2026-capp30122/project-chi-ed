@@ -5,6 +5,10 @@ from pathlib import Path
 RAW_DATA_API = Path(__file__).parent.parent.parent / "data/raw/api_data/api_data.json"
 URL = "https://api.cps.edu/schoolprofile/CPS/AllSchoolProfiles"
 
+# ------------------------------------------------------------------------------
+# This codes attempts to fetch Chicago Public School API data - we make the call
+# only if the data does not exist to speed up the process 
+# ------------------------------------------------------------------------------
 
 class FetchException(Exception):
     """

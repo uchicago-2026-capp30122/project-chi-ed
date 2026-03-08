@@ -28,7 +28,7 @@ import pathlib
 # output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean" / "schools_by_neighborhoods.json"
 
 ROOT = pathlib.Path(__file__).parent.parent.parent.resolve()
-SHAPEFILE_DIR = ROOT / "data" / "chicago_neighborhoods"
+SHAPEFILE_DIR = ROOT / "data" / "shapefiles"
 SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
 MERGED_DATA_DIR = ROOT / "data" / "outputs" / "merged_data"
 CLEAN_DATA_DIR = ROOT / "data" / "clean"
@@ -36,38 +36,15 @@ CLEANED_DATA_FILE = "clean_panel.csv"
 
 def load_neighborhoods():
     """
-    Load Chicago neighborhood boundaries from shapefile.
+    Loading Chicago neighborhood boundaries from shapefile.
     Key column is `pri_neigh`
 
     Returns:
-        GeoDataFrame with neighborhood polygons in CRS EPSG:4326.     
+        Geodataframe with neighborhood polygons in CRS EPSG:4326.     
     """
-        
+
     return gpd.read_file(SHAPEFILE_DIR / SHAPEFILE_NAME)
 
-# def load_schools(year=None):
-#     
-#     Loads and cleans the merged CPS + ISBE school data.
-    
-#     Parameters:
-#     - year: if provided, filters to that year. If None, uses most recent year.
-    
-#     Returns a cleaned pandas DataFrame.
-#     """
-    
-#     df = pd.read_csv(CLEAN_DATA_DIR / CLEANED_DATA_FILE)
-
-#     # Impute missing year: if lat/lon present, it's 2025 API-only data
-#     mask = df["year"].isna() & df["address_latitude"].notna() & df["address_longitude"].notna()
-#     df.loc[mask, "year"] = 2025.0
-
-#     # Drop rows with no coordinates (unusable for mapping)
-#     df = df.dropna(subset=["address_latitude", "address_longitude"])
-
-#     if year is not None:
-#         df = df[df["year"] == year]
-
-#     return df
 
 def load_schools(year=None):
     """
@@ -77,45 +54,47 @@ def load_schools(year=None):
     but had no matching ISBE report card entry. 
 
     Parameters:
-        year: If provided, filters to only rows matching that school year.
+        year (optional): Filters to only rows matching that school year.
     
     Returns:
-        DataFrame with panel data for all schools, optionally filtered by year.
+        Dataframe with panel data for all schools, optionally filtered by year.
     """
 
-    df = pd.read_csv(CLEAN_DATA_DIR / CLEANED_DATA_FILE)
+    schools = pd.read_csv(CLEAN_DATA_DIR / CLEANED_DATA_FILE)
     
     # Imputing missing year: if latitutde and longitude are present for a school, 
     # the data came in from API which only contains data from year 2025
-    mask = df["year"].isna() & df["address_latitude"].notna() & df["address_longitude"].notna()
-    df.loc[mask, "year"] = 2025.0
+    mask = schools["year"].isna() & schools["address_latitude"].notna() & schools["address_longitude"].notna()
+    schools.loc[mask, "year"] = 2025
     
     if year is not None:
-        df = df[df["year"] == year]
+        schools = schools[schools["year"] == year]
+
+    schools = schools.replace("*", pd.NA)
     
-    return df
+    return schools
 
 def get_mappable_schools(schools):
     """
-    Filter schools to only those that can be plotted on a map.
+    Filter school dataframe to keep only those that can be plotted on a map.
 
     Parameters:
-        schools: DataFrame output of load_schools.
+        schools: Dataframe output of load_schools.
 
     Returns:
-        Subset of schools DataFrame with non-null latitude and longitude.
+        A subset of schools with non-missing latitude and longitude.
     """
     return schools.dropna(subset=["address_latitude", "address_longitude"])
 
 def get_school_points(schools):
     """
-    Convert a schools DataFrame to a GeoDataFrame of point geometries.
+    Convert a schools dataframe to a geodataframe of point geometries.
 
     Parameters:
-        schools: DataFrame with `address_longitude` and `address_latitude` columns.
+        schools: Dataframe with `address_longitude` and `address_latitude` columns.
 
     Returns:
-        GeoDataFrame with Point geometry in CRS EPSG:4326.
+        Geodataframe with point geometry in CRS EPSG:4326.
     """
     return gpd.GeoDataFrame(
         schools,
@@ -129,13 +108,13 @@ def get_spatial_join(school_points, neighborhoods):
     Spatially join schools to neighborhoods based on point-in-polygon.
 
     Parameters:
-        school_points: GeoDataFrame output of get_school_points.
-        neighborhoods: GeoDataFrame output of load_neighborhoods.
+        school_points: A geodataframe of school locations with point geometry.
+        neighborhoods: A geodataframe of Chicago neighborhood boundaries.
 
     Returns:
-        GeoDataFrame of schools with `pri_neigh` column added. 
-        Schools outside any neighborhood polygon will have NaN for `pri_neigh`.
+        A geodataframe of schools with `pri_neigh` column added. 
     """
+
     return gpd.sjoin(
         school_points,
         neighborhoods[["pri_neigh", "geometry"]],
@@ -143,4 +122,12 @@ def get_spatial_join(school_points, neighborhoods):
         predicate="within"
     )
 
+def get_available_years():
+    """
+    Return a sorted list of years present in the panel data.
 
+    Returns:
+        Sorted list of integers representing available school years.
+    """
+    df = pd.read_csv(CLEAN_DATA_DIR / CLEANED_DATA_FILE, usecols=["year"])
+    return sorted(df["year"].dropna().unique().astype(int).tolist())
