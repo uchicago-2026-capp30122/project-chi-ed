@@ -41,7 +41,11 @@ def aggregate_by_neighborhood(schools, metric, year):
     Returns:
         DataFrame with columns [neighborhood, {metric}, school_count, year].
     """
+    schools = schools.copy()
+    schools[metric] = pd.to_numeric(schools[metric], errors="coerce")
+
     agg = schools.groupby("neighborhood")[metric].agg(["mean", "count"]).reset_index()
+
     agg.columns = ["neighborhood", metric, "school_count"]
     agg["year"] = year
     return agg
