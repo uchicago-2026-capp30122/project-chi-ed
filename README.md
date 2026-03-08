@@ -1,53 +1,32 @@
-# Chi-Ed - An Interactive Dashboard to Compare Highschools Across Chicago
+# Chi-Ed - An Interactive Dashboard to Compare Highschool Outcomes Across Chicago
 Authors: Apollinaire Abi, Mehwish Waheed, Muhammad Faizan Imran
 
 ## Abstract
 
-Our project aims to provide users with a deep dive into highschool outcomes and metrics across Chicago. Basing our analysis on the Chicago Public Schools (CPS) API data and Illinois Report Card data our goal is to build a comprehensive tool that has all the relevant information in one spot.
+Understanding high school outcomes across a major city like Chicago is important; our project aims to provide an overall aggregation of high schools across various metrics (e.g., graduation rate, college enrollment rate, SAT scores) across different neighborhoods in Chicago and it also allows draws on comprehensive Chicago Public Schools and Illinois Report Card data sets to compare any two schools across a wider range of outcomes and facilities. 
 
-We will also be doing a neighborhood level analysis of schools through maps and will attempt to highlight a disparity in outcomes across different neighborhoods.
+With the dashboard and the report card we aim to facilitate both neighborhood level policy analysis which is aimed at policymakers to visualize the disparities in educational outcomes across different neighborhoods. The report card on the other hand provides a tool aimed at individual level decision making, through providing meaningful high school comparisons allowing users to make informed decisions about which high school would align best with their goals.
 
-![alt text](demo_viz.jpeg "High School Spread Across Chicago")
+## Running the Code
 
-### Repo Structure
+Please follow the following steps and command line instructions to execute and run the project:
 
-We have gathered the data from different sources that we will be using for this project. The code that fetches Json API can be found under: 
+1. Clone the repository:
 
+``` git@github.com:uchicago-2026-capp30122/project-chi-ed.git ```
 
-```
-└── chi_ed
-    └── cps_api
-        └── fetching_api_data.py
-```
+2. Run the cleaning sequence from the project root to get all the files needed to run the dashboard and generate reports:
 
-We have created seperate module that have set functions that we can call to fetch, clean, merge and visualize our data and over the coming days we will be working to startng working on the interactive dashboard for the project.
+``` uv run python -m chi_ed clean ```
 
-### Data Reconciliation & Cleaning Plan
+3. Execute the dashboard:
 
-We have started cleaning the primary data and our next step is to merge the API data with the report card data. Since there isn't a unique identifier that is present in both the datasets we will be setting up a string matching alogrithm that matches schools based on school names and zip codes.
+``` uv run python -m chi_ed dashboard ```
 
-The code that cleans API data can be found here:
+4. Generate reports comparing schools in neighborhoods of your choice:
 
-```
-└── chi_ed
-    └── cps_api
-        └── cleaning_api.py
-```
+``` uv run python -m chi_ed report ```
 
-### Sample Report
-
-For our final product we are aiming to automate PDF generation that provides users with an in-depth comparison across two schools. We currently created a sample comparison of two randomly selected schools in Chicago and the report can be found in the directory:
-
-```
-└── outputs
-    └── reports
-```
-
-The code to produce the reports is ```bash chi_ed/reports/render.sh```⁠, this is a sample product and the sample will be incorporated in our ```__main__.py``` module. The code that we are using to import, clean and map one of our data sources is ```chi_ed/report_card/s01_load.py```.
-
----
-
-More updates to follow soon!
 
 
 
