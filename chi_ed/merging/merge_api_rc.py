@@ -97,7 +97,7 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
 def merge_api_rc() -> pl.DataFrame:
     """
     This function takes in a Path object, and returns a merged dataframe with
-    all the schools in the API data merged with the schools in the report card 
+    all the schools in the API data merged with the schools in the report card
     data. We perform a full merge to keep the schools that are in one 21    /lqa
 
     Returns:
@@ -150,3 +150,10 @@ def write_merged_data(output_filname: Path = MERGE_CSV_PATH):
     """
     merged_df = merge_api_rc()
     merged_df.write_csv(output_filname)
+
+
+if __name__ == "__main__":
+    # This call will go all the way back to fetching_api_data and run all functions
+    #   in sequence from: getting the API data -> cleaning it -> merging it with 
+    #   report card data
+    write_merged_data()
