@@ -13,19 +13,28 @@ Please follow the following steps and command line instructions to execute and r
 
 1. Clone the repository:
 
-``` git@github.com:uchicago-2026-capp30122/project-chi-ed.git ```
+``` 
+git clone git@github.com:uchicago-2026-capp30122/project-chi-ed.git
+```
 
 2. Run the cleaning sequence from the project root to get all the files needed to run the dashboard and generate reports:
 
-``` uv run python -m chi_ed clean ```
+``` 
+uv run python -m chi_ed clean
+```
 
 3. Execute the dashboard:
 
-``` uv run python -m chi_ed dashboard ```
+``` 
+uv run python -m chi_ed dashboard
+```
 
 4. Generate reports comparing schools in neighborhoods of your choice:
 
-``` uv run python -m chi_ed report ```
+``` 
+uv run python -m chi_ed report
+```
+
 
 
 
