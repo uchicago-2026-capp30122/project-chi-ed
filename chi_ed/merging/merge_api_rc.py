@@ -94,10 +94,11 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     return school_similarity_lookup
 
 
-def merge_api_rc(output_filname: Path = MERGE_CSV_PATH):
+def merge_api_rc() -> pl.DataFrame:
     """
-    This function takes in a Path object and inside the function we are importing
-    different data sources, performing a fuzzy match and return the merged df
+    This function takes in a Path object, and returns a merged dataframe with
+    all the schools in the API data merged with the schools in the report card 
+    data. We perform a full merge to keep the schools that are in one 21    /lqa
 
     Returns:
         Merged Dataframe containing data from both API and Report card data
