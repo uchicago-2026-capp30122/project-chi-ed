@@ -1,7 +1,7 @@
 # Import all other modules in this file and run everything here
 import sys 
-from .spatial import dashboard
-from .reports.reports import create_report
+from chi_ed.spatial.dashboard import app
+from chi_ed.reports.reports import create_report
 
 
 if __name__ == "__main__":
@@ -13,4 +13,5 @@ if __name__ == "__main__":
     task = str(sys.argv[1])
 
     if task == "dashboard":
-        dashboard
+        app.run(debug=True)
+

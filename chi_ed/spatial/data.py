@@ -28,7 +28,7 @@ import pathlib
 # output_path = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean" / "schools_by_neighborhoods.json"
 
 ROOT = pathlib.Path(__file__).parent.parent.parent.resolve()
-SHAPEFILE_DIR = ROOT / "data" / "chicago_neighborhoods"
+SHAPEFILE_DIR = ROOT / "data" / "shapefiles"
 SHAPEFILE_NAME = "geo_export_acac5c2b-cc20-4f75-b7fe-e0a1c11b1ab2.shp"
 MERGED_DATA_DIR = ROOT / "data" / "outputs" / "merged_data"
 CLEAN_DATA_DIR = ROOT / "data" / "clean"

@@ -17,8 +17,23 @@ school_data = load_schools()
 app.layout = dbc.Container([
 
     dbc.Row(
-        dbc.Col(html.H2("Chicago Public Schools Dashboard"), width=12),
-        className="my-3"
+    dbc.Col(
+        html.Div([
+            html.Span("Chicago Public Schools — Neighborhood Explorer", style={"fontWeight": "bold", "fontSize": "1.1rem"}),
+            html.Span("CAPP 30122 · PROJECT CHI-ED", style={"fontSize": "0.85rem", "letterSpacing": "0.05em"}),
+        ], style={
+            "backgroundColor": "#1a1a1a",
+            "color": "white",
+            "padding": "15px 25px",
+            "display": "flex",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "marginLeft": "-12px",
+            "marginRight": "-12px",
+        }),
+        width=12
+    ),
+    className="mb-3"
     ),
 
     dbc.Row([
@@ -129,8 +144,6 @@ def update_map(year):
 
 def update_bar_chart(year, metric):
     schools = get_mappable_schools(school_data[school_data["year"] == year])
-    print(schools[metric].dtype)
-    print(schools[metric].unique()[:10])
     agg = aggregate_by_neighborhood(schools, metric, year)
     agg = agg.sort_values(metric, ascending=True)
 
@@ -188,7 +201,7 @@ def update_comparison_chart(year, school_a, school_b):
     schools = school_data[school_data["year"] == year]
     comparison = get_school_comparison(schools, school_a, school_b)
 
-    # https://plotly.com/python/grouped-bar-charts/
+    # https://plotly.com/python/grouped-bar-charts/ ## fix this link
     fig = go.Figure()
     fig.add_trace(go.Bar(
         name=school_a,
@@ -212,4 +225,5 @@ def update_comparison_chart(year, school_a, school_b):
 
 
 if __name__ == "__main__":
+    print("I AM RUNNING")
     app.run(debug=True)
