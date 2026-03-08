@@ -1,6 +1,3 @@
-# Import all other modules in this file and run everything here
-
-
 def main():
     pass
 
