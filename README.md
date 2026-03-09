@@ -44,6 +44,8 @@ brew add pandoc
 ## Report Stats
 
 ![Alt text](docs/report_1.png)
+![Alt text](docs/report_2.png)
+![Alt text](docs/report_3.png)
 
 ## Data Sources
 Following are the data sources that we used for the project:
