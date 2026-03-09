@@ -42,6 +42,7 @@ brew add pandoc
 ```
 
 ## Report Stats
+<img src=docs/report_1.png width="400" height="400">
 
 ![Alt text](docs/report_1.png)
 ![Alt text](docs/report_2.png)
