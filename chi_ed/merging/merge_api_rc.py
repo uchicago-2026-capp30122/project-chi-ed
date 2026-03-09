@@ -17,6 +17,13 @@ from collections import defaultdict
 MERGE_CSV_PATH = (
     Path(__file__).parent.parent.parent / "data/outputs/merged_data/merged_api_rc.csv"
 )
+PANEL_DATA_PATH = (
+    Path(__file__).parent.parent.parent / "data/clean/panel_report_cards.csv"
+)
+PANEL_DATA_CSV = (
+    Path(__file__).parent.parent.parent
+    / "data/outputs/merged_data/merged_panel_api_2025.csv"
+)
 
 
 def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
@@ -94,17 +101,26 @@ def matched_schools(api_dict: dict, rc_dict: dict) -> dict:
     return school_similarity_lookup
 
 
-def merge_api_rc() -> pl.DataFrame:
+def merge_api_rc(report_card_filename: Path, is_panel: bool = False) -> pl.DataFrame:
     """
     This function takes in a Path object, and returns a merged dataframe with
     all the schools in the API data merged with the schools in the report card
-    data. We perform a full merge to keep the schools that are in one 21    /lqa
+    data. We perform a full merge to keep the schools that are in both data sets
+    to avoid losing any data. This function also handles the panel data merging.
+
+    Inputs:
+        report_card_filename:
+            The path to the report card data that we are merging on. This allows
+            us to handle both panel data and just the 2025 report card data
+        is_panel:
+            A boolean to indicate whether we are working with the panel data for
+            the merge or not.
 
     Returns:
         Merged Dataframe containing data from both API and Report card data
     """
     report_card_df = merge_for_zip(
-        DIRECTORY_DATA_PATH, REPORT_CARD_PATH
+        DIRECTORY_DATA_PATH, report_card_filename
     )  # Merging report card data with direcotry data to get zip codes
     api_df = clean_api_json(RAW_DATA_API)
 
@@ -133,9 +149,14 @@ def merge_api_rc() -> pl.DataFrame:
         mapper, on="school_short_name", how="inner"
     )  # We do an inner join here because there should be a 1:1 correspondence
 
-    merged_df = report_card_df.join(
-        api_df, on="school_name", how="full"
-    )  # We do a full join here to keep the schools that were not matched across both datasets
+    if is_panel:
+        year = pl.Series("year", 173 * [2025])
+        api_df.insert_column(-1, year)
+        merged_df = report_card_df.join(api_df, on=["school_name", "year"], how="full")
+    else:
+        merged_df = report_card_df.join(
+            api_df, on="school_name", how="full"
+        )  # We do a full join here to keep the schools that were not matched across both datasets
 
     return merged_df
 
@@ -148,8 +169,10 @@ def write_merged_data(output_filname: Path = MERGE_CSV_PATH):
     Inputs:
         output_filename: Path object where the csv file will be written
     """
-    merged_df = merge_api_rc()
+    merged_df = merge_api_rc(REPORT_CARD_PATH)
+    merged_df_panel = merge_api_rc(PANEL_DATA_PATH, True)
     merged_df.write_csv(output_filname)
+    merged_df_panel.write_csv(PANEL_DATA_CSV)
 
 
 if __name__ == "__main__":
