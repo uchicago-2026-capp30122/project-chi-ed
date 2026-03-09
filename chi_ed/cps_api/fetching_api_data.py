@@ -7,8 +7,9 @@ URL = "https://api.cps.edu/schoolprofile/CPS/AllSchoolProfiles"
 
 # ------------------------------------------------------------------------------
 # This codes attempts to fetch Chicago Public School API data - we make the call
-# only if the data does not exist to speed up the process 
+# only if the data does not exist to speed up the process
 # ------------------------------------------------------------------------------
+
 
 class FetchException(Exception):
     """
@@ -21,7 +22,7 @@ class FetchException(Exception):
         )
 
 
-def get_api_data(filename: Path = RAW_DATA_API, api_url: str=URL):
+def get_api_data(filename: Path = RAW_DATA_API, api_url: str = URL):
     """
     This function checks for whether the API data has previosly been downloaded
     and saved, if not it makes the httpx.get call and writes the data in the
