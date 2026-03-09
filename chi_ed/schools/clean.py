@@ -179,6 +179,12 @@ def clean_merged_data(version: str):
     elif version == "clean":
         merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "clean_panel.csv", raw = False)
 
+        # Balance the panel
+        merged_dt.balance_panel(years = [2019, 2020, 2021, 2022, 2023, 2024, 2025])
+
+        # Fill in the missing ZIP codes
+        merged_dt.populate_columns(identifier = ["school_name"], columns = ["zip"])
+
         # Input missing values
         context_columns = ["year", "zip"]
         columns_to_impute = ["enrollment", "ELA_proficiency", "math_proficiency", "science_proficiency", "sat_school_average", "graduation_rate", "graduation_rate4_year"]

@@ -12,7 +12,9 @@ from chi_ed.merging.spatial_merge import spatial_merge
 REPORT_DIRPATH = pathlib.Path(__file__).parent / "REPORT.pdf"
 
 def clean(version):
+    """Clean the data and save it to the data directory"""
     if version == "raw":
+        print("Cleaning raw data ... this may take a while...")
         clean_merged_data(version = "raw") 
         write_merged_data()
         clean_merged_data(version = "intermediate")
@@ -20,9 +22,10 @@ def clean(version):
         data = clean_merged_data(version = "clean")
 
     elif version == "clean":
+        print("Retrieving clean data with some minor additional cleaning...")
         data = clean_merged_data(version = "clean")
     
-    print(f"Data cleaned successfully and saved in {DATA_DIRPATH}. \nPreview:\n")
+    print(f"Data retrieved successfully and saved in {DATA_DIRPATH}. \nPreview:\n")
     print(data.data.head(10))
 
     return data.data
@@ -59,9 +62,15 @@ if __name__ == "__main__":
         webbrowser.open(REPORT_DIRPATH.as_uri())
 
     elif task == "clean":
+        if len(sys.argv) < 3:
+            raise ValueError("Usage: python -m chi_ed clean <version> (raw | clean)")
+
         subtask = str(sys.argv[2])
+        if subtask not in ["raw", "clean"]:
+            raise ValueError("Invalid version: {subtask}. Choose from ['raw', 'clean']")
+
         clean(version = subtask)
 
     else:
-        raise ValueError("Usage: python -m chi_ed `dashboard | report | clean`")
+        raise ValueError("Usage: python -m chi_ed `dashboard | report | clean <version>`")
 
