@@ -2,17 +2,25 @@ from pathlib import Path
 import polars as pl
 import re
 
-REPORT_CARD_PATH = Path(__file__).parent.parent.parent / "data/outputs/report_cards_2025.csv"
-DIRECTORY_DATA_PATH = Path(__file__).parent.parent.parent / "data/raw/aux_data/dir_ed_entities.xls"
+REPORT_CARD_PATH = (
+    Path(__file__).parent.parent.parent / "data/outputs/report_cards_2025.csv"
+)
+DIRECTORY_DATA_PATH = (
+    Path(__file__).parent.parent.parent / "data/raw/aux_data/dir_ed_entities.xls"
+)
 
 # ------------------------------------------------------------------------------
 # This code merges the report card csv dataset with school directory data to get zip codes
 # ------------------------------------------------------------------------------
 
-def merge_for_zip(directory_data: Path = DIRECTORY_DATA_PATH, report_card_data: Path = REPORT_CARD_PATH):
+
+def merge_for_zip(
+    directory_data: Path = DIRECTORY_DATA_PATH,
+    report_card_data: Path = REPORT_CARD_PATH,
+):
     """
     This function reads in chicago public schools directory data and Illinois
-    schools report card data, and merges the two datasets on RCDTS to add the 
+    schools report card data, and merges the two datasets on RCDTS to add the
     zip code that is missing from the report card data
 
     Inputs:
@@ -32,21 +40,14 @@ def merge_for_zip(directory_data: Path = DIRECTORY_DATA_PATH, report_card_data: 
 
     dir_ed = dir_ed.with_columns(
         (pl.col("RCD") + pl.col("Type") + pl.col("School")).alias("RCDTS"),
-        (pl.col("Zip").str.slice(0, 5).alias("zip"))
+        (pl.col("Zip").str.slice(0, 5).alias("zip")),
     )
 
     dir_ed = dir_ed.select(pl.col("RCDTS"), pl.col("zip"))
 
-    report_card = report_card.with_columns(
-        pl.col("RCDTS").str.replace_all(r"\-", "")
-    )
+    report_card = report_card.with_columns(pl.col("RCDTS").str.replace_all(r"\-", ""))
 
-    merged_df = report_card.join(
-        dir_ed,
-        on="RCDTS",
-        how="inner"
-    )
+    merged_df = report_card.join(dir_ed, on="RCDTS", how="inner")
 
     # Should yield 141 high schools with zip codes
     return merged_df
-
