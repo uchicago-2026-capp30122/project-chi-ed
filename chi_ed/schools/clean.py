@@ -142,34 +142,44 @@ def clean_merged_data(version: str):
             return
 
         elif version == "intermediate":
-            panel_dt = import_data(filepath = DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw = False)
-            
-        merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw = False)
+            panel_dt = import_data(
+                filepath=DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw=False
+            )
 
-        columns_ISBE = set(panel_dt.data.columns) 
+        merged_dt = import_data(
+            filepath=DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw=False
+        )
+
+        columns_ISBE = set(panel_dt.data.columns)
         columns_API = set(merged_dt.data.columns) - columns_ISBE
 
         columns_dict = {"ISBE": list(columns_ISBE), "API": list(columns_API)}
 
-        with open(DATA_DIRPATH / "outputs" / "colnames" / "clean_columns.json", "w") as f:
-            json.dump(columns_dict, f, indent = 1)
-        
-        copy = merged_dt.data.copy()
-        
-        # Fill in missing school names with the school long name or short name if necessary
-        merged_dt.fill_school_names(column = "school_long_name")
-        merged_dt.fill_school_names(column = "school_short_name")
+        with open(
+            DATA_DIRPATH / "outputs" / "colnames" / "clean_columns.json", "w"
+        ) as f:
+            json.dump(columns_dict, f, indent=1)
 
-        print(f"We filled in {merged_dt.data["school_name"].nunique() - copy["school_name"].nunique()} missing school names")
+        copy = merged_dt.data.copy()
+
+        # Fill in missing school names with the school long name or short name if necessary
+        merged_dt.fill_school_names(column="school_long_name")
+        merged_dt.fill_school_names(column="school_short_name")
+
+        print(
+            f"We filled in {merged_dt.data['school_name'].nunique() - copy['school_name'].nunique()} missing school names"
+        )
 
         # Populate the merged data with the API columns
-        merged_dt.populate_columns(identifier = ["school_name"], columns = list(columns_API) + ["RCDTS"])
+        merged_dt.populate_columns(
+            identifier=["school_name"], columns=list(columns_API) + ["RCDTS"]
+        )
 
         # Convert binary columns to Yes, No
         binary_columns = [ "has_transition_program", "has_bilingual_services", "has_refugee_services", 
                           "has_hearing_impairment_services", "has_visual_impairment_services"
         ]
-        merged_dt.convert_to_binary(columns = binary_columns)
+        merged_dt.convert_to_binary(columns=binary_columns)
 
         # More cleaning
         merged_dt.data = merged_dt.data.dropna(how = "all")
@@ -177,7 +187,9 @@ def clean_merged_data(version: str):
         return
 
     elif version == "clean":
-        merged_dt = import_data(filepath = DATA_DIRPATH / "clean" / "clean_panel.csv", raw = False)
+        merged_dt = import_data(
+            filepath=DATA_DIRPATH / "clean" / "clean_panel.csv", raw=False
+        )
 
         # Balance the panel
         merged_dt.balance_panel(years = [2019, 2020, 2021, 2022, 2023, 2024, 2025])
@@ -196,11 +208,12 @@ def clean_merged_data(version: str):
         return merged_dt
             
     else:
-        raise ValueError(f"Invalid version: {version}. Choose from ['raw', 'intermediate', 'clean']")
+        raise ValueError(
+            f"Invalid version: {version}. Choose from ['raw', 'intermediate', 'clean']"
+        )
 
     
 
 
-
 if __name__ == "__main__":
-    clean_merged_data(version = "clean")
+    clean_merged_data(version="clean")

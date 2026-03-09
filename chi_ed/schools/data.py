@@ -103,13 +103,13 @@ class Schools:
         """Impute missing values for columns using KNN.
         Context columns inform neighbor distances but are not imputed."""
         all_cols = context + [column for column in columns if column not in context]
-        df = self.data[all_cols].apply(pandas.to_numeric, errors = "coerce")
-        imputed = KNNImputer(n_neighbors = n).fit_transform(df)
-        self.data[columns] = pandas.DataFrame(imputed, columns = all_cols, index = self.data.index)[columns]
-
+        df = self.data[all_cols].apply(pandas.to_numeric, errors="coerce")
+        imputed = KNNImputer(n_neighbors=n).fit_transform(df)
+        self.data[columns] = pandas.DataFrame(
+            imputed, columns=all_cols, index=self.data.index
+        )[columns]
 
     def save_csv(self, filepath: str):
         """Save the data to a csv file"""
         self.data.to_csv(filepath, index=False)
         print(f"Data successfully saved to {filepath}")
-

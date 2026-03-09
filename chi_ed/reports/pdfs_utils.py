@@ -31,14 +31,12 @@ class PDFdocument:
         return self.sections[section]
 
 
-
 def select_school(df: pandas.DataFrame, label: str) -> str:
     """Interactive menu to select a neighborhood then a school."""
     neighborhoods = sorted(df["neighborhood"].dropna().unique())
- 
-    
+
     print(f"\n----- Select {label} -----")
-    
+
     # Numbered list of neighborhoods
     print("Neighborhoods:")
     for index, neighborhood in enumerate(neighborhoods, 1):
@@ -49,8 +47,9 @@ def select_school(df: pandas.DataFrame, label: str) -> str:
         if choice.isdigit() and 1 <= int(choice) <= len(neighborhoods):
             break
 
-        print(f"Invalid choice. Choose a number between 1 and {len(neighborhoods)} and try again.")
-
+        print(
+            f"Invalid choice. Choose a number between 1 and {len(neighborhoods)} and try again."
+        )
 
     neighborhood = neighborhoods[int(choice) - 1]
     schools = sorted(df.loc[df["neighborhood"] == neighborhood, "school_name"].unique())
@@ -65,11 +64,12 @@ def select_school(df: pandas.DataFrame, label: str) -> str:
         if choice.isdigit() and 1 <= int(choice) <= len(schools):
             break
 
-        print(f"Invalid choice. Choose a number between 1 and {len(schools)} and try again.")
-
+        print(
+            f"Invalid choice. Choose a number between 1 and {len(schools)} and try again."
+        )
 
     school = schools[int(choice) - 1]
 
     print(f"Selected: {school}")
-    
+
     return school
