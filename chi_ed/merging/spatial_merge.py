@@ -6,9 +6,7 @@ from ..spatial.data import (
     CLEAN_DATA_DIR,
 )
 
-if __name__ == "__main__":
-    # Write explanation of what this file is doing
-
+def spatial_merge():
     neighborhoods = load_neighborhoods()
     schools = load_schools()
     school_points = get_school_points(schools)
@@ -17,3 +15,11 @@ if __name__ == "__main__":
     # Adding neighborhood to panel cleaned data
     schools["neighborhood"] = spatial_join["pri_neigh"].values
     schools.to_csv(CLEAN_DATA_DIR / "clean_panel.csv", index=False)
+
+
+if __name__ == "__main__":
+
+    # Write explanation of what this file is doing
+    spatial_merge()
+
+    

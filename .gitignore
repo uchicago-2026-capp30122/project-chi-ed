@@ -8,3 +8,4 @@ reports/figures/
 reports/tables/
 __pycache__/
 *.pyc
+*.py[cod]
