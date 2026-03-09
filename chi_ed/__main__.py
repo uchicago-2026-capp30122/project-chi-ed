@@ -12,7 +12,9 @@ REPORT_DIRPATH = pathlib.Path(__file__).parent / "REPORT.pdf"
 if __name__ == "__main__":
     # First let's make sure the data exists
     if not DATA_DIRPATH.exists():
-        raise FileNotFoundError(f"Data file not found at {DATA_DIRPATH}. \nThis is on us not you, sorry! Try again later.")
+        raise FileNotFoundError(
+            f"Data file not found at {DATA_DIRPATH}. \nThis is on us not you, sorry! Try again later."
+        )
 
     if len(sys.argv) != 2:
         raise ValueError("Usage: python -m chi_ed `dashboard | report | clean`")
@@ -20,7 +22,7 @@ if __name__ == "__main__":
     task = str(sys.argv[1])
 
     if task == "dashboard":
-        app.run(debug = True)
+        app.run(debug=True)
 
     elif task == "report":
         clean_panel_df = pandas.read_csv(DATA_DIRPATH)
@@ -30,12 +32,12 @@ if __name__ == "__main__":
         print(f"\nGenerating report for {school1} & {school2}...")
 
         create_report(
-            df = clean_panel_df, 
-            school1 = school1, 
-            school2 = school2, 
-            output_filepath = REPORT_DIRPATH)
+            df=clean_panel_df,
+            school1=school1,
+            school2=school2,
+            output_filepath=REPORT_DIRPATH,
+        )
         print(f"Report saved to {REPORT_DIRPATH}")
 
         # Open the report in the default browser
         webbrowser.open(REPORT_DIRPATH.as_uri())
-

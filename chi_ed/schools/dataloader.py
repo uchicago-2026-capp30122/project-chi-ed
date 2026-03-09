@@ -103,29 +103,28 @@ def load_reports_card(filepath: pathlib.Path):
 
 COLUMNS_2025_REPORTS_CARDS = {
     "identifiers": {
-        "RCDTS": "RCDTS", 
-        "School Name": "school_name", 
-        "District": "district", 
-        "City": "city", 
-        "County": "county", 
-        "School Type": "school_type"
+        "RCDTS": "RCDTS",
+        "School Name": "school_name",
+        "District": "district",
+        "City": "city",
+        "County": "county",
+        "School Type": "school_type",
     },
     "performance": {
-        "% Math Proficiency": "math_proficiency", 
-        "% ELA Proficiency": "ELA_proficiency", 
-        "% Science Proficiency": "science_proficiency", 
-        "High School 4-Year Graduation Rate": "grad_rate"
-    }, 
+        "% Math Proficiency": "math_proficiency",
+        "% ELA Proficiency": "ELA_proficiency",
+        "% Science Proficiency": "science_proficiency",
+        "High School 4-Year Graduation Rate": "grad_rate",
+    },
     "general": {
-        "% Novice Teachers": "perc_novice_teachers", 
-        "Avg Teaching Exp": "avg_teaching_exp", 
-        "Pupil Teacher Ratio - High School": "pupil_teacher_ratio", 
-        "Avg Class Size - All Grades": "avg_class_size", 
-        "Chronic Absenteeism": "chronic_absenteeism", 
-        "High School Dropout Rate": "dropout_rate", 
-        "# Student Enrollment": "enrollment", 
-        "Children with Disabilities": "num_children_with_disabilities", 
-        "Teacher Attendance Rate": "teacher_attendance_rate"
-    }
+        "% Novice Teachers": "perc_novice_teachers",
+        "Avg Teaching Exp": "avg_teaching_exp",
+        "Pupil Teacher Ratio - High School": "pupil_teacher_ratio",
+        "Avg Class Size - All Grades": "avg_class_size",
+        "Chronic Absenteeism": "chronic_absenteeism",
+        "High School Dropout Rate": "dropout_rate",
+        "# Student Enrollment": "enrollment",
+        "Children with Disabilities": "num_children_with_disabilities",
+        "Teacher Attendance Rate": "teacher_attendance_rate",
+    },
 }
-

@@ -162,16 +162,22 @@ def generate_school_address(df: pandas.DataFrame, school: str) -> str:
     return ", ".join(parts)
 
 
-def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filepath: pathlib.Path, year: int = 2025):
+def create_report(
+    df: pandas.DataFrame,
+    school1: str,
+    school2: str,
+    output_filepath: pathlib.Path,
+    year: int = 2025,
+):
     """Create and render a full comparison report for two schools."""
     PDF_doc = PDFdocument(school1, school2)
 
     PDF_doc.add_section(
         "Overview",
-        figure = generate_time_series(
-            df, 
-            load_variables("overview.json"), 
-            school1, 
+        figure=generate_time_series(
+            df,
+            load_variables("overview.json"),
+            school1,
             school2,
             filepath=FIGURES_DIRPATH / f"overview_{school1}_{school2}.png",
         ),
@@ -179,10 +185,10 @@ def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filep
 
     PDF_doc.add_section(
         "Academic Performance",
-        figure = generate_figure(
-            df, 
-            load_variables("academic.json"), 
-            school1, 
+        figure=generate_figure(
+            df,
+            load_variables("academic.json"),
+            school1,
             school2,
             filepath=FIGURES_DIRPATH / f"academics_{school1}_{school2}.png",
             year=year,
@@ -191,8 +197,8 @@ def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filep
 
     PDF_doc.add_section(
         "Enrollment & Demographics",
-        table = generate_table(
-            df, 
+        table=generate_table(
+            df,
             "Enrollment & Demographics",
             load_variables("enrollment.json"),
             school1,
@@ -205,8 +211,8 @@ def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filep
 
     PDF_doc.add_section(
         "Faculty & Attendance",
-        table = generate_table(
-            df, 
+        table=generate_table(
+            df,
             "Faculty & Attendance",
             load_variables("faculty.json"),
             school1,
@@ -219,8 +225,8 @@ def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filep
 
     PDF_doc.add_section(
         "Ratings",
-        table = generate_table(
-            df, 
+        table=generate_table(
+            df,
             "Ratings",
             load_variables("ratings.json"),
             school1,
@@ -233,8 +239,8 @@ def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filep
 
     PDF_doc.add_section(
         "Infrastructure & Services",
-        table = generate_table(
-            df, 
+        table=generate_table(
+            df,
             "Infrastructure & Services",
             load_variables("infrastructure.json"),
             school1,

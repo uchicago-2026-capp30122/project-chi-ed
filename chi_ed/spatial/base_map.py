@@ -59,12 +59,12 @@ def make_base_map(
         zoom_start=11,
         tiles="CartoDB positron",
         width="100%",
-        height="750px",
+        height="800px",
     )
 
     # Setting the dimensions to match iframe height
     base_map.get_root().width = "100%"
-    base_map.get_root().height = "750px"
+    base_map.get_root().height = "800px"
 
     # Creating a chloropleth map for the neighborhood tab in dash app
     if metric:
@@ -79,7 +79,7 @@ def make_base_map(
             columns=["neighborhood", metric],
             key_on="feature.properties.pri_neigh",
             fill_color="Blues",
-            fill_opacity=0.6,
+            fill_opacity=0.9,
             line_opacity=0.8,
             nan_fill_color="white",
             nan_fill_opacity=0.0,

@@ -1,13 +1,15 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import html, dcc, Input, Output, callback
-import plotly.graph_objects as go
 from .data import load_schools, get_mappable_schools, get_available_years
 from .base_map import make_base_map
-from .bar_charts import make_neighborhood_performance_charts
+from .bar_charts import (
+    make_neighborhood_performance_charts,
+    make_school_comparison_chart,
+    METRIC_LABELS,
+)
 from .aggregation import (
     get_available_metrics,
-    get_school_comparison,
     CHOROPLETH_METRICS,
 )
 
@@ -47,11 +49,11 @@ app.layout = dbc.Container(
                     style={
                         "backgroundColor": "#1a1a1a",
                         "color": "white",
-                        "padding": "15px 25px",
+                        "padding": "25px 25px",  # setting thickness of the title box
                         "display": "flex",
                         "justifyContent": "space-between",
                         "alignItems": "center",
-                        "marginLeft": "-12px",
+                        "marginLeft": "-12px",  # reducing page margins
                         "marginRight": "-12px",
                     },
                 ),
@@ -59,38 +61,34 @@ app.layout = dbc.Container(
             ),
             className="mb-3",
         ),
-
         dbc.Row(
             [
                 dbc.Col(
                     [
                         html.Label("Year"),
-                        dcc.Dropdown(
+                        dcc.Slider(
                             id="year-dropdown",
-                            options=[
-                                {"label": str(y), "value": y} for y in available_years
-                            ],
+                            min=available_years[0],
+                            max=available_years[-1],
+                            step=1,
                             value=available_years[-1],
-                            clearable=False,
+                            marks={y: str(y) for y in available_years},
                         ),
                     ],
-                    width=3,
+                    width=6,
                 ),
             ],
             className="mb-3",
         ),
-
         # https://dash-bootstrap-components.opensource.faculty.ai/docs/components/tabs/
         dbc.Tabs(
             id="tabs",
             active_tab="tab-neighborhood",
             children=[
-
                 dbc.Tab(
                     label="Neighborhood View",
                     tab_id="tab-neighborhood",
                     children=[
-
                         dbc.Row(
                             [
                                 dbc.Col(
@@ -107,13 +105,11 @@ app.layout = dbc.Container(
                             ],
                             className="my-2",
                         ),
-
                         dbc.Row(
                             [
                                 # Header of the Chicago map
                                 dbc.Col(
                                     [
-                                    
                                         html.Div(
                                             [
                                                 html.Link(
@@ -126,6 +122,7 @@ app.layout = dbc.Container(
                                                         "fontFamily": "'DM Serif Display', serif",
                                                         "fontSize": "0.95rem",
                                                         "color": "#1a1814",
+                                                        "fontWeight": "bold",
                                                     },
                                                 ),
                                                 html.Span(
@@ -150,7 +147,7 @@ app.layout = dbc.Container(
                                             id="base-map",
                                             style={
                                                 "width": "100%",
-                                                "height": "750px",
+                                                "height": "830px",
                                                 "border": "1px solid #ddd9d3",
                                                 "borderTop": "none",
                                                 "borderRadius": "0 0 4px 4px",
@@ -159,8 +156,9 @@ app.layout = dbc.Container(
                                     ],
                                     width=5,
                                 ),
-
-                                # Right column — with two stacked bar chart
+                                # Right panel — with two stacked bar chart
+                                # Top performing neighborhoods on top
+                                # Low performing neighborhoods at the bottom
                                 dbc.Col(
                                     [
                                         # Top performing neighborhoods
@@ -213,8 +211,7 @@ app.layout = dbc.Container(
                                                 "marginBottom": "12px",
                                             },
                                         ),
-
-                                        # Worst performing neighborhoods
+                                        # Least performing neighborhoods
                                         dbc.Card(
                                             [
                                                 html.Div(
@@ -270,7 +267,7 @@ app.layout = dbc.Container(
                         ),
                     ],
                 ),
-
+                # School comparison tab for dashboard
                 dbc.Tab(
                     label="School Comparison",
                     tab_id="tab-comparison",
@@ -298,24 +295,77 @@ app.layout = dbc.Container(
                             ],
                             className="my-2",
                         ),
+                        # Header on top of the neighborhood map
                         dbc.Row(
                             [
                                 dbc.Col(
-                                    html.Iframe(
-                                        id="comparison-map",
-                                        style={
-                                            "width": "100%",
-                                            "height": "700px",
-                                            "border": "none",
-                                        },
-                                    ),
+                                    [
+                                        html.Div(
+                                            [
+                                                html.Span(
+                                                    "Chicago Neighborhoods",
+                                                    style={
+                                                        "fontFamily": "'DM Serif Display', serif",
+                                                        "fontSize": "0.95rem",
+                                                        "color": "#1a1814",
+                                                        "fontWeight": "bold",
+                                                    },
+                                                ),
+                                                html.Span(
+                                                    "Hover school to view details  ·  Select schools to compare",
+                                                    style={
+                                                        "fontFamily": "'DM Mono', monospace",
+                                                        "fontSize": "0.7rem",
+                                                        "color": "#6b6560",
+                                                    },
+                                                ),
+                                            ],
+                                            style={
+                                                **TITLE_BAR_STYLE,
+                                                "border": "1px solid #ddd9d3",
+                                                "borderBottom": "1px solid #ddd9d3",
+                                                "borderRadius": "4px 4px 0 0",
+                                            },
+                                        ),
+                                        html.Iframe(
+                                            id="comparison-map",
+                                            style={
+                                                "width": "100%",
+                                                "height": "700px",
+                                                "border": "1px solid #ddd9d3",
+                                                "borderTop": "none",
+                                                "borderRadius": "0 0 4px 4px",
+                                            },
+                                        ),
+                                    ],
                                     width=5,
                                 ),
                                 dbc.Col(
-                                    dcc.Graph(
-                                        id="comparison-chart",
+                                    dbc.Card(
+                                        [
+                                            html.Div(
+                                                [
+                                                    html.Span(
+                                                        "School Comparison",
+                                                        style={
+                                                            "fontFamily": "'DM Serif Display', serif",
+                                                            "fontSize": "0.95rem",
+                                                            "color": "#1a1814",
+                                                            "fontWeight": "bold",
+                                                        },
+                                                    ),
+                                                ],
+                                                style=TITLE_BAR_STYLE,
+                                            ),
+                                            dcc.Graph(
+                                                id="comparison-chart",
+                                                style={
+                                                    "height": "700px",
+                                                    "padding": "10px",
+                                                },
+                                            ),
+                                        ],
                                         style={
-                                            "height": "700px",
                                             "border": "1px solid #ddd9d3",
                                             "borderRadius": "4px",
                                         },
@@ -330,6 +380,7 @@ app.layout = dbc.Container(
         ),
     ],
     fluid=True,
+    style={"paddingBottom": "80px"},
 )
 
 
@@ -342,7 +393,10 @@ app.layout = dbc.Container(
 def update_metric_options(year):
     schools = get_mappable_schools(school_data[school_data["year"] == year])
     available = get_available_metrics(schools, CHOROPLETH_METRICS)
-    options = [{"label": m.replace("_", " ").title(), "value": m} for m in available]
+    options = [
+        {"label": METRIC_LABELS.get(m, m.replace("_", " ").title()), "value": m}
+        for m in available
+    ]
     return options, available[0] if available else None
 
 
@@ -356,7 +410,7 @@ def update_map(year, metric):
     return make_base_map(year, metric)._repr_html_()
 
 
-# Updating bar charts for top and worst perfoming neighborhoods
+# Updating bar charts for top and worst performing neighborhoods
 @callback(
     Output("top-performing-chart", "figure"),
     Output("worst-performing-chart", "figure"),
@@ -369,19 +423,20 @@ def update_map(year, metric):
     Input("year-dropdown", "value"),
     Input("metric-dropdown", "value"),
 )
-
 def update_bar_charts(year, metric):
     schools = get_mappable_schools(school_data[school_data["year"] == year])
-    top_chart, worst_chart, _, metric_description = make_neighborhood_performance_charts(schools, metric, year)
+    top_chart, worst_chart, _, metric_description = (
+        make_neighborhood_performance_charts(schools, metric, year)
+    )
 
-    metric_label = metric.replace("_", " ").title()
+    metric_label = METRIC_LABELS.get(metric, metric.replace("_", " ").title())
     year_label = f"{year}  ·  Average across schools"
 
     return (
         top_chart,
         worst_chart,
-        f"Top Neighborhoods — {metric_label}",
-        f"Bottom Neighborhoods — {metric_label}",
+        f"Top Performing Neighborhoods — {metric_label}",
+        f"Low Performing Neighborhoods — {metric_label}",
         metric_description,
         metric_description,
         year_label,
@@ -425,21 +480,7 @@ def update_comparison_chart(year, school_a, school_b):
         return {}
 
     schools = school_data[school_data["year"] == year]
-    comparison = get_school_comparison(schools, school_a, school_b)
-
-    # https://plotly.com/python/grouped-bar-charts/ ## fix this link
-    fig = go.Figure()
-    fig.add_trace(go.Bar(name=school_a, x=comparison["metric"], y=comparison[school_a]))
-    fig.add_trace(go.Bar(name=school_b, x=comparison["metric"], y=comparison[school_b]))
-
-    fig.update_layout(
-        barmode="group",
-        title=school_a + " vs " + school_b + " (" + str(int(year)) + ")",
-        xaxis_tickangle=-45,
-        margin=dict(l=0, r=0, t=40, b=0),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02),
-    )
-    return fig
+    return make_school_comparison_chart(schools, school_a, school_b)
 
 
 if __name__ == "__main__":
