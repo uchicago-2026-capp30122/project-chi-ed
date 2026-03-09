@@ -1,4 +1,4 @@
-# Chi-Ed - An Interactive Dashboard to Compare Highschool Outcomes Across Chicago
+# Chi-Ed - An Interactive Dashboard & Report to Compare Highschool Outcomes Across Chicago
 Authors: Apollinaire Abi, Mehwish Waheed, Muhammad Faizan Imran
 
 ## Abstract
