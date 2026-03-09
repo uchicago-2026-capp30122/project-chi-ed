@@ -58,13 +58,13 @@ API_DATA_COLS = [
 def clean_api_json(filename: Path = RAW_DATA_API):
     """
     This function loads the JSON API data as a polars dataframe, performs basic
-    cleaning on it and selects only the relevant columns for our analysis and 
+    cleaning on it and selects only the relevant columns for our analysis and
     returns the cleaned dataframe.
 
     Inputs:
         filename: Path object for the raw API JSON data file
 
-    Returns: 
+    Returns:
         dataframe: returns the cleaned API data as polars dataframe
     """
 
@@ -104,7 +104,7 @@ def clean_api_json(filename: Path = RAW_DATA_API):
 
 def write_csv(input_filename: Path = RAW_DATA_API, output_filename: Path = CSV_PATH):
     """
-    This function takes in the raw API filepaths and writes the csv data on the 
+    This function takes in the raw API filepaths and writes the csv data on the
     specified output filepath.
 
     Inputs:
@@ -113,4 +113,3 @@ def write_csv(input_filename: Path = RAW_DATA_API, output_filename: Path = CSV_P
     """
     api_data = clean_api_json(input_filename)
     api_data.write_csv(output_filename)
-

@@ -24,6 +24,8 @@ dependencies = [
     "dash-bootstrap-components>=2.0.4",
     "plotly>=6.6.0",
     "pytest>=9.0.2",
+    "pandoc>=2.4",
+    "pypandoc>=1.16.2",
 ]
 
 [tool.ruff.lint]

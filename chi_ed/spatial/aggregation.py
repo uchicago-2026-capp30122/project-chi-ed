@@ -50,6 +50,7 @@ def aggregate_by_neighborhood(schools, metric, year):
     agg["year"] = year
     return agg
 
+
 def get_available_metrics(schools, metrics):
     """
     Return only metrics that have at least some data for the given schools DataFrame.
@@ -61,7 +62,11 @@ def get_available_metrics(schools, metrics):
     Returns:
         List of metrics with at least one non-null value.
     """
-    return [metric for metric in metrics if metric in schools.columns and schools[metric].notna().any()]
+    return [
+        metric
+        for metric in metrics
+        if metric in schools.columns and schools[metric].notna().any()
+    ]
 
 
 def get_school_comparison(schools, school_a, school_b):
@@ -81,10 +86,12 @@ def get_school_comparison(schools, school_a, school_b):
     a = schools[schools["school_name"] == school_a][available_metrics].iloc[0]
     b = schools[schools["school_name"] == school_b][available_metrics].iloc[0]
 
-    comparison = pd.DataFrame({
-        "metric": available_metrics,
-        school_a: a.values,
-        school_b: b.values,
-    })
+    comparison = pd.DataFrame(
+        {
+            "metric": available_metrics,
+            school_a: a.values,
+            school_b: b.values,
+        }
+    )
 
     return comparison
