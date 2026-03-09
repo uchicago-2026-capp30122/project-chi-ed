@@ -64,8 +64,11 @@ def render_report(PDF_doc: PDFdocument, output_filepath: pathlib.Path):
 
     # Convert to PDF and save
     subprocess.run(
-        ["pandoc", str(md_path), "-o", str(output_filepath), "--pdf-engine=pdflatex"],
-        check=True,
+        [
+            "pandoc", str(md_path), "-o", str(output_filepath),
+            "--pdf-engine=pdflatex"
+        ],
+        check = True,
     )
     # Remove the markdown file
     md_path.unlink()
@@ -98,7 +101,7 @@ def generate_figure(
         school2,
         nrows=nrows,
         ncols=ncols,
-        year=year,
+        year = year,
         filepath=filepath,
     )
     return str(filepath)
@@ -127,20 +130,13 @@ def generate_table(
     filepath: pathlib.Path,
     round_to: int = 0,
     display_chicago: bool = True,
+    year: int = 2025,
 ) -> str:
     """Generate a summary table, save to filepath, and return the path."""
     filepath = pathlib.Path(filepath)
-    filepath.parent.mkdir(parents=True, exist_ok=True)
-    summary_table(
-        df,
-        section,
-        variables,
-        school1,
-        school2,
-        filepath=filepath,
-        round_to=round_to,
-        display_chicago=display_chicago,
-    )
+    filepath.parent.mkdir(parents = True, exist_ok = True)
+    summary_table(df, section, variables, school1, school2, filepath=filepath,
+                  round_to = round_to, display_chicago = display_chicago, year = year)
     return str(filepath)
 
 
@@ -158,6 +154,8 @@ def generate_school_address(df: pandas.DataFrame, school: str) -> str:
         parts.append(str(city))
     if pandas.notna(zip_code):
         parts.append(f"Illinois {int(zip_code)}")
+    else:
+        parts.append("Illinois")
 
     return ", ".join(parts)
 
@@ -191,7 +189,7 @@ def create_report(
             school1,
             school2,
             filepath=FIGURES_DIRPATH / f"academics_{school1}_{school2}.png",
-            year=year,
+            year = year,
         ),
     )
 
@@ -206,6 +204,7 @@ def create_report(
             filepath=TABLES_DIRPATH / f"enrollment_{school1}_{school2}.tex",
             round_to=0,
             display_chicago=True,
+            year = year,
         ),
     )
 
@@ -220,20 +219,22 @@ def create_report(
             filepath=TABLES_DIRPATH / f"faculty_{school1}_{school2}.tex",
             round_to=1,
             display_chicago=True,
+            year = year,
         ),
     )
 
     PDF_doc.add_section(
         "Ratings",
-        table=generate_table(
-            df,
-            "Ratings",
+        table = generate_table(
+            df, 
+            "Ratings (form public survey)",
             load_variables("ratings.json"),
             school1,
             school2,
-            filepath=TABLES_DIRPATH / f"ratings_{school1}_{school2}.tex",
-            round_to=0,
+            filepath = TABLES_DIRPATH / f"ratings_{school1}_{school2}.tex",
+            round_to = 0,
             display_chicago=False,
+            year = year,
         ),
     )
 
@@ -245,14 +246,16 @@ def create_report(
             load_variables("infrastructure.json"),
             school1,
             school2,
-            filepath=TABLES_DIRPATH / f"infrastructure_{school1}_{school2}.tex",
-            round_to=0,
-            display_chicago=False,
+            filepath = TABLES_DIRPATH / f"infrastructure_{school1}_{school2}.tex",
+            round_to = 0,
+            display_chicago = False,
+            year = year,
         ),
     )
 
-    PDF_doc.school1_address = generate_school_address(df, school1)
-    PDF_doc.school2_address = generate_school_address(df, school2)
+    year_df = df.loc[df["year"] == year] if "year" in df.columns else df
+    PDF_doc.school1_address = generate_school_address(year_df, school1)
+    PDF_doc.school2_address = generate_school_address(year_df, school2)
 
     render_report(PDF_doc, output_filepath)
 

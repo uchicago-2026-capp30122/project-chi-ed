@@ -15,14 +15,10 @@ def compute_avgs(df: pandas.DataFrame, variables: typing.List[str]):
 
 def format_statistic(value: float, variable: str, round_to: int = 2):
     """Format percentages and rates as actual percentages"""
-    rounded = (
-        round(value * 100, round_to)
-        if variable in variables_in_perc
-        else round(value, round_to)
-    )
+    rounded = round(value, round_to)
     if round_to == 0:
         rounded = int(rounded)
-    return f"{rounded}%" if variable in variables_in_perc else f"{rounded}"
+    return str(rounded)
 
 
 def summary_table(
@@ -34,9 +30,10 @@ def summary_table(
     filepath: pathlib.Path,
     round_to: int = 0,
     display_chicago: bool = True,
+    year: int = 2025,
 ):
     """Create a summary table comparing both schools with a Chicago average column."""
-    data = df.copy()
+    data = df.loc[df["year"] == year].copy() if "year" in df.columns else df.copy()
     var_cols = [v for v in variables.keys() if v in data.columns]
 
     numeric_vars = []
@@ -48,11 +45,14 @@ def summary_table(
 
     chicago_avgs = compute_avgs(data, numeric_vars)
 
+    school1_display = " ".join(school1.split()[:4]) if len(school1) > 35 else school1
+    school2_display = " ".join(school2.split()[:4]) if len(school2) > 35 else school2
+
     rows = []
     for var, display_name in variables.items():
         if var not in data.columns:
             rows.append(
-                {"Variable": display_name, school1: "", school2: "", "Chicago Avg.": ""}
+                {"Metric": display_name, school1_display: "", school2_display: "", "Chicago Avg.": ""}
             )
             continue
 
@@ -64,12 +64,12 @@ def summary_table(
         if is_numeric:
             stat1_str = (
                 format_statistic(val_school1.iloc[0], var, round_to)
-                if len(val_school1) and val_school1.notna().any()
+                if len(val_school1) and pandas.notna(val_school1.iloc[0])
                 else ""
             )
             stat2_str = (
                 format_statistic(val_school2.iloc[0], var, round_to)
-                if len(val_school2) and val_school2.notna().any()
+                if len(val_school2) and pandas.notna(val_school2.iloc[0])
                 else ""
             )
             if display_chicago:
@@ -81,18 +81,22 @@ def summary_table(
         else:
             stat1_str = (
                 str(val_school1.iloc[0])
-                if len(val_school1) and val_school1.notna().any()
+                if len(val_school1) and pandas.notna(val_school1.iloc[0])
                 else ""
             )
             stat2_str = (
                 str(val_school2.iloc[0])
-                if len(val_school2) and val_school2.notna().any()
+                if len(val_school2) and pandas.notna(val_school2.iloc[0])
                 else ""
             )
             if display_chicago:
                 avg_str = ""
-
-        stats = {"Variable": display_name, school1: stat1_str, school2: stat2_str}
+        
+        stats = {
+            "Metric": display_name, 
+            school1_display: stat1_str if stat1_str else "", 
+            school2_display: stat2_str if stat2_str else ""
+        }
 
         # Add the Chicago average specified
         if display_chicago:
@@ -100,9 +104,15 @@ def summary_table(
 
         rows.append(stats)
 
+    # # NOTE: I thought about deleting columns where all is missing
+    # for name in [school1_display, school2_display]:
+    #     if all(row[name] == "" for row in rows):
+    #         for row in rows:
+    #             del row[name]
+
     table = (
         GT(pandas.DataFrame(rows))
-        .tab_header(title=f"{section} Summary Statistics")
+        .tab_header(title = f"{section}")
         .tab_source_note("Empty cells indicates missing statistics.")
     )
 
@@ -133,5 +143,3 @@ def summary_table(
     return table
 
 
-# I might not need this
-variables_in_perc = []

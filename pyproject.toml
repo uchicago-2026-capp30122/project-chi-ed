@@ -26,7 +26,6 @@ dependencies = [
     "pytest>=9.0.2",
     "pandoc>=2.4",
     "pypandoc>=1.16.2",
-    "pylatex>=1.4.2"
 ]
 
 [tool.ruff.lint]

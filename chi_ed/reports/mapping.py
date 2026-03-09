@@ -72,7 +72,7 @@ def plot_bar_graph(
         # Assign highlight color
         color_scale = alt.Scale(
             domain=[school1_label, school2_label, other_label],
-            range=["blue", "red", "lightgray"],
+            range=["#2B6CB0", "#C44E3D", "lightgray"],
         )
 
         chart = (
@@ -120,7 +120,7 @@ def plot_bar_graph(
 
     subtitle = subtitles if subtitles else alt.Undefined
 
-    grid = grid.properties(title=alt.Title(text="", subtitle=subtitle))
+    grid = grid.properties(title= alt.Title(text = "", subtitle=subtitle))
 
     if filepath is not None:
         grid.save(filepath, scale_factor=2)
@@ -142,7 +142,7 @@ def plot_time_series(
     """Plot a 2x2 grid of line plots showing school1 and school2 trends from 2019 to 2025."""
     dataset = df.copy()
     dataset = dataset[dataset["school_name"].isin([school1, school2])]
-    dataset["year"] = pandas.to_numeric(dataset["year"], errors="coerce")
+    dataset["year"] = pandas.to_numeric(dataset["year"], errors = "coerce")
     dataset = dataset.dropna(subset=["year"])
     dataset = dataset.sort_values("year")
 
@@ -150,7 +150,7 @@ def plot_time_series(
     school1_missing_vars = []
     school2_missing_vars = []
 
-    color_scale = alt.Scale(domain=[school1, school2], range=["blue", "red"])
+    color_scale = alt.Scale(domain=[school1, school2], range=["#2B6CB0", "#C44E3D"])
 
     for variable, varname in variables.items():
         data = dataset.copy()

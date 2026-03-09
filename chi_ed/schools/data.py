@@ -66,7 +66,7 @@ class Schools:
         I will just take the school name from the first occurrence of each RCDTS"""
         # Create a mapping of RCDTS to school name, a dict
         rcdts_school_mapping = (
-            self.data.drop_duplicates(subset="RCDTS", keep="first")
+            self.data.drop_duplicates(subset = "RCDTS", keep = "first")
             .set_index("RCDTS")["school_name"]
             .to_dict()
         )
@@ -87,6 +87,17 @@ class Schools:
         for column in columns:
             self.data[column] = pandas.to_numeric(self.data[column], errors="coerce")
             self.data[column] = self.data[column].map({1.0: "Yes", 0.0: "No"})
+
+    def balance_panel(self, years: list[int]):
+        """Ensure every school_name has a row for every year in years."""
+        schools = self.data["school_name"].unique()
+        full_panel = pandas.MultiIndex.from_product(
+            [schools, years],
+            names = ["school_name", "year"],
+        ).to_frame(index = False)
+        self.data = full_panel.merge(self.data, on = ["school_name", "year"], how = "left")
+        self.data = self.data.sort_values(["school_name", "year"]).reset_index(drop = True)
+        self.columns = self.data.columns
 
     def input_missing_values(self, columns: list[str], context: list[str], n: int = 5):
         """Impute missing values for columns using KNN.
