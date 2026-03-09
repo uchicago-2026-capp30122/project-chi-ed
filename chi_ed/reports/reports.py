@@ -91,9 +91,9 @@ def generate_table(df: pandas.DataFrame, section: str, variables: dict, school1:
                    filepath: pathlib.Path, round_to: int = 0, display_chicago: bool = True) -> str:
     """Generate a summary table, save to filepath, and return the path."""
     filepath = pathlib.Path(filepath)
-    filepath.parent.mkdir(parents=True, exist_ok=True)
+    filepath.parent.mkdir(parents = True, exist_ok = True)
     summary_table(df, section, variables, school1, school2, filepath=filepath,
-                  round_to=round_to, display_chicago=display_chicago)
+                  round_to = round_to, display_chicago = display_chicago)
     return str(filepath)
 
 

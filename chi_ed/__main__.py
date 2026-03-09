@@ -1,4 +1,3 @@
-# Import all other modules in this file and run everything here
 import sys
 import webbrowser
 import pandas
@@ -6,15 +5,35 @@ import pathlib
 from chi_ed.spatial.dashboard import app
 from chi_ed.reports.reports import create_report, DATA_DIRPATH
 from chi_ed.reports.pdfs_utils import select_school
+from chi_ed.schools.clean import clean_merged_data
+from chi_ed.merging.merge_api_rc import write_merged_data
+from chi_ed.merging.spatial_merge import spatial_merge
 
 REPORT_DIRPATH = pathlib.Path(__file__).parent / "REPORT.pdf"
+
+def clean(version):
+    if version == "raw":
+        clean_merged_data(version = "raw") 
+        write_merged_data()
+        clean_merged_data(version = "intermediate")
+        spatial_merge() 
+        data = clean_merged_data(version = "clean")
+
+    elif version == "clean":
+        data = clean_merged_data(version = "clean")
+    
+    print(f"Data cleaned successfully and saved in {DATA_DIRPATH}. \nPreview:\n")
+    print(data.data.head(10))
+
+    return data.data
+
 
 if __name__ == "__main__":
     # First let's make sure the data exists
     if not DATA_DIRPATH.exists():
         raise FileNotFoundError(f"Data file not found at {DATA_DIRPATH}. \nThis is on us not you, sorry! Try again later.")
 
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         raise ValueError("Usage: python -m chi_ed `dashboard | report | clean`")
 
     task = str(sys.argv[1])
@@ -38,4 +57,11 @@ if __name__ == "__main__":
 
         # Open the report in the default browser
         webbrowser.open(REPORT_DIRPATH.as_uri())
+
+    elif task == "clean":
+        subtask = str(sys.argv[2])
+        clean(version = subtask)
+
+    else:
+        raise ValueError("Usage: python -m chi_ed `dashboard | report | clean`")
 
