@@ -1,6 +1,7 @@
 """Data classes"""
 
 import pandas
+from sklearn.impute import KNNImputer
 
 
 class Schools:
@@ -13,7 +14,7 @@ class Schools:
         self.columns = schools_data.columns
 
         # Automatically correct RCDTS column
-        if "RCDTS" not in self.columns:
+        if "RCDTS" in self.columns:
             self.data["RCDTS"] = str(self.data["RCDTS"])
 
     def select_columns(self, columns: list, contains: bool = True):
@@ -87,40 +88,17 @@ class Schools:
             self.data[column] = pandas.to_numeric(self.data[column], errors="coerce")
             self.data[column] = self.data[column].map({1.0: "Yes", 0.0: "No"})
 
-    def assign_neighborhoods(self, mapping: dict):
-        """Assign neighborhoods to schools based on the mapping"""
-        self.data["neighborhood"] = self.data["school_name"].map(mapping)
+    def input_missing_values(self, columns: list[str], context: list[str], n: int = 5):
+        """Impute missing values for columns using KNN.
+        Context columns inform neighbor distances but are not imputed."""
+        all_cols = context + [column for column in columns if column not in context]
+        df = self.data[all_cols].apply(pandas.to_numeric, errors = "coerce")
+        imputed = KNNImputer(n_neighbors = n).fit_transform(df)
+        self.data[columns] = pandas.DataFrame(imputed, columns = all_cols, index = self.data.index)[columns]
+
 
     def save_csv(self, filepath: str):
         """Save the data to a csv file"""
         self.data.to_csv(filepath, index=False)
         print(f"Data successfully saved to {filepath}")
 
-
-COLUMNS_2025_REPORTS_CARDS = {
-    "identifiers": {
-        "RCDTS": "RCDTS",
-        "School Name": "school_name",
-        "District": "district",
-        "City": "city",
-        "County": "county",
-        "School Type": "school_type",
-    },
-    "performance": {
-        "% Math Proficiency": "math_proficiency",
-        "% ELA Proficiency": "ELA_proficiency",
-        "% Science Proficiency": "science_proficiency",
-        "High School 4-Year Graduation Rate": "grad_rate",
-    },
-    "general": {
-        "% Novice Teachers": "perc_novice_teachers",
-        "Avg Teaching Exp": "avg_teaching_exp",
-        "Pupil Teacher Ratio - High School": "pupil_teacher_ratio",
-        "Avg Class Size - All Grades": "avg_class_size",
-        "Chronic Absenteeism": "chronic_absenteeism",
-        "High School Dropout Rate": "dropout_rate",
-        "# Student Enrollment": "enrollment",
-        "Children with Disabilities": "num_children_with_disabilities",
-        "Teacher Attendance Rate": "teacher_attendance_rate",
-    },
-}
