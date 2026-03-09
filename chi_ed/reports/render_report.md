@@ -1,6 +1,6 @@
 ---
 title: "School Comparison Report"
-subtitle: "{{school1}} vs. {{school2}}"
+subtitle: "{{school1}} | {{school2}}"
 author: "Chi-Ed Star Team"
 date: \today
 geometry: "left = 0.5in, right = 0.5in, top = 1in, bottom = 1in"
@@ -14,11 +14,10 @@ header-includes:
 numbersections: true
 ---
 
-In this report, we compare **{{school1}}** and **{{school2}}** across key performance and operational metrics. 
-The data is collected by the Chicago Public Schools (CPS) authority and theIllinois State Board of Education. 
-For some variables, we have a time series analysis from 2019 to 2025. 
+This report is a brief comparison of **{{school1}}** and **{{school2}}** across key performance and operational metrics. 
+The data used here is collected by the Chicago Public Schools (CPS) authority and theIllinois State Board of Education.
 We mostly have data for the most recent academic year 2024/2025, but for a few select number of variables, 
-we will show you the schools' performance from 201/2019 to 2024/2025 academic years.
+we will show you the schools' performance from the 2018/2019 to the 2024/2025 academic years.
 
 
 \vspace{0.5 cm}
@@ -30,9 +29,8 @@ we will show you the schools' performance from 201/2019 to 2024/2025 academic ye
 
 \newpage
 
-# Academic Performances
-Now we zoom in on the most recent academic year, and also show how these two schools perform relative to other 
-high schools in Chicago. 
+# A Closer Look at the Most Recent Academic Year: 2024/2025
+We zoom in on the 2024/2024 academic year and also show how these two schools perform relative to other high schools in Chicago. 
 
 {{figure:Academic Performance}}
 
@@ -44,8 +42,9 @@ This section presents student counts, with a more details in-look on racial dist
 
 
 # Faculty Experience and Students' Discipline
-Student Chronic Absenteeism is the only metric in this section that is student-centered. 
-We instead look at the experience of teachers and their performance (proxied here by their absenteeism). 
+It is important to understand the quality and experience of the academic faculty, so we compare both institutions
+teaching experience and discipline of their instructors (proxied here by their absenteeism). 
+We also include the overall discipline of student while we discuss this topic. 
 
 {{table:Faculty & Attendance}}
 
@@ -56,7 +55,6 @@ We instead look at the experience of teachers and their performance (proxied her
 
 
 # Safety, culture, and overall school ratings
-We also have ratings on the safety, culture, and an overall rating of each school. These ratings were performed by the public. 
 
 {{table:Ratings}}
 
