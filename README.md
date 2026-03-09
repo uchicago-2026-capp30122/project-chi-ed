@@ -42,11 +42,14 @@ brew add pandoc
 ```
 
 ## Report Stats
-<img src=docs/report_1.png width="400" height="400">
+<p align="center">
+  <img src="docs/report_1.png" width="45%">
+  <img src="docs/report_2.png" width="45%">
+</p>
 
-![Alt text](docs/report_1.png)
-![Alt text](docs/report_2.png)
-![Alt text](docs/report_3.png)
+<p align="center">
+<img src="docs/report_3.png" width="400" height="400">
+</p>  
 
 ## Data Sources
 Following are the data sources that we used for the project:
