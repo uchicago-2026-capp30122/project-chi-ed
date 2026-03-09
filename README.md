@@ -43,7 +43,7 @@ brew add pandoc
 
 ## Report Stats
 <p align="center">
-  <img src="docs/report_1.png" width="49%">
+  <img src="docs/report_1.png" width="51%">
   <img src="docs/report_2.png" width="45%">
 </p>
 
