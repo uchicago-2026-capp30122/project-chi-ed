@@ -35,6 +35,22 @@ uv run python -m chi_ed dashboard
 uv run python -m chi_ed report
 ```
 
+*Dependencies*: For report generation please ensure that you have pandocs installed on your machine. To install pandoc please run:
+
+```
+brew add pandoc
+```
+
+## Report Stats
+<p align="center">
+  <img src="docs/report_1.png" width="50%">
+  <img src="docs/report_2.png" width="45%">
+</p>
+
+<p align="center">
+<img src="docs/report_3.png" width="500" height="500">
+</p>  
+
 ## Data Sources
 Following are the data sources that we used for the project:
 
