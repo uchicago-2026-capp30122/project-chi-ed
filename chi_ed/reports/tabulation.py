@@ -104,12 +104,6 @@ def summary_table(
 
         rows.append(stats)
 
-    # # NOTE: I thought about deleting columns where all is missing
-    # for name in [school1_display, school2_display]:
-    #     if all(row[name] == "" for row in rows):
-    #         for row in rows:
-    #             del row[name]
-
     table = (
         GT(pandas.DataFrame(rows))
         .tab_header(title = f"{section}")
@@ -119,13 +113,13 @@ def summary_table(
     # Save to tex file, but just in case I forget to pass the correct path the  default to png
     filepath = pathlib.Path(filepath)
     if filepath.suffix == ".tex":
-        latex_str = table.as_latex()
-        latex_str = latex_str.replace("\\begin{table}[!t]", "\\begin{table}[H]")
-        latex_str = latex_str.replace(
+        latex_table = table.as_latex()
+        latex_table = latex_table.replace("\\begin{table}[!t]", "\\begin{table}[H]")
+        latex_table = latex_table.replace(
             "\\begin{table}[H]",
             "\\begin{table}[H]\n\\renewcommand{\\arraystretch}{1.5}",
         )
-        latex_str = latex_str.replace(
+        latex_table = latex_table.replace(
             "\\fontsize{12.0pt}{14.4pt}", "\\fontsize{10pt}{11pt}"
         )
         for old, new in [
@@ -134,9 +128,9 @@ def summary_table(
             ("llll}", "lccc}"),
             ("lll}", "lcc}"),
         ]:
-            latex_str = latex_str.replace(old, new)
+            latex_table = latex_table.replace(old, new)
         with open(filepath, "w") as f:
-            f.write(latex_str)
+            f.write(latex_table)
     else:
         table.save(str(filepath))
 
