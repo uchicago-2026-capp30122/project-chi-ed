@@ -45,4 +45,24 @@ I set up the ```cps_api``` module and the data merging modules in ```merging```.
 - The main merging sequences in ```merging``` folder that perform 2 separate merges, ```merge_rc_dir.py``` merges directory data with report card data to get zip codes and the ```merge_api_rc.py``` performs blocking and record links the schools names because there was not a unique identifier that we could match on.
 - Set up tests to check if the raw API data is being downloaded and stored correctly and another test that checks the cleaning sequence that we perform on the API json data.
 
+### Apollinaire Abi:
+
+- ⁠ Cache storage: The automated generation of plots and tables for the report will save cache files locally without auto-delection. In the future we want to auto-delete these files or use them as cache to speed up the generation of the reports for pairs of  schools that were previously compared. For now, delete these cache files to save your memory.  ⁠
+
 ## Final Thoughts
+The idea for the project came to us during last year's Scopeathon where two of us worked with George Washington Carver Center for Advancement of Science Education, where we worked on highlighting disparities in educational outcomes in the South Side of Chicago compared to other neighborhoods. What stood out during that experience was the need to have some clear visual that one can refer to, to get a sense of just how bad some of the disparities are. We aimed to deliver on that need through the dashboard.
+
+Once we looked at the API and report card data we realized that there was a lot of data that could allow us to automate PDF generation comparing any two schools in Chicago, to inform those looking to start high schools which school in a specific neighborhood aligns best with their interests/goals. To this end we built a CLI to automate report generation. One issue we faced when doing historical analysis was that some of the schools had missing data for some years, and there were a lot of NAs that lead to some metrics being empty.;
+
+There were some shortcomings that we also want to mention and things we would have liked to do differently if we had more time:
+- Automate report generation from within the dashboard, becasue CLI is not something most people are fimiliar with and since the tool is meant for Middle School students and parents looking to compare schools it would make most sense to have it embedded withing the dashboard, allowing easy web access.
+
+
+
+
+
+
+
+
+
+
