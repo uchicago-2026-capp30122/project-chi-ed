@@ -1,25 +1,21 @@
-"""Data classes"""
-
 import pandas
 from sklearn.impute import KNNImputer
 
 
 class Schools:
-    """This is a temp design of schools class to facilitate operations on schools data
-    I would rather pass in json files but for now I am storing pandas.DataFrames.
+    """This schools class facilitates operations on schools data (report cards particulary, 
+    but some methods are general to pandas or polars dataframes).
     """
-
     def __init__(self, schools_data: pandas.DataFrame):
         self.data = schools_data
         self.columns = schools_data.columns
 
-        # Automatically correct RCDTS column
+        # Automatically convert RCDTS column to string
         if "RCDTS" in self.columns:
             self.data["RCDTS"] = str(self.data["RCDTS"])
 
     def select_columns(self, columns: list, contains: bool = True):
-        """Select columns of interest.
-        Strict column mapping if necessary"""
+        """Select columns of interest. Strict column mapping if necessary"""
         if contains:
             assert all(col in self.columns for col in columns), (
                 f"All columns must be in the dataset: {columns}"
@@ -35,19 +31,17 @@ class Schools:
         self.columns = self.data.columns
 
     def filter(self, column: str, values: list):
-        """Filter to specific values in a column.
-        Example: filter to specific schools"""
+        """Filter to specific values in a column"""
         assert column in self.columns, f"Column not found in the data: {column}"
         assert all(value in self.data[column].values for value in values), (
             f"Some values are not present in the data: {values}. Column: {column}."
         )
-
         self.data = self.data[self.data[column].isin(values)]
 
     def rename_columns(self, mapping: dict):
-        """Rename columns
-        NOTE: This method is not an unecessary duplicate of pandas.DataFrame.rename() because it allows columns in mapping that are not in the data.
-        This flexibility helps us use a unique columns dict across multiple datasets."""
+        """Rename columns.
+        NOTE: This method is not a duplicate of pandas.DataFrame.rename() because it allows columns in mapping 
+        that are not in the data. This flexibility helps us use a unique columns dict across multiple datasets."""
         cols_mapping = {
             col: mapping[col] for col in mapping.keys() if col in self.columns
         }
@@ -56,14 +50,8 @@ class Schools:
         self.data.rename(columns=cols_mapping, inplace=True)
         self.columns = self.data.columns
 
-    def set_year_attribute(self, year: int):
-        """Set the year attribute and column"""
-        self.data["year"] = year
-        self.year = year
-
     def correct_school_names(self):
-        """Use RCDTS to correct school names.
-        I will just take the school name from the first occurrence of each RCDTS"""
+        """Use RCDTS to correct school names, taking the school name from the first occurrence of each RCDTS"""
         # Create a mapping of RCDTS to school name, a dict
         rcdts_school_mapping = (
             self.data.drop_duplicates(subset = "RCDTS", keep = "first")

@@ -1,5 +1,4 @@
 import subprocess
-import re
 import math
 import json
 import pathlib
@@ -10,21 +9,15 @@ from .tabulation import summary_table
 
 VARIABLES_DIRPATH = pathlib.Path(__file__).parent.resolve() / "variables"
 TEMPLATE_PATH = pathlib.Path(__file__).parent.resolve() / "render_report.md"
-DATA_DIRPATH = (
-    pathlib.Path(__file__).parent.parent.parent.resolve()
-    / "data"
-    / "clean"
-    / "clean_panel.csv"
-)
+DATA_DIRPATH = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "clean" / "clean_panel.csv"
 REPORTS_DIRPATH = pathlib.Path(__file__).parent.parent.parent.resolve() / "reports"
 FIGURES_DIRPATH = REPORTS_DIRPATH / "figures"
 TABLES_DIRPATH = REPORTS_DIRPATH / "tables"
 
 
 def render_report(PDF_doc: PDFdocument, output_filepath: pathlib.Path):
-    """Read render_report.md, replace placeholders with pre-generated image
-    paths from the PDFdocument, and convert to PDF via pandoc."""
-
+    """Read render_report.md, replace placeholders with pre-generated image paths from the PDFdocument, 
+    and convert to PDF via pandoc."""
     with open(TEMPLATE_PATH, "r") as f:
         template = f.read()
 
@@ -80,68 +73,35 @@ def load_variables(filename: str) -> dict:
         return json.load(f)
 
 
-def generate_figure(
-    df: pandas.DataFrame,
-    variables: dict,
-    school1: str,
-    school2: str,
-    filepath: pathlib.Path,
-    year: int = 2025,
-) -> str:
+def generate_figure(df: pandas.DataFrame, variables: dict, school1: str, school2: str, filepath: pathlib.Path, year: int = 2025):
     """Generate a bar plot grid, save to filepath, and return the path."""
     filepath = pathlib.Path(filepath)
     filepath.parent.mkdir(parents=True, exist_ok=True)
     n = len(variables)
     ncols = min(n, 2)
     nrows = math.ceil(n / ncols)
-    plot_bar_graph(
-        df,
-        variables,
-        school1,
-        school2,
-        nrows=nrows,
-        ncols=ncols,
-        year = year,
-        filepath=filepath,
-    )
+    plot_bar_graph(df, variables, school1, school2, nrows, ncols, year, filepath)
     return str(filepath)
 
 
-def generate_time_series(
-    df: pandas.DataFrame,
-    variables: dict,
-    school1: str,
-    school2: str,
-    filepath: pathlib.Path,
-) -> str:
+def generate_time_series(df: pandas.DataFrame, variables: dict, school1: str, school2: str, filepath: pathlib.Path):
     """Generate a time series plot, save to filepath, and return the path."""
     filepath = pathlib.Path(filepath)
-    filepath.parent.mkdir(parents=True, exist_ok=True)
-    plot_time_series(df, variables, school1, school2, filepath=filepath)
+    filepath.parent.mkdir(parents = True, exist_ok = True)
+    plot_time_series(df, variables, school1, school2, filepath = filepath)
     return str(filepath)
 
 
-def generate_table(
-    df: pandas.DataFrame,
-    section: str,
-    variables: dict,
-    school1: str,
-    school2: str,
-    filepath: pathlib.Path,
-    round_to: int = 0,
-    display_chicago: bool = True,
-    year: int = 2025,
-) -> str:
+def generate_table(df: pandas.DataFrame, section: str, variables: dict, school1: str, school2: str, filepath: pathlib.Path, round_to: int = 0, display_chicago: bool = True, year: int = 2025):
     """Generate a summary table, save to filepath, and return the path."""
     filepath = pathlib.Path(filepath)
     filepath.parent.mkdir(parents = True, exist_ok = True)
-    summary_table(df, section, variables, school1, school2, filepath=filepath,
-                  round_to = round_to, display_chicago = display_chicago, year = year)
+    summary_table(df, section, variables, school1, school2, filepath, round_to, display_chicago, year)
     return str(filepath)
 
 
-def generate_school_address(df: pandas.DataFrame, school: str) -> str:
-    """Generate a US-style address for a school."""
+def generate_school_address(df: pandas.DataFrame, school: str):
+    """Generate a US-style address for the school."""
     row = df.loc[df["school_name"] == school].iloc[0]
     street = row.get("address_street", "")
     city = row.get("city", "")
@@ -160,35 +120,31 @@ def generate_school_address(df: pandas.DataFrame, school: str) -> str:
     return ", ".join(parts)
 
 
-def create_report(
-    df: pandas.DataFrame,
-    school1: str,
-    school2: str,
-    output_filepath: pathlib.Path,
-    year: int = 2025,
-):
-    """Create and render a full comparison report for two schools."""
+def create_report(df: pandas.DataFrame, school1: str, school2: str, output_filepath: pathlib.Path, year: int = 2025):
+    """Create and render a full comparison report for two schools. Add each section."""
+    # NOTE: This functions creates plots and tables which are not automatically cached or deleted after the report is rendered
+    # In the future, we would take some time to address this inefficiency as it will also speed up the report generation process
     PDF_doc = PDFdocument(school1, school2)
 
     PDF_doc.add_section(
         "Overview",
-        figure=generate_time_series(
+        figure = generate_time_series(
             df,
             load_variables("overview.json"),
             school1,
             school2,
-            filepath=FIGURES_DIRPATH / f"overview_{school1}_{school2}.png",
+            filepath = FIGURES_DIRPATH / f"overview_{school1}_{school2}.png",
         ),
     )
 
     PDF_doc.add_section(
         "Academic Performance",
-        figure=generate_figure(
+        figure = generate_figure(
             df,
             load_variables("academic.json"),
             school1,
             school2,
-            filepath=FIGURES_DIRPATH / f"academics_{school1}_{school2}.png",
+            filepath = FIGURES_DIRPATH / f"academics_{school1}_{school2}.png",
             year = year,
         ),
     )
@@ -202,8 +158,8 @@ def create_report(
             school1,
             school2,
             filepath=TABLES_DIRPATH / f"enrollment_{school1}_{school2}.tex",
-            round_to=0,
-            display_chicago=True,
+            round_to = 0,
+            display_chicago = True,
             year = year,
         ),
     )
@@ -240,7 +196,7 @@ def create_report(
 
     PDF_doc.add_section(
         "Infrastructure & Services",
-        table=generate_table(
+        table = generate_table(
             df,
             "Infrastructure & Services",
             load_variables("infrastructure.json"),
@@ -265,7 +221,7 @@ if __name__ == "__main__":
     panel_df = pandas.read_csv(DATA_DIRPATH)
 
     with open("schools.json", "w") as f:
-        json.dump(panel_df["school_name"].unique().tolist(), f, indent=1)
+        json.dump(panel_df["school_name"].unique().tolist(), f, indent = 1)
 
     school1 = "Amundsen High School"
     school2 = "Back of The Yards IB HS"
@@ -273,9 +229,9 @@ if __name__ == "__main__":
     output_filepath = REPORTS_DIRPATH / f"{school1}_{school2}.pdf"
 
     create_report(
-        df=panel_df,
-        school1=school1,
-        school2=school2,
-        output_filepath=output_filepath,
-        year=2025,
+        df = panel_df,
+        school1 = school1,
+        school2 = school2,
+        output_filepath = output_filepath,
+        year = 2025
     )
