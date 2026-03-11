@@ -9,12 +9,7 @@ With the dashboard and the report card we aim to facilitate both neighborhood le
 
 ## Brief Video Describing the Project:
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/MkAEJoTCRMA"
-title="YouTube video player"
-frameborder="0"
-allowfullscreen>
-</iframe>
+[![Watch the video](https://img.youtube.com/vi/MkAEJoTCRMA/0.jpg)](https://youtu.be/MkAEJoTCRMA)
 
 ## Running the Code
 
