@@ -6,6 +6,7 @@ pyproject.toml
 uv.lock
 reports/figures/
 reports/tables/
+chi_ed/REPORT.pdf
 __pycache__/
 *.pyc
 *.py[cod]
