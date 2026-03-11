@@ -19,7 +19,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 available_years = get_available_years()
 school_data = load_schools()
 
-# Shared title bar style matching mockup CSS variables
+# Style of Shared title bar across both tabs
 TITLE_BAR_STYLE = {
     "backgroundColor": "#f5f2ee",
     "padding": "10px 15px",
@@ -459,7 +459,7 @@ def update_school_dropdowns(year):
     return options, options, options[0]["value"], options[1]["value"]
 
 
-# Update comparison map when year changes — no metric, shows base light blue fill
+# Updating comparison map when year changes
 @callback(
     Output("comparison-map", "srcDoc"),
     Input("year-dropdown", "value"),
@@ -468,7 +468,7 @@ def update_comparison_map(year):
     return make_base_map(year)._repr_html_()
 
 
-# Update comparison chart when schools or year changes
+# Updating comparison chart when schools or year changes
 @callback(
     Output("comparison-chart", "figure"),
     Input("year-dropdown", "value"),
