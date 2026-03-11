@@ -7,6 +7,10 @@ Understanding high school outcomes across a major city like Chicago is important
 
 With the dashboard and the report card we aim to facilitate both neighborhood level policy analysis which is aimed at policymakers to visualize and tabulate the disparities in educational outcomes across different neighborhoods and schols. The report card on the other hand provides a tool aimed at individual level decision making, through providing meaningful high school comparisons allowing users to make informed decisions about which high school would align best with their goals.
 
+## Brief Video Describing the Project:
+
+https://youtu.be/MkAEJoTCRMA?si=W4WczLo1qXmBJRgT
+
 ## Running the Code
 
 Please follow the following steps and command line instructions to execute and run the project:
