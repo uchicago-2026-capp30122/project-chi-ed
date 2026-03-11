@@ -45,9 +45,14 @@ I set up the ```cps_api``` module and the data merging modules in ```merging```.
 - The main merging sequences in ```merging``` folder that perform 2 separate merges, ```merge_rc_dir.py``` merges directory data with report card data to get zip codes and the ```merge_api_rc.py``` performs blocking and record links the schools names because there was not a unique identifier that we could match on.
 - Set up tests to check if the raw API data is being downloaded and stored correctly and another test that checks the cleaning sequence that we perform on the API json data.
 
-### Apollinaire Abi:
+### Essosolim Apollinaire Abi:
 
-- ⁠ Cache storage: The automated generation of plots and tables for the report will save cache files locally without auto-delection. In the future we want to auto-delete these files or use them as cache to speed up the generation of the reports for pairs of  schools that were previously compared. For now, delete these cache files to save your memory.  ⁠
+I cleaned the raw report cards from ISBE and automated the report generation (in pdf) to comparate two specific schools. The scripts in `chi_ed/schools/` and `chi_ed/reports`
+are authored by me to either clean the data or create plots and tables which are used in the report. The test file `tests/test_reports.py` tests some functionalities in the
+code folders/modules. 
+- ⁠ Note on Cache storage: The automated generation of plots and tables for the report will save cache files locally without auto-delection. In the future we want to auto-delete these files or use them as cache to speed up the generation of the reports for pairs of  schools that were previously compared. For now, delete these cache files to save your memory. 
+- Data transformation choices: To make our visualizations and tables more "beautiful" and consistent, I filled in missing values using the k nearest neighboors using KNNImputer
+from sklearn. I also balanced the panel across 2019 to 2025 which means even inputed data for schools missing from those years. Again this is purely a technical challenge and does not reflect true intended analysis in the real-world scenario.  
 
 ## Final Thoughts
 The idea for the project came to us during last year's Scopeathon where two of us worked with George Washington Carver Center for Advancement of Science Education, where we worked on highlighting disparities in educational outcomes in the South Side of Chicago compared to other neighborhoods. What stood out during that experience was the need to have some clear visual that one can refer to, to get a sense of just how bad some of the disparities are. We aimed to deliver on that need through the dashboard.
