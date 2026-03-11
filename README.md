@@ -9,7 +9,7 @@ With the dashboard and the report card we aim to facilitate both neighborhood le
 
 ## Brief Video Describing the Project:
 
-[![chi_ed][https://youtu.be/MkAEJoTCRMA?si=ryxqQ7Pc3gnYXUNR](https://youtu.be/MkAEJoTCRMA?si=ryxqQ7Pc3gnYXUNR)]
+[![Watch the video](https://img.youtube.com/vi/MkAEJoTCRMA/0.jpg)](https://youtu.be/MkAEJoTCRMA)
 
 ## Running the Code
 
