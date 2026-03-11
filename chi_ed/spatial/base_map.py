@@ -11,6 +11,7 @@ from .aggregation import aggregate_by_neighborhood
 neighborhoods = load_neighborhoods()
 school_data = load_schools()
 
+
 def make_base_map(
     year, metric=None, school_data=school_data, neighborhoods=neighborhoods
 ):

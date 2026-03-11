@@ -6,10 +6,12 @@ from chi_ed.spatial.aggregation import aggregate_by_neighborhood
 @pytest.fixture
 def sample_schools():
     """Three schools in Lincoln Park — one has missing ELA data."""
-    return pd.DataFrame({
-        "neighborhood": ["Lincoln Park", "Lincoln Park", "Lincoln Park"],
-        "ELA_proficiency": [80.0, 60.0, None],
-    })
+    return pd.DataFrame(
+        {
+            "neighborhood": ["Lincoln Park", "Lincoln Park", "Lincoln Park"],
+            "ELA_proficiency": [80.0, 60.0, None],
+        }
+    )
 
 
 def test_average_ignores_missing_values(sample_schools):

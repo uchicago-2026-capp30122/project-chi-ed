@@ -6,7 +6,7 @@ CHOROPLETH_METRICS = [
     "graduation_rate",
     "college_enrollment_rate",
     "attendance_rate_current_year",
-    "sat_school_average"
+    "sat_school_average",
 ]
 
 COMPARISON_METRICS = CHOROPLETH_METRICS + [
@@ -20,13 +20,13 @@ COMPARISON_METRICS = CHOROPLETH_METRICS + [
     "student_count_black",
     "student_count_hispanic",
     "student_count_white",
-    "student_count_asian"
+    "student_count_asian",
 ]
 
 
 def aggregate_by_neighborhood(schools, metric, year):
     """
-    Aggregating a metric by neighborhood for a given year. Computing average 
+    Aggregating a metric by neighborhood for a given year. Computing average
     of the metric using data of schools that is available in a neighborhood
 
     Parameters:
@@ -40,7 +40,9 @@ def aggregate_by_neighborhood(schools, metric, year):
     schools = schools.copy()
     schools[metric] = pd.to_numeric(schools[metric], errors="coerce")
 
-    aggregated_metric = schools.groupby("neighborhood")[metric].agg(["mean", "count"]).reset_index()
+    aggregated_metric = (
+        schools.groupby("neighborhood")[metric].agg(["mean", "count"]).reset_index()
+    )
 
     aggregated_metric.columns = ["neighborhood", metric, "school_count"]
     aggregated_metric["year"] = year
@@ -49,7 +51,7 @@ def aggregate_by_neighborhood(schools, metric, year):
 
 def get_available_metrics(schools, metrics):
     """
-    Return only metrics that have data available for the schools in 
+    Return only metrics that have data available for the schools in
     the data frame
 
     Parameters:

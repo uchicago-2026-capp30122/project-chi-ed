@@ -3,9 +3,10 @@ from sklearn.impute import KNNImputer
 
 
 class Schools:
-    """This schools class facilitates operations on schools data (report cards particulary, 
+    """This schools class facilitates operations on schools data (report cards particulary,
     but some methods are general to pandas or polars dataframes).
     """
+
     def __init__(self, schools_data: pandas.DataFrame):
         self.data = schools_data
         self.columns = schools_data.columns
@@ -40,7 +41,7 @@ class Schools:
 
     def rename_columns(self, mapping: dict):
         """Rename columns.
-        NOTE: This method is not a duplicate of pandas.DataFrame.rename() because it allows columns in mapping 
+        NOTE: This method is not a duplicate of pandas.DataFrame.rename() because it allows columns in mapping
         that are not in the data. This flexibility helps us use a unique columns dict across multiple datasets."""
         cols_mapping = {
             col: mapping[col] for col in mapping.keys() if col in self.columns
@@ -54,7 +55,7 @@ class Schools:
         """Use RCDTS to correct school names, taking the school name from the first occurrence of each RCDTS"""
         # Create a mapping of RCDTS to school name, a dict
         rcdts_school_mapping = (
-            self.data.drop_duplicates(subset = "RCDTS", keep = "first")
+            self.data.drop_duplicates(subset="RCDTS", keep="first")
             .set_index("RCDTS")["school_name"]
             .to_dict()
         )
@@ -81,10 +82,12 @@ class Schools:
         schools = self.data["school_name"].unique()
         full_panel = pandas.MultiIndex.from_product(
             [schools, years],
-            names = ["school_name", "year"],
-        ).to_frame(index = False)
-        self.data = full_panel.merge(self.data, on = ["school_name", "year"], how = "left")
-        self.data = self.data.sort_values(["school_name", "year"]).reset_index(drop = True)
+            names=["school_name", "year"],
+        ).to_frame(index=False)
+        self.data = full_panel.merge(self.data, on=["school_name", "year"], how="left")
+        self.data = self.data.sort_values(["school_name", "year"]).reset_index(
+            drop=True
+        )
         self.columns = self.data.columns
 
     def input_missing_values(self, columns: list[str], context: list[str], n: int = 5):

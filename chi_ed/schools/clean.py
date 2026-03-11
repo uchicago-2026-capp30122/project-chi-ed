@@ -31,39 +31,60 @@ def clean_reports_data():
     """Clean report cards and create panel data from 2019 to 2025"""
     # NOTE: This function is very costly. Call it only if necessary.
     cards_2025_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2025 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2025
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2025 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2025,
     )
     cards_2024_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2024 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2024
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2024 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2024,
     )
     cards_2023_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2023 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2023
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2023 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2023,
     )
     cards_2022_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2022 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2022
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2022 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2022,
     )
     cards_2021_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2021 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2021
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2021 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2021,
     )
     cards_2020_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2020 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2020
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2020 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2020,
     )
     cards_2019_dt = import_data(
-        filepath = DATA_DIRPATH / "raw" / "report_card_data" / "2019 ISBE Reports Card.xlsx",
-        raw = True,
-        year = 2019
+        filepath=DATA_DIRPATH
+        / "raw"
+        / "report_card_data"
+        / "2019 ISBE Reports Card.xlsx",
+        raw=True,
+        year=2019,
     )
 
     # Save each data for preview
@@ -91,12 +112,12 @@ def clean_reports_data():
             cards_2020_dt.data,
             cards_2019_dt.data,
         ],
-        ignore_index = True,
+        ignore_index=True,
     )
 
     # Sort by school name and year
-    panel_data_df = panel_data_df.sort_values(by = ["RCDTS", "year"]).reset_index(
-        drop = True
+    panel_data_df = panel_data_df.sort_values(by=["RCDTS", "year"]).reset_index(
+        drop=True
     )
     panel_dt = Schools(panel_data_df)
 
@@ -105,20 +126,22 @@ def clean_reports_data():
 
     # Save the panel data
     panel_dt.save_csv(DATA_DIRPATH / "clean" / "panel_report_cards.csv")
-    print(f"Panel data has: \n{panel_dt.data['RCDTS'].nunique()} schools \n{panel_dt.data['year'].nunique()} years")
+    print(
+        f"Panel data has: \n{panel_dt.data['RCDTS'].nunique()} schools \n{panel_dt.data['year'].nunique()} years"
+    )
 
     return panel_dt
 
 
 def clean_merged_data(version: str):
     """Clean the merged data.
-    This functions is designed to be cautiously flexible because the panel data is modified at different 
+    This functions is designed to be cautiously flexible because the panel data is modified at different
     stages of the cleaning process. Raw files are cleaned in this module, in another, then here again.
     The clean version of the data is modified here again and in-place. So: ONLY RUN THIS FUNCTION IF ABSOLUTELY NECESSARY.
-    It is advised to user version = "clean" to get the final version of the data. 
+    It is advised to user version = "clean" to get the final version of the data.
     Use version = "intermediate" or "raw" if you are a data scientist on this project."""
-    # NOTE: The data transformation in this cleaning process are solely to allow a technical performance of our product. 
-    # In the real-world scenario, we would not opt for some of these decisions. 
+    # NOTE: The data transformation in this cleaning process are solely to allow a technical performance of our product.
+    # In the real-world scenario, we would not opt for some of these decisions.
     if version in ["raw", "intermediate"]:
         if version == "raw":
             panel_dt = clean_reports_data()
@@ -126,56 +149,73 @@ def clean_merged_data(version: str):
 
         elif version == "intermediate":
             panel_dt = import_data(
-                filepath = DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw=False
+                filepath=DATA_DIRPATH / "clean" / "panel_report_cards.csv", raw=False
             )
 
         merged_dt = import_data(
-            filepath = DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw=False
+            filepath=DATA_DIRPATH / "clean" / "merged_panel_api_2025.csv", raw=False
         )
 
         columns_ISBE = set(panel_dt.data.columns)
         columns_API = set(merged_dt.data.columns) - columns_ISBE
 
         # Fill in missing school names with the school long name or short name if necessary
-        merged_dt.fill_school_names(column = "school_long_name")
-        merged_dt.fill_school_names(column = "school_short_name")
+        merged_dt.fill_school_names(column="school_long_name")
+        merged_dt.fill_school_names(column="school_short_name")
 
         # Populate the merged data with the API columns
         merged_dt.populate_columns(
-            identifier = ["school_name"], columns = list(columns_API) + ["RCDTS"]
+            identifier=["school_name"], columns=list(columns_API) + ["RCDTS"]
         )
 
         # Convert binary columns to Yes, No
-        binary_columns = [ "has_transition_program", "has_bilingual_services", "has_refugee_services", 
-                          "has_hearing_impairment_services", "has_visual_impairment_services"
+        binary_columns = [
+            "has_transition_program",
+            "has_bilingual_services",
+            "has_refugee_services",
+            "has_hearing_impairment_services",
+            "has_visual_impairment_services",
         ]
-        merged_dt.convert_to_binary(columns = binary_columns)
+        merged_dt.convert_to_binary(columns=binary_columns)
 
         # More cleaning
-        merged_dt.data = merged_dt.data.dropna(how = "all")
-        merged_dt.data.drop(columns = ["RCDTS", "school_short_name", "school_long_name", "school_type"], inplace = True)
+        merged_dt.data = merged_dt.data.dropna(how="all")
+        merged_dt.data.drop(
+            columns=["RCDTS", "school_short_name", "school_long_name", "school_type"],
+            inplace=True,
+        )
         return
 
     elif version == "clean":
         merged_dt = import_data(
-            filepath = DATA_DIRPATH / "clean" / "clean_panel.csv", raw = False
+            filepath=DATA_DIRPATH / "clean" / "clean_panel.csv", raw=False
         )
         # Balance the panel
-        merged_dt.balance_panel(years = [2019, 2020, 2021, 2022, 2023, 2024, 2025])
+        merged_dt.balance_panel(years=[2019, 2020, 2021, 2022, 2023, 2024, 2025])
 
         # Fill in the missing ZIP codes
-        merged_dt.populate_columns(identifier = ["school_name"], columns = ["zip"])
+        merged_dt.populate_columns(identifier=["school_name"], columns=["zip"])
 
         # Input missing values
         context_columns = ["year", "zip"]
-        columns_to_impute = ["enrollment", "ELA_proficiency", "math_proficiency", "science_proficiency", "sat_school_average", "graduation_rate", "graduation_rate4_year"]
-        merged_dt.input_missing_values(columns = columns_to_impute, context = context_columns)
+        columns_to_impute = [
+            "enrollment",
+            "ELA_proficiency",
+            "math_proficiency",
+            "science_proficiency",
+            "sat_school_average",
+            "graduation_rate",
+            "graduation_rate4_year",
+        ]
+        merged_dt.input_missing_values(
+            columns=columns_to_impute, context=context_columns
+        )
 
         # Save the updated merged data
         merged_dt.save_csv(DATA_DIRPATH / "clean" / "clean_panel.csv")
 
         return merged_dt
-            
+
     else:
         raise ValueError(
             f"Invalid version: {version}. Choose from ['raw', 'intermediate', 'clean']"
@@ -183,4 +223,4 @@ def clean_merged_data(version: str):
 
 
 if __name__ == "__main__":
-    clean_merged_data(version = "clean")
+    clean_merged_data(version="clean")
