@@ -48,7 +48,13 @@ uv run python -m chi_ed report
 brew add pandoc
 ```
 
-## Report Stats
+## Dashboard
+
+<p align="center">
+  <img src="docs/dashboard.png">
+</p>
+
+## Report Snippets
 <p align="center">
   <img src="docs/report_1.png" width="50%">
   <img src="docs/report_2.png" width="45%">
