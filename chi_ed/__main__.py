@@ -14,7 +14,9 @@ REPORT_DIRPATH = pathlib.Path(__file__).parent / "REPORT.pdf"
 def clean(version):
     """Clean the data and save it to the data directory"""
     if version == "raw":
-        print("Cleaning raw data ... this may take a while...")
+        raise ValueError("You probably don't have the raw files so you can not clean the data from raw. " \
+        "You can review the pipepline to clean raw datasets by reading the function clean() in __main__.py. " \
+        "Run: `uv run python -m chi_ed clean clean` to retried the cleaned version.")
         clean_merged_data(version = "raw") 
         write_merged_data()
         clean_merged_data(version = "intermediate")

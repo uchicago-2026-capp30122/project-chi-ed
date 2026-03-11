@@ -1,11 +1,11 @@
 # Chi-Ed - An Interactive Dashboard & Report to Compare Highschool Outcomes Across Chicago
-Authors: Apollinaire Abi, Mehwish Waheed, Muhammad Faizan Imran
+Authors: Essosolim Apollinaire Abi, Mehwish Waheed, Muhammad Faizan Imran
 
 ## Abstract
 
 Understanding high school outcomes across a major city like Chicago is important; our project aims to provide an overall aggregation of high schools across various metrics (e.g., graduation rate, college enrollment rate, SAT scores) across different neighborhoods in Chicago and it also allows draws on comprehensive Chicago Public Schools and Illinois Report Card data sets to compare any two schools across a wider range of outcomes and facilities. 
 
-With the dashboard and the report card we aim to facilitate both neighborhood level policy analysis which is aimed at policymakers to visualize the disparities in educational outcomes across different neighborhoods. The report card on the other hand provides a tool aimed at individual level decision making, through providing meaningful high school comparisons allowing users to make informed decisions about which high school would align best with their goals.
+With the dashboard and the report card we aim to facilitate both neighborhood level policy analysis which is aimed at policymakers to visualize and tabulate the disparities in educational outcomes across different neighborhoods and schols. The report card on the other hand provides a tool aimed at individual level decision making, through providing meaningful high school comparisons allowing users to make informed decisions about which high school would align best with their goals.
 
 ## Running the Code
 
@@ -27,8 +27,11 @@ uv sync
 3. Run the cleaning sequence from the project root to get all the files needed to run the dashboard and generate reports:
 
 ``` 
-uv run python -m chi_ed clean
+uv run python -m chi_ed clean (clean|raw)
 ```
+The second argument in the command line indicates whether to clean from the "raw" files or retrieve the "clean" version with 
+a few final touches. Raw files are not included in this directory but can be downloaded from the source. See `Sources` below. 
+
 
 4. Execute the dashboard:
 
@@ -41,11 +44,20 @@ uv run python -m chi_ed dashboard
 ``` 
 uv run python -m chi_ed report
 ```
+This will open an interactive panel requesting you to select the two schools to compare. The selection is simplied through a mapping 
+of schools to unique numbers. 
 
 *Dependencies*: For report generation please ensure that you have pandocs installed on your machine. To install pandoc please run:
 
 ```
 brew add pandoc
+```
+
+6. Tests 
+We included a few tests for different sections of our code. The test files are in `tests/` and can be reviewed to see which functionalities 
+are tested. 
+```
+uv run pytest
 ```
 
 ## Dashboard

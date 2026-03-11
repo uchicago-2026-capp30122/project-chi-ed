@@ -111,12 +111,14 @@ def clean_reports_data():
 
 
 def clean_merged_data(version: str):
-    """Clean the merged data
-    This functions is designed to be cautiously flexible because the panel data is modified different 
+    """Clean the merged data.
+    This functions is designed to be cautiously flexible because the panel data is modified at different 
     stages of the cleaning process. Raw files are cleaned in this module, in another, then here again.
-    The clean version is modified here again but in-place. So: Only clean the data if absolutely necessary.
+    The clean version of the data is modified here again and in-place. So: ONLY RUN THIS FUNCTION IF ABSOLUTELY NECESSARY.
     It is advised to user version = "clean" to get the final version of the data. 
     Use version = "intermediate" or "raw" if you are a data scientist on this project."""
+    # NOTE: The data transformation in this cleaning process are solely to allow a technical performance of our product. 
+    # In the real-world scenario, we would not opt for some of these decisions. 
     if version in ["raw", "intermediate"]:
         if version == "raw":
             panel_dt = clean_reports_data()
