@@ -4,7 +4,7 @@
 
 ## Project Structure
 
-![prject_flow](docs/coding_workflow.png)
+![prject_flow](../docs/coding_workflow.png)
 
 ## Team Responsibilites
 
