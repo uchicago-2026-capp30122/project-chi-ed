@@ -37,7 +37,7 @@ Auxillary data that we used to merge with report card data to get ZIP codes that
 
 The flowchart above provides a brief overview of our Python application. Other than chi_ed we have the following directories containing the data that we are fetching/creating, tests and reports that are being generated from the command line:
 
-
+![prject_flow](../docs/tree.png)
 
 ## Team Responsibilites
 
