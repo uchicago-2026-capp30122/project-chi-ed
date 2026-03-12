@@ -35,9 +35,16 @@ Auxillary data that we used to merge with report card data to get ZIP codes that
 
 ![prject_flow](../docs/coding_workflow.png)
 
-The flowchart above provides a brief overview of our Python application. Other than chi_ed we have the following directories containing the data that we are fetching/creating, tests and reports that are being generated from the command line:
+The flowchart above provides a brief overview of our Python application. The ```__main__.py``` folder makes all the relevant calls to indvidual functions inside each directory to clean the data, generate the report and initiate the dashboard. All code inside each module is written in a functional form allowing convenient testing and calling from different modules.
+
+Other than chi_ed we have the following directories containing the data that we are fetching/creating, tests and reports that are being generated from the command line:
 
 ![prject_flow](../docs/tree.png)
+
+- Tests: All of us added some basic tests that ensure that the data being cleaned and used for our main analysis is correct, they live inside the tests directory and can be run using ```uv run pytest ```.
+- Data: Contains subfolders containing the raw API data, geospatial data for neighborhood level shapefiles and cleaned/merged data that our functions are returning.
+- Docs: The docs folder contains some of the images that we are using to populate the ```readme.md``` and this file.
+
 
 ## Team Responsibilites
 
@@ -48,6 +55,8 @@ I set up the ```cps_api``` module and the data merging modules in ```merging```.
 - I wrote the script to fetch, clean and store the API Json data. Modules:  ```fetching_api_data.py``` & ```cleaning_api.py```
 - The main merging sequences in ```merging``` folder that perform 2 separate merges, ```merge_rc_dir.py``` merges directory data with report card data to get zip codes and the ```merge_api_rc.py``` performs blocking and uses school names for record linkage matching across two data sets, since there was not a unique identifier that we could match on.
 - Set up tests to check if the raw API data is being downloaded and stored correctly and another test that checks the cleaning sequence that we perform on the API json data.
+- I also worked on setting up the repo structure, and worked on the first drafts for the final ```readme.md``` and ```final.md``` and made flowchart describing the project flow.
+- Note: For the ```merge_api_rc.py``` module where I am merging our two main data sources, I explicitly handle one case where the matching algorithm resulted in a wrong match, since our data was limited I eyeballed the entire match dataframe and was able to flag faulty matches, which is not ideal but it served our purpose. At the late stage of our project we also decided to work with panel data for the schools, for which I had to make a slight adjustment to my functions, which I believe could have been done by writing another function instead of adding more parameters to the existing functions.
 
 ### Essosolim Apollinaire Abi:
 
