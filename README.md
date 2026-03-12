@@ -33,8 +33,7 @@ uv sync
 ``` 
 uv run python -m chi_ed clean (clean|raw)
 ```
-The second argument in the command line indicates whether to clean from the "raw" files or retrieve the "clean" version with 
-a few final touches. Raw files are not included in this directory but can be downloaded from the source. See `Sources` below. 
+The second argument in the command line indicates whether to clean from the "raw" files or retrieve the "clean" version with a few final touches. Raw files are not included in this directory but can be downloaded from the source. See `Sources` below. 
 
 
 4. Execute the dashboard:
@@ -48,8 +47,7 @@ uv run python -m chi_ed dashboard
 ``` 
 uv run python -m chi_ed report
 ```
-This will open an interactive panel requesting you to select the two schools to compare. The selection is simplied through a mapping 
-of schools to unique numbers. 
+Accessed using command line interface, users would need to select neighborhoods and schools within them that they want to compare.
 
 *Dependencies*: For report generation please ensure that you have pandocs installed on your machine. To install pandoc please run:
 
@@ -57,9 +55,7 @@ of schools to unique numbers.
 brew add pandoc
 ```
 
-6. Tests 
-We included a few tests for different sections of our code. The test files are in `tests/` and can be reviewed to see which functionalities 
-are tested. 
+6. The following command can be used to run some tests, making sure that the data is in the form it should be for the dashboard and report generation:
 ```
 uv run pytest
 ```
