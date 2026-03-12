@@ -35,6 +35,10 @@ Auxillary data that we used to merge with report card data to get ZIP codes that
 
 ![prject_flow](../docs/coding_workflow.png)
 
+The flowchart above provides a brief overview of our Python application. Other than chi_ed we have the following directories containing the data that we are fetching/creating, tests and reports that are being generated from the command line:
+
+
+
 ## Team Responsibilites
 
 ### Muhammad Faizan Imran
@@ -42,7 +46,7 @@ Auxillary data that we used to merge with report card data to get ZIP codes that
 I set up the ```cps_api``` module and the data merging modules in ```merging```. Here is a more detailed breakdown:
 
 - I wrote the script to fetch, clean and store the API Json data. Modules:  ```fetching_api_data.py``` & ```cleaning_api.py```
-- The main merging sequences in ```merging``` folder that perform 2 separate merges, ```merge_rc_dir.py``` merges directory data with report card data to get zip codes and the ```merge_api_rc.py``` performs blocking and record links the schools names because there was not a unique identifier that we could match on.
+- The main merging sequences in ```merging``` folder that perform 2 separate merges, ```merge_rc_dir.py``` merges directory data with report card data to get zip codes and the ```merge_api_rc.py``` performs blocking and uses school names for record linkage matching across two data sets, since there was not a unique identifier that we could match on.
 - Set up tests to check if the raw API data is being downloaded and stored correctly and another test that checks the cleaning sequence that we perform on the API json data.
 
 ### Essosolim Apollinaire Abi:
