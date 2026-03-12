@@ -80,7 +80,7 @@ def make_neighborhood_performance_charts(schools, metric, year):
     Build two bar charts showing top 10 and bottom 10 neighborhoods by metric.
 
     Parameters:
-        schools: A data frame filtered to a single year containing mappable schools only
+        schools: Data frame containing panel data of schools
         metric: Metric to aggregate and rank neighborhoods by
         year: Year to filter school data by
 
@@ -110,7 +110,7 @@ def make_neighborhood_performance_charts(schools, metric, year):
     # Neighborhoods with worst performance at the top
     worst_performing_neighborhoods = neighborhoods_with_data.nsmallest(
         10, metric
-    ).sort_values(metric, ascending=False)
+    ).sort_values(metric, ascending=True)
 
     metric_description = METRIC_DESCRIPTIONS.get(
         metric,
@@ -139,12 +139,12 @@ def make_school_comparison_chart(schools, school_a, school_b):
     Build a grouped bar chart comparing two schools across key metrics.
 
     Parameters:
-        schools: DataFrame filtered to a single year
+        schools: Data frame containing school data filtered to a single year
         school_a: Name of the first school
         school_b: Name of the second school
 
     Returns:
-        Plotly figure
+        A plotly grouped bar chart
     """
     comparison = get_school_comparison(schools, school_a, school_b)
 

@@ -55,10 +55,10 @@ def load_schools(year=None):
 
 def get_mappable_schools(schools):
     """
-    Filter school dataframe to keep only those that can be plotted on a map.
+    Filter school data frame to keep only those that can be plotted on a map
 
     Parameters:
-        schools: Dataframe output of load_schools.
+        schools: A panel data frame containing school information
 
     Returns:
         A subset of schools with non-missing latitude and longitude.
@@ -68,10 +68,10 @@ def get_mappable_schools(schools):
 
 def get_school_points(schools):
     """
-    Convert a schools dataframe to a geodataframe of point geometries.
+    Convert a schools data frame to a geodataframe of point geometries.
 
     Parameters:
-        schools: A data frame containing school information
+        schools: A panel data frame containing school information
 
     Returns:
         A geodataframe with point geometry in CRS EPSG:4326.

@@ -6,7 +6,6 @@ CHOROPLETH_METRICS = [
     "graduation_rate",
     "college_enrollment_rate",
     "attendance_rate_current_year",
-    "chronic_absenteeism",
     "sat_school_average",
 ]
 
@@ -27,40 +26,40 @@ COMPARISON_METRICS = CHOROPLETH_METRICS + [
 
 def aggregate_by_neighborhood(schools, metric, year):
     """
-    Aggregate a metric by neighborhood for a given year.
-
-    The mean is computed over available schools data only.
-    A school_count column is included so users can know how many schools
-    contributed to each neighborhood's average.
+    Aggregating a metric by neighborhood for a given year. Computing average
+    of the metric using data of schools that is available in a neighborhood
 
     Parameters:
-        schools: DataFrame filtered to a single year.
-        metric: Column name to aggregate.
-        year: School year being aggregated (used for labeling only).
+        schools: Data frame containing panel data of schools
+        metric: Characteristic of school to aggregate by
+        year: Year to filter school data by
 
     Returns:
-        DataFrame with columns [neighborhood, {metric}, school_count, year].
+        Data frame with columns [neighborhood, {metric}, school_count, year]
     """
     schools = schools.copy()
     schools[metric] = pd.to_numeric(schools[metric], errors="coerce")
 
-    agg = schools.groupby("neighborhood")[metric].agg(["mean", "count"]).reset_index()
+    aggregated_metric = (
+        schools.groupby("neighborhood")[metric].agg(["mean", "count"]).reset_index()
+    )
 
-    agg.columns = ["neighborhood", metric, "school_count"]
-    agg["year"] = year
-    return agg
+    aggregated_metric.columns = ["neighborhood", metric, "school_count"]
+    aggregated_metric["year"] = year
+    return aggregated_metric
 
 
 def get_available_metrics(schools, metrics):
     """
-    Return only metrics that have at least some data for the given schools DataFrame.
+    Return only metrics that have data available for the schools in
+    the data frame
 
     Parameters:
-        schools: DataFrame filtered to a single year.
-        metrics: List of metric column names to check.
+        schools: DataFrame of schools filtered to a single year
+        metrics: List of metric column names to check
 
     Returns:
-        List of metrics with at least one non-null value.
+        List of metrics with at least one non-missing value.
     """
     return [
         metric
@@ -74,9 +73,10 @@ def get_school_comparison(schools, school_a, school_b):
     Extract and compare all comparison metrics for two schools side by side.
 
     Parameters:
-        schools: DataFrame filtered to a single year.
-        school_a: Name of the first school.
-        school_b: Name of the second school.
+        schools: Data frame containing school information
+                 filtered to a single year
+        school_a: Name of the first school
+        school_b: Name of the second school
 
     Returns:
         DataFrame with columns [metric, school_a, school_b].

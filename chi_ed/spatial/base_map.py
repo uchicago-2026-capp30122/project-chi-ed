@@ -8,7 +8,6 @@ from .data import (
 )
 from .aggregation import aggregate_by_neighborhood
 
-
 neighborhoods = load_neighborhoods()
 school_data = load_schools()
 
@@ -138,5 +137,4 @@ def make_base_map(
 
 if __name__ == "__main__":
     base_map = make_base_map(2025)
-    base_map.save("/mnt/c/Users/mehwi/Downloads/chicago_schools_map.html")
     base_map.save(str(CLEAN_DATA_DIR / "chicago_schools_map.html"))

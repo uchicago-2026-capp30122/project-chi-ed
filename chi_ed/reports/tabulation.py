@@ -21,8 +21,17 @@ def format_statistic(value: float, variable: str, round_to: int = 2):
     return str(rounded)
 
 
-def summary_table(df: pandas.DataFrame, section: str, variables: dict[str, str], school1: str, school2: str,
-    filepath: pathlib.Path, round_to: int = 0, display_chicago: bool = True, year: int = 2025):
+def summary_table(
+    df: pandas.DataFrame,
+    section: str,
+    variables: dict[str, str],
+    school1: str,
+    school2: str,
+    filepath: pathlib.Path,
+    round_to: int = 0,
+    display_chicago: bool = True,
+    year: int = 2025,
+):
     """Create a summary table comparing both schools, with a Chicago average column if display_chicago is True."""
     data = df.loc[df["year"] == year].copy() if "year" in df.columns else df.copy()
     var_cols = [var for var in variables.keys() if var in data.columns]
@@ -45,7 +54,12 @@ def summary_table(df: pandas.DataFrame, section: str, variables: dict[str, str],
     for var, display_name in variables.items():
         if var not in data.columns:
             rows.append(
-                {"Metric": display_name, school1_display: "", school2_display: "", "Chicago Avg.": ""}
+                {
+                    "Metric": display_name,
+                    school1_display: "",
+                    school2_display: "",
+                    "Chicago Avg.": "",
+                }
             )
             continue
 
@@ -86,11 +100,11 @@ def summary_table(df: pandas.DataFrame, section: str, variables: dict[str, str],
             )
             if display_chicago:
                 avg_str = ""
-        
+
         stats = {
-            "Metric": display_name, 
-            school1_display: stat1_str if stat1_str else "", 
-            school2_display: stat2_str if stat2_str else ""
+            "Metric": display_name,
+            school1_display: stat1_str if stat1_str else "",
+            school2_display: stat2_str if stat2_str else "",
         }
 
         # Add the Chicago average if specified
@@ -101,7 +115,7 @@ def summary_table(df: pandas.DataFrame, section: str, variables: dict[str, str],
 
     table = (
         GT(pandas.DataFrame(rows))
-        .tab_header(title = f"{section}")
+        .tab_header(title=f"{section}")
         .tab_source_note("Empty cells indicates missing statistics.")
     )
 
@@ -131,5 +145,3 @@ def summary_table(df: pandas.DataFrame, section: str, variables: dict[str, str],
         table.save(str(filepath))
 
     return table
-
-

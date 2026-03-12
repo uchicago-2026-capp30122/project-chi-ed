@@ -2,7 +2,9 @@ import pathlib
 import pandas
 from ..schools.data import Schools
 
-COLNAMES_DIRPATH = pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "raw" / "colnames"
+COLNAMES_DIRPATH = (
+    pathlib.Path(__file__).parent.parent.parent.resolve() / "data" / "raw" / "colnames"
+)
 
 
 def _find_sheet(excel_file: pandas.ExcelFile, candidates: list[str]) -> str | None:
@@ -28,7 +30,9 @@ def load_reports_card(filepath: pathlib.Path):
     # Try to find correct sheet names
     # NOTE: These are the sheet names across years (2019-2025)
     general_sheet = _find_sheet(excel_file, ["General"])
-    scores_sheet = _find_sheet(excel_file, ["ELAMathScience", "ELA Math Science", "ELA and Math"])
+    scores_sheet = _find_sheet(
+        excel_file, ["ELAMathScience", "ELA Math Science", "ELA and Math"]
+    )
     scores2_sheet = _find_sheet(excel_file, ["ELAMathScience (2)"])
 
     # Strict error handling for general sheet which contains metadata
@@ -51,11 +55,18 @@ def load_reports_card(filepath: pathlib.Path):
     # NOTE: I am using contains = False because we are using a unique columns dict across all datasets
     list_of_sheets = [general_dt] + other_sheets
     for sheet_data in list_of_sheets:
-        sheet_data.select_columns(columns_to_keep, contains = False)
+        sheet_data.select_columns(columns_to_keep, contains=False)
         sheet_data.rename_columns(columns_mapping)
 
     # Common columns across all sheets
-    common_colnames = ["RCDTS", "school_name", "school_type", "county", "city", "district"]
+    common_colnames = [
+        "RCDTS",
+        "school_name",
+        "school_type",
+        "county",
+        "city",
+        "district",
+    ]
 
     # Merge all sheets on the common columns
     # NOTE: Note how I denote dataframes with _df suffix and schools class objects with _dt suffix
@@ -66,11 +77,12 @@ def load_reports_card(filepath: pathlib.Path):
             merged_df, sheet_dt.data, on=common_colnames, how="left"
         )
 
-    # Filter to "High Schools" and "Chicago" 
-    merged_df = merged_df[merged_df["school_type"].str.strip().str.lower() == "high school"]
+    # Filter to "High Schools" and "Chicago"
+    merged_df = merged_df[
+        merged_df["school_type"].str.strip().str.lower() == "high school"
+    ]
     merged_df = merged_df[merged_df["city"].str.strip().str.lower() == "chicago"]
     return Schools(merged_df)
-
 
 
 COLUMNS_2025_REPORTS_CARDS = {

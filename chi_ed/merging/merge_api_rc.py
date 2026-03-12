@@ -171,9 +171,9 @@ def write_merged_data(output_filname: Path = MERGE_CSV_PATH):
     """
     merged_df = merge_api_rc(REPORT_CARD_PATH)
     merged_df_panel = merge_api_rc(PANEL_DATA_PATH, True)
-    
-    merged_df.write_csv(output_filname) # Write CSV for 2025
-    merged_df_panel.write_csv(PANEL_DATA_CSV) # Write panel data
+
+    merged_df.write_csv(output_filname)  # Write CSV for 2025
+    merged_df_panel.write_csv(PANEL_DATA_CSV)  # Write panel data
 
 
 if __name__ == "__main__":

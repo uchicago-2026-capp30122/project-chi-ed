@@ -11,22 +11,25 @@ from chi_ed.merging.spatial_merge import spatial_merge
 
 REPORT_DIRPATH = pathlib.Path(__file__).parent / "REPORT.pdf"
 
+
 def clean(version):
     """Clean the data and save it to the data directory"""
     if version == "raw":
-        raise ValueError("You probably don't have the raw files so you can not clean the data from raw. " \
-        "You can review the pipepline to clean raw datasets by reading the function clean() in __main__.py. " \
-        "Run: `uv run python -m chi_ed clean clean` to retried the cleaned version.")
-        clean_merged_data(version = "raw") 
+        raise ValueError(
+            "You probably don't have the raw files so you can not clean the data from raw. "
+            "You can review the pipepline to clean raw datasets by reading the function clean() in __main__.py. "
+            "Run: `uv run python -m chi_ed clean clean` to retried the cleaned version."
+        )
+        clean_merged_data(version="raw")
         write_merged_data()
-        clean_merged_data(version = "intermediate")
-        spatial_merge() 
-        data = clean_merged_data(version = "clean")
+        clean_merged_data(version="intermediate")
+        spatial_merge()
+        data = clean_merged_data(version="clean")
 
     elif version == "clean":
         print("Retrieving clean data with some minor additional cleaning...")
-        data = clean_merged_data(version = "clean")
-    
+        data = clean_merged_data(version="clean")
+
     print(f"Data retrieved successfully and saved in {DATA_DIRPATH}. \nPreview:\n")
     print(data.data.head(10))
 
@@ -74,8 +77,9 @@ if __name__ == "__main__":
         if subtask not in ["raw", "clean"]:
             raise ValueError("Invalid version: {subtask}. Choose from ['raw', 'clean']")
 
-        clean(version = subtask)
+        clean(version=subtask)
 
     else:
-        raise ValueError("Usage: python -m chi_ed `dashboard | report | clean <version>`")
-
+        raise ValueError(
+            "Usage: python -m chi_ed `dashboard | report | clean <version>`"
+        )

@@ -6,6 +6,7 @@ from ..spatial.data import (
     CLEAN_DATA_DIR,
 )
 
+
 def spatial_merge():
     neighborhoods = load_neighborhoods()
     schools = load_schools()
@@ -18,8 +19,5 @@ def spatial_merge():
 
 
 if __name__ == "__main__":
-
     # Write explanation of what this file is doing
     spatial_merge()
-
-    

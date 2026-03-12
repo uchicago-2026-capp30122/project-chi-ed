@@ -54,6 +54,14 @@ code folders/modules.
 - Data transformation choices: To make our visualizations and tables more "beautiful" and consistent, I filled in missing values using the k nearest neighboors using KNNImputer
 from sklearn. I also balanced the panel across 2019 to 2025 which means even inputed data for schools missing from those years. Again this is purely a technical challenge and does not reflect true intended analysis in the real-world scenario.  
 
+### Mehwish Waheed:
+
+I merged the cleaned school panel data with Chicago neighborhood shapefiles to assign each school to its corresponding neighborhood via a spatial join.
+
+From there, I built out the visualizations for the dashboard. For the neighborhood tab, I created an interactive choropleth map of Chicago colored by a user-selected performance metric such as graduation rate, SAT scores, ELA/math proficiency, and wrote functions to display the top 10 and bottom 10 performing neighborhoods for that metric. All charts update dynamically based on the selected year.
+
+I then created a school comparison tab that allows users to select any two schools and compare them directly across key performance metrics, displayed as a grouped bar chart alongside a map of school locations.
+
 ## Final Thoughts
 The idea for the project came to us during last year's Scopeathon where two of us worked with George Washington Carver Center for Advancement of Science Education, where we worked on highlighting disparities in educational outcomes in the South Side of Chicago compared to other neighborhoods. What stood out during that experience was the need to have some clear visual that one can refer to, to get a sense of just how bad some of the disparities are. We aimed to deliver on that need through the dashboard.
 
