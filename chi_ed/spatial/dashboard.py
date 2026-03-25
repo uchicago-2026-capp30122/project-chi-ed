@@ -15,6 +15,7 @@ from .aggregation import (
 
 # https://dash-bootstrap-components.opensource.faculty.ai/docs/quickstart/
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 available_years = get_available_years()
 school_data = load_schools()
