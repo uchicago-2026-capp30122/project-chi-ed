@@ -1,5 +1,6 @@
 import dash
 import dash_bootstrap_components as dbc
+from flask_caching import Cache
 from dash import html, dcc, Input, Output, callback
 from .data import load_schools, get_mappable_schools, get_available_years
 from .base_map import make_base_map
@@ -16,6 +17,8 @@ from .aggregation import (
 # https://dash-bootstrap-components.opensource.faculty.ai/docs/quickstart/
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
+cache = Cache(app.server, config={"CACHE_TYPE": "SimpleCache"})
+
 
 available_years = get_available_years()
 school_data = load_schools()
@@ -402,16 +405,27 @@ def update_metric_options(year):
 
 
 # Updating neighborhood level map when year or metric changes
+@cache.memoize(timeout=600)
+def get_cached_map(year, metric):
+    return make_base_map(year, metric)._repr_html_()
+
 @callback(
     Output("base-map", "srcDoc"),
     Input("year-dropdown", "value"),
     Input("metric-dropdown", "value"),
 )
+
 def update_map(year, metric):
-    return make_base_map(year, metric)._repr_html_()
+    return get_cached_map(year, metric)
 
 
 # Updating bar charts for top and worst performing neighborhoods
+@cache.memoize(timeout=600)
+def get_cached_charts(year, metric):
+    schools = get_mappable_schools(school_data[school_data["year"] == year])
+    return make_neighborhood_performance_charts(schools, metric, year)
+
+
 @callback(
     Output("top-performing-chart", "figure"),
     Output("worst-performing-chart", "figure"),
@@ -425,10 +439,7 @@ def update_map(year, metric):
     Input("metric-dropdown", "value"),
 )
 def update_bar_charts(year, metric):
-    schools = get_mappable_schools(school_data[school_data["year"] == year])
-    top_chart, worst_chart, _, metric_description = (
-        make_neighborhood_performance_charts(schools, metric, year)
-    )
+    top_chart, worst_chart, _, metric_description = get_cached_charts(year, metric)
 
     metric_label = METRIC_LABELS.get(metric, metric.replace("_", " ").title())
     year_label = f"{year}  ·  Average across schools"
@@ -443,6 +454,38 @@ def update_bar_charts(year, metric):
         year_label,
         year_label,
     )
+
+# @callback(
+#     Output("top-performing-chart", "figure"),
+#     Output("worst-performing-chart", "figure"),
+#     Output("top-chart-title", "children"),
+#     Output("worst-chart-title", "children"),
+#     Output("top-chart-description", "children"),
+#     Output("worst-chart-description", "children"),
+#     Output("top-chart-year", "children"),
+#     Output("worst-chart-year", "children"),
+#     Input("year-dropdown", "value"),
+#     Input("metric-dropdown", "value"),
+# )
+# def update_bar_charts(year, metric):
+#     schools = get_mappable_schools(school_data[school_data["year"] == year])
+#     top_chart, worst_chart, _, metric_description = (
+#         make_neighborhood_performance_charts(schools, metric, year)
+#     )
+
+#     metric_label = METRIC_LABELS.get(metric, metric.replace("_", " ").title())
+#     year_label = f"{year}  ·  Average across schools"
+
+#     return (
+#         top_chart,
+#         worst_chart,
+#         f"Top Performing Neighborhoods — {metric_label}",
+#         f"Low Performing Neighborhoods — {metric_label}",
+#         metric_description,
+#         metric_description,
+#         year_label,
+#         year_label,
+#     )
 
 
 # Populating school dropdowns when user changes year

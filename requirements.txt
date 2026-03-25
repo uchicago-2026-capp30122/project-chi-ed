@@ -14,6 +14,8 @@ blinker==1.9.0
     # via flask
 branca==0.8.2
     # via folium
+cachelib==0.13.0
+    # via flask-caching
 certifi==2026.2.25
     # via
     #   httpcore
@@ -39,7 +41,11 @@ dash-bootstrap-components==2.0.4
 faicons==0.2.2
     # via great-tables
 flask==3.1.3
-    # via dash
+    # via
+    #   dash
+    #   flask-caching
+flask-caching==2.3.1
+    # via project-chi-ed
 folium==0.20.0
     # via project-chi-ed
 geopandas==1.1.3
